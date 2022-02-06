@@ -4,12 +4,8 @@
  */
 package com.dev.panels;
 
-import com.dev.content.AdminEmployeeAdd;
-import javax.swing.BorderFactory;
-import javax.swing.table.DefaultTableCellRenderer;
-
-
-
+import javax.swing.JPanel;
+import com.dev.content.*;
 
 /**
  *
@@ -20,16 +16,11 @@ public class AdminEmployee extends javax.swing.JPanel {
     /**
      * Creates new form AdminEmployeeMain
      */
-    final DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-    AdminEmployeeAdd add = new AdminEmployeeAdd();
     
     public AdminEmployee() {
         initComponents();
-        jTable1.setFillsViewportHeight(true);
-        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
-        renderer.setBorder(null);
-        renderer.setHorizontalAlignment(0);
-        jTable1.getTableHeader().setDefaultRenderer(renderer);
+        pnlBack.setVisible(false);
+        panelChange(Content, new AdminEmployeeMain());
     }
 
     /**
@@ -48,8 +39,8 @@ public class AdminEmployee extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Content = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        pnlBack = new javax.swing.JPanel();
+        btnBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -83,7 +74,7 @@ public class AdminEmployee extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, -1));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, 50));
 
         AddEmployee.setBackground(new java.awt.Color(236, 239, 244));
         AddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -100,73 +91,61 @@ public class AdminEmployee extends javax.swing.JPanel {
         jLabel4.setText("Add Employee");
         AddEmployee.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 7, -1, 20));
 
-        add(AddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, 40));
+        add(AddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, 140, 40));
 
-        Content.setBackground(new java.awt.Color(229, 233, 240));
+        Content.setBackground(new java.awt.Color(236, 239, 244));
+        Content.setPreferredSize(new java.awt.Dimension(840, 500));
+        Content.setLayout(new javax.swing.BoxLayout(Content, javax.swing.BoxLayout.LINE_AXIS));
+        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
-        jTable1.setBackground(new java.awt.Color(229, 233, 240));
-        jTable1.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Name", "NUI", "Dirección", "Telefono", "Email"
+        pnlBack.setBackground(new java.awt.Color(236, 239, 244));
+        pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
             }
-        ));
-        jTable1.setCellSelectionEnabled(true);
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(216, 222, 233));
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(129, 161, 193));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.setShowGrid(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        });
+        pnlBack.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
-        Content.setLayout(ContentLayout);
-        ContentLayout.setHorizontalGroup(
-            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContentLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
-        ContentLayout.setVerticalGroup(
-            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContentLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
-
-        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 840, 410));
+        add(pnlBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 40, 40));
 
         getAccessibleContext().setAccessibleName("pnlMain");
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEmployeeMouseClicked
-        add.setVisible(true);
-        ;
+        AddEmployee.setVisible(false);
+        pnlBack.setVisible(true);
+        panelChange(Content, new AdminEmployeeAdd());
     }//GEN-LAST:event_AddEmployeeMouseClicked
 
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        panelChange(Content, new AdminEmployeeMain());
+        AddEmployee.setVisible(true);
+        pnlBack.setVisible(false);
+    }//GEN-LAST:event_btnBackMouseClicked
+     public void panelChange(JPanel container, JPanel content) {
+        container.removeAll();
+        container.revalidate();
+        container.repaint();
+
+        container.add(content);
+        container.revalidate();
+        container.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AddEmployee;
     private javax.swing.JPanel Content;
     private javax.swing.JPanel Title;
+    private javax.swing.JLabel btnBack;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel pnlBack;
     // End of variables declaration//GEN-END:variables
 
 }

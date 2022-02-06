@@ -4,8 +4,6 @@
  */
 package com.dev.mainPanel;
 
-import com.dev.content.AdminEmployeeAdd;
-import com.dev.panels.AdminEmployee;
 import java.awt.Color;
 import javax.swing.*;
 import com.dev.panels.*;
@@ -63,7 +61,6 @@ public class AdminMain extends javax.swing.JFrame {
         pnlMain = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 625));
         setMinimumSize(new java.awt.Dimension(1000, 625));
         setUndecorated(true);
 
@@ -73,6 +70,7 @@ public class AdminMain extends javax.swing.JFrame {
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlStatus.setBackground(new java.awt.Color(94, 129, 172));
+        pnlStatus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnMenu.setBackground(new java.awt.Color(94, 129, 172));
         btnMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -90,6 +88,7 @@ public class AdminMain extends javax.swing.JFrame {
                 btnMenuMouseExited(evt);
             }
         });
+        pnlStatus.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 40));
 
         btnClose.setBackground(new java.awt.Color(208, 135, 112));
         btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -107,34 +106,12 @@ public class AdminMain extends javax.swing.JFrame {
                 btnCloseMouseExited(evt);
             }
         });
+        pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(76, 86, 106));
         jLabel1.setText("MINIMARKET QMET");
-
-        javax.swing.GroupLayout pnlStatusLayout = new javax.swing.GroupLayout(pnlStatus);
-        pnlStatus.setLayout(pnlStatusLayout);
-        pnlStatusLayout.setHorizontalGroup(
-            pnlStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlStatusLayout.createSequentialGroup()
-                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(352, 352, 352)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
-                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        pnlStatusLayout.setVerticalGroup(
-            pnlStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStatusLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(pnlStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(pnlStatusLayout.createSequentialGroup()
-                            .addComponent(btnClose, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                            .addGap(30, 30, 30))
-                        .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
+        pnlStatus.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 174, 40));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
@@ -569,7 +546,7 @@ public class AdminMain extends javax.swing.JFrame {
         }
     }
     public void viewAddEmployee(){
-        panelChange(pnlMain, new AdminEmployeeAdd());
+        panelChange(pnlMain, new AdminEmployee());
     }
     /**
      * @param args the command line arguments

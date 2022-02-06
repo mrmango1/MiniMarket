@@ -62,7 +62,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 30, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -32,9 +32,6 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Title = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         Content = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -54,39 +51,8 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
-        setPreferredSize(new java.awt.Dimension(940, 590));
+        setPreferredSize(new java.awt.Dimension(840, 500));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Title.setBackground(new java.awt.Color(236, 239, 244));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account.png"))); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel1.setText("EMPLOYEE");
-
-        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
-        Title.setLayout(TitleLayout);
-        TitleLayout.setHorizontalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        TitleLayout.setVerticalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, -1));
 
         Content.setBackground(new java.awt.Color(229, 233, 240));
         Content.setForeground(new java.awt.Color(76, 86, 106));
@@ -162,12 +128,12 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         txtEmail.setBorder(null);
         Content.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 110, 22));
 
-        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 750, 320));
+        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 800, 350));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(76, 86, 106));
         jLabel10.setText("Agregar Empleados:");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(143, 188, 187));
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
@@ -181,7 +147,7 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
                 jLabel11MouseClicked(evt);
             }
         });
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, 120, 40));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -196,19 +162,24 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         String phone = txtPhone.getText();
         String email = txtEmail.getText();
         String password = txtPassword.getText();
-        String sql = "insert into employee (nui,firstname,lastname,address,phone,mail,password,admin_idAdmin) values ('" + nui + "','" + name + "','" + lastName + "','" + address + "','" + phone + "','" + email + "','" + password + "', 1)";
-        try {
-            cn = ctn.getConnection();
-            st = cn.createStatement();
-            st.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "Usuario Agregado");
-            clearTxtFields();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+        System.out.println(name.equals(""));
+        String sql = "insert into employee (nui,firstname,lastname,address,phone,mail,password,idAdmin) values ('" + nui + "','" + name + "','" + lastName + "','" + address + "','" + phone + "','" + email + "','" + password + "', 1)";
+        if (nui.equals("") || lastName.equals("") || nui.equals("") || address.equals("") || phone.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
+        } else {
+            try {
+                cn = ctn.getConnection();
+                st = cn.createStatement();
+                st.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Usuario Agregado");
+                clearTxtFields();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
-
     }
-    public void clearTxtFields(){
+
+    public void clearTxtFields() {
         txtName.setText("");
         txtLastName.setText("");
         txtPhone.setText("");
@@ -219,11 +190,8 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Content;
-    private javax.swing.JPanel Title;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
