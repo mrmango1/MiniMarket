@@ -466,7 +466,7 @@ public class AdminMain extends javax.swing.JFrame {
             menuColorChange();
             btnSales.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSales.getBackground();
-            panelChange(pnlMain, new AdminEmployeeMain());
+            panelChange(pnlMain, new AdminSales());
             pnlMenu.setSize(60, 625);
             x=210;
         }if(pos==3){
@@ -481,7 +481,7 @@ public class AdminMain extends javax.swing.JFrame {
             menuColorChange();
             btnCustomers.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnCustomers.getBackground();
-            panelChange(pnlMain, new AdminEmployeeMain());
+            panelChange(pnlMain, new AdminCustomers());
             pnlMenu.setSize(60, 625);
             x=210;
         }if(pos==4){
@@ -496,7 +496,7 @@ public class AdminMain extends javax.swing.JFrame {
             menuColorChange();
             btnSupplier.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSupplier.getBackground();
-            panelChange(pnlMain, new AdminEmployeeMain());
+            panelChange(pnlMain, new AdminSuppliers());
             pnlMenu.setSize(60, 625);
             x=210;
         }if(pos==5){
@@ -511,7 +511,7 @@ public class AdminMain extends javax.swing.JFrame {
             menuColorChange();
             btnSettings.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSettings.getBackground();
-            panelChange(pnlMain, new AdminEmployeeMain());
+            panelChange(pnlMain, new Settings());
             pnlMenu.setSize(60, 625);
             x=210;
         }if(pos==6){
