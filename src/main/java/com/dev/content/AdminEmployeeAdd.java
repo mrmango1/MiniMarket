@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.dev.panels;
+package com.dev.content;
 
 import com.dev.config.DBConnection;
 import java.sql.*;
@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author mrmango
  */
-public class AdminEmployeeMain extends javax.swing.JPanel {
+public class AdminEmployeeAdd extends javax.swing.JPanel {
 
     DBConnection ctn = new DBConnection();
     Connection cn;
     Statement st;
     ResultSet rs;
 
-    public AdminEmployeeMain() {
+    public AdminEmployeeAdd() {
         initComponents();
     }
 
@@ -32,10 +32,10 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Title = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        Content = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -57,7 +57,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(940, 590));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(236, 239, 244));
+        Title.setBackground(new java.awt.Color(236, 239, 244));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account.png"))); // NOI18N
 
@@ -65,104 +65,104 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(76, 86, 106));
         jLabel1.setText("EMPLOYEE");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
+        Title.setLayout(TitleLayout);
+        TitleLayout.setHorizontalGroup(
+            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        TitleLayout.setVerticalGroup(
+            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 30, -1, -1));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(229, 233, 240));
-        jPanel2.setForeground(new java.awt.Color(76, 86, 106));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Content.setBackground(new java.awt.Color(229, 233, 240));
+        Content.setForeground(new java.awt.Color(76, 86, 106));
+        Content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(76, 86, 106));
         jLabel3.setText("Contraseña:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
+        Content.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(76, 86, 106));
         jLabel4.setText("Apellido:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        Content.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(76, 86, 106));
         jLabel5.setText("Nombre:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        Content.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(76, 86, 106));
         jLabel6.setText("Direccion:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        Content.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(76, 86, 106));
         jLabel7.setText("Telefono:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
+        Content.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(76, 86, 106));
         jLabel8.setText("Email:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
+        Content.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(76, 86, 106));
         jLabel9.setText("NUI:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        Content.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(236, 239, 244));
         txtPassword.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtPassword.setBorder(null);
-        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 110, 22));
+        Content.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 110, 22));
 
         txtName.setBackground(new java.awt.Color(236, 239, 244));
         txtName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtName.setBorder(null);
-        jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 110, 22));
+        Content.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 110, 22));
 
         txtLastName.setBackground(new java.awt.Color(236, 239, 244));
         txtLastName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtLastName.setBorder(null);
-        jPanel2.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 110, 22));
+        Content.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 110, 22));
 
         txtNui.setBackground(new java.awt.Color(236, 239, 244));
         txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtNui.setBorder(null);
-        jPanel2.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 110, 22));
+        Content.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 110, 22));
 
         txtAddress.setBackground(new java.awt.Color(236, 239, 244));
         txtAddress.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtAddress.setBorder(null);
-        jPanel2.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, 22));
+        Content.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, 22));
 
         txtPhone.setBackground(new java.awt.Color(236, 239, 244));
         txtPhone.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtPhone.setBorder(null);
-        jPanel2.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 110, 22));
+        Content.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 110, 22));
 
         txtEmail.setBackground(new java.awt.Color(236, 239, 244));
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtEmail.setBorder(null);
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 110, 22));
+        Content.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 110, 22));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 750, 320));
+        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 750, 320));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(76, 86, 106));
@@ -218,6 +218,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         txtPassword.setText("");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Content;
+    private javax.swing.JPanel Title;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -229,8 +231,6 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtLastName;

@@ -4,6 +4,8 @@
  */
 package com.dev.mainPanel;
 
+import com.dev.content.AdminEmployeeAdd;
+import com.dev.panels.AdminEmployee;
 import java.awt.Color;
 import javax.swing.*;
 import com.dev.panels.*;
@@ -16,7 +18,7 @@ public class AdminMain extends javax.swing.JFrame {
 
     Color bgColorReset;
     int pos = 0;
-    int x = 210;
+    int x = 60;
 
 
     public AdminMain() {
@@ -137,6 +139,9 @@ public class AdminMain extends javax.swing.JFrame {
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
         pnlMenu.setBackground(new java.awt.Color(216, 222, 233));
+        pnlMenu.setMaximumSize(new java.awt.Dimension(210, 585));
+        pnlMenu.setMinimumSize(new java.awt.Dimension(60, 585));
+        pnlMenu.setPreferredSize(new java.awt.Dimension(60, 585));
         pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnDashboard.setBackground(new java.awt.Color(216, 222, 233));
@@ -296,7 +301,7 @@ public class AdminMain extends javax.swing.JFrame {
 
         pnlMenu.add(btnSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 210, 45));
 
-        background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 590));
+        background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 60, 590));
 
         pnlMain.setBackground(new java.awt.Color(236, 239, 244));
         pnlMain.setLayout(new java.awt.CardLayout());
@@ -317,41 +322,7 @@ public class AdminMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseClicked
-        if (x == 210) {
-            pnlMenu.setSize(210, 625);
-            Thread th = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 210; i >= 60; i--) {
-                            Thread.sleep(1);
-                            pnlMenu.setSize(i, 625);
-                        }
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-                }
-            };
-            th.start();
-            x = 60;
-        } else if (x == 60) {
-            pnlMenu.setSize(x, 625);
-            Thread th = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 60; i <= x; i++) {
-                            Thread.sleep(1);
-                            pnlMenu.setSize(i, 625);
-                        }
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-                }
-            };
-            th.start();
-            x = 210;
-        }
+        menuAnimation();
     }//GEN-LAST:event_btnMenuMouseClicked
 
     private void btnMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseEntered
@@ -436,14 +407,13 @@ public class AdminMain extends javax.swing.JFrame {
             btnDashboard.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnDashboard.getBackground();
             panelChange(pnlMain, new AdminDashboard());
-            pnlMenu.setSize(60, 625);
-            x=210;
-        }if(pos==1){
-            x=60;
+        }else{
+            
         }
-        pnlMenu.setSize(60, 625);
+        if(x==210){
+            menuAnimation(); 
+        }
         pos = 1;
-        
     }//GEN-LAST:event_btnDashboardMouseClicked
 
     private void btnEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseClicked
@@ -451,13 +421,13 @@ public class AdminMain extends javax.swing.JFrame {
             menuColorChange();
             btnEmployee.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnEmployee.getBackground();
-            panelChange(pnlMain, new AdminEmployeeMain());
-            pnlMenu.setSize(60, 625);
-            x=210;
-        }if(pos==2){
-            x=60;
+            panelChange(pnlMain, new AdminEmployee());
+        }else{
+            
         }
-        pnlMenu.setSize(60, 625);
+        if(x==210){
+            menuAnimation(); 
+        }
         pos = 2;
     }//GEN-LAST:event_btnEmployeeMouseClicked
 
@@ -467,12 +437,12 @@ public class AdminMain extends javax.swing.JFrame {
             btnSales.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSales.getBackground();
             panelChange(pnlMain, new AdminSales());
-            pnlMenu.setSize(60, 625);
-            x=210;
-        }if(pos==3){
-            x=60;
+        }else{
+            
         }
-        pnlMenu.setSize(60, 625);
+        if(x==210){
+            menuAnimation(); 
+        }
         pos = 3;
     }//GEN-LAST:event_btnSalesMouseClicked
 
@@ -482,12 +452,12 @@ public class AdminMain extends javax.swing.JFrame {
             btnCustomers.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnCustomers.getBackground();
             panelChange(pnlMain, new AdminCustomers());
-            pnlMenu.setSize(60, 625);
-            x=210;
-        }if(pos==4){
-            x=60;
+        }else{
+            
         }
-        pnlMenu.setSize(60, 625);
+        if(x==210){
+            menuAnimation(); 
+        }
         pos = 4;
     }//GEN-LAST:event_btnCustomersMouseClicked
 
@@ -497,12 +467,12 @@ public class AdminMain extends javax.swing.JFrame {
             btnSupplier.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSupplier.getBackground();
             panelChange(pnlMain, new AdminSuppliers());
-            pnlMenu.setSize(60, 625);
-            x=210;
-        }if(pos==5){
-            x=60;
+        }else{
+            
         }
-        pnlMenu.setSize(60, 625);
+        if(x==210){
+            menuAnimation(); 
+        }
         pos = 5;
     }//GEN-LAST:event_btnSupplierMouseClicked
 
@@ -512,14 +482,16 @@ public class AdminMain extends javax.swing.JFrame {
             btnSettings.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSettings.getBackground();
             panelChange(pnlMain, new Settings());
-            pnlMenu.setSize(60, 625);
-            x=210;
-        }if(pos==6){
-            x=60;
+        }else{
+            
         }
-        pnlMenu.setSize(60, 625);
+        if(x==210){
+            menuAnimation(); 
+        }
         pos = 6;
     }//GEN-LAST:event_btnSettingsMouseClicked
+    
+    //METODOS
     private void resetColor(JLabel label) {
         label.setBackground(bgColorReset);
     }
@@ -558,7 +530,47 @@ public class AdminMain extends javax.swing.JFrame {
         btnSupplier.setBackground(new java.awt.Color(216, 222, 233));
         btnSettings.setBackground(new java.awt.Color(216, 222, 233));
     }
-
+    
+    public void menuAnimation(){
+        if (x == 210) {
+            pnlMenu.setSize(210, 625);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 210; i >= 60; i--) {
+                            Thread.sleep(1);
+                            pnlMenu.setSize(i, 625);
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+            x = 60;
+        } else if (x == 60) {
+            pnlMenu.setSize(x, 625);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 60; i <= x; i++) {
+                            Thread.sleep(1);
+                            pnlMenu.setSize(i, 625);
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+            x = 210;
+        }
+    }
+    public void viewAddEmployee(){
+        panelChange(pnlMain, new AdminEmployeeAdd());
+    }
     /**
      * @param args the command line arguments
      */
@@ -570,7 +582,7 @@ public class AdminMain extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
