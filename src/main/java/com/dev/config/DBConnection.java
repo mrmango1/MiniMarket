@@ -13,16 +13,22 @@ import javax.swing.JOptionPane;
  * @author mrmango
  */
 public class DBConnection {
-    Connection con;
-    public DBConnection(){
+
+    private static Connection con;
+
+    static {
+        String url = "jdbc:mysql://localhost:3306/qmet";
+        String user = "root";
+        String password = "1234";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/qmet", "root", "1234");
-        } catch (Exception e){
+            con = DriverManager.getConnection(url, user, password);
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-    } 
-    public Connection getConnection(){
+    }
+
+    public Connection getConnection() {
         return con;
     }
 }

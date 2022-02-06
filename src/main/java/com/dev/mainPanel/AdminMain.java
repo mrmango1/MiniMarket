@@ -4,9 +4,11 @@
  */
 package com.dev.mainPanel;
 
+import com.dev.config.DBConnection;
 import java.awt.Color;
 import javax.swing.*;
 import com.dev.panels.*;
+import com.formdev.flatlaf.FlatLightLaf;
 
 /**
  *
@@ -18,11 +20,12 @@ public class AdminMain extends javax.swing.JFrame {
     int pos = 0;
     int x = 60;
 
-
     public AdminMain() {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
+        DBConnection ctn = new DBConnection();
+
     }
 
     /**
@@ -384,11 +387,11 @@ public class AdminMain extends javax.swing.JFrame {
             btnDashboard.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnDashboard.getBackground();
             panelChange(pnlMain, new AdminDashboard());
-        }else{
-            
+        } else {
+
         }
-        if(x==210){
-            menuAnimation(); 
+        if (x == 210) {
+            menuAnimation();
         }
         pos = 1;
     }//GEN-LAST:event_btnDashboardMouseClicked
@@ -399,11 +402,11 @@ public class AdminMain extends javax.swing.JFrame {
             btnEmployee.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnEmployee.getBackground();
             panelChange(pnlMain, new AdminEmployee());
-        }else{
-            
+        } else {
+
         }
-        if(x==210){
-            menuAnimation(); 
+        if (x == 210) {
+            menuAnimation();
         }
         pos = 2;
     }//GEN-LAST:event_btnEmployeeMouseClicked
@@ -414,11 +417,11 @@ public class AdminMain extends javax.swing.JFrame {
             btnSales.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSales.getBackground();
             panelChange(pnlMain, new AdminSales());
-        }else{
-            
+        } else {
+
         }
-        if(x==210){
-            menuAnimation(); 
+        if (x == 210) {
+            menuAnimation();
         }
         pos = 3;
     }//GEN-LAST:event_btnSalesMouseClicked
@@ -429,11 +432,11 @@ public class AdminMain extends javax.swing.JFrame {
             btnCustomers.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnCustomers.getBackground();
             panelChange(pnlMain, new AdminCustomers());
-        }else{
-            
+        } else {
+
         }
-        if(x==210){
-            menuAnimation(); 
+        if (x == 210) {
+            menuAnimation();
         }
         pos = 4;
     }//GEN-LAST:event_btnCustomersMouseClicked
@@ -444,11 +447,11 @@ public class AdminMain extends javax.swing.JFrame {
             btnSupplier.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSupplier.getBackground();
             panelChange(pnlMain, new AdminSuppliers());
-        }else{
-            
+        } else {
+
         }
-        if(x==210){
-            menuAnimation(); 
+        if (x == 210) {
+            menuAnimation();
         }
         pos = 5;
     }//GEN-LAST:event_btnSupplierMouseClicked
@@ -459,15 +462,15 @@ public class AdminMain extends javax.swing.JFrame {
             btnSettings.setBackground(new java.awt.Color(94, 129, 172));
             bgColorReset = btnSettings.getBackground();
             panelChange(pnlMain, new Settings());
-        }else{
-            
+        } else {
+
         }
-        if(x==210){
-            menuAnimation(); 
+        if (x == 210) {
+            menuAnimation();
         }
         pos = 6;
     }//GEN-LAST:event_btnSettingsMouseClicked
-    
+
     //METODOS
     private void resetColor(JLabel label) {
         label.setBackground(bgColorReset);
@@ -507,8 +510,8 @@ public class AdminMain extends javax.swing.JFrame {
         btnSupplier.setBackground(new java.awt.Color(216, 222, 233));
         btnSettings.setBackground(new java.awt.Color(216, 222, 233));
     }
-    
-    public void menuAnimation(){
+
+    public void menuAnimation() {
         if (x == 210) {
             pnlMenu.setSize(210, 625);
             Thread th = new Thread() {
@@ -545,9 +548,11 @@ public class AdminMain extends javax.swing.JFrame {
             x = 210;
         }
     }
-    public void viewAddEmployee(){
+
+    public void viewAddEmployee() {
         panelChange(pnlMain, new AdminEmployee());
     }
+
     /**
      * @param args the command line arguments
      */
@@ -558,21 +563,11 @@ public class AdminMain extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
         }
+
         //</editor-fold>
 
         /* Create and display the form */

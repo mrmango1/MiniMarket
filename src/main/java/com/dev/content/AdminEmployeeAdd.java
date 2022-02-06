@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class AdminEmployeeAdd extends javax.swing.JPanel {
 
-    DBConnection ctn = new DBConnection();
+    DBConnection cnt = new DBConnection();
     Connection cn;
     Statement st;
     ResultSet rs;
@@ -93,37 +93,37 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         jLabel9.setText("NUI:");
         Content.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        txtPassword.setBackground(new java.awt.Color(236, 239, 244));
+        txtPassword.setBackground(new java.awt.Color(216, 222, 233));
         txtPassword.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtPassword.setBorder(null);
         Content.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 110, 22));
 
-        txtName.setBackground(new java.awt.Color(236, 239, 244));
+        txtName.setBackground(new java.awt.Color(216, 222, 233));
         txtName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtName.setBorder(null);
         Content.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 110, 22));
 
-        txtLastName.setBackground(new java.awt.Color(236, 239, 244));
+        txtLastName.setBackground(new java.awt.Color(216, 222, 233));
         txtLastName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtLastName.setBorder(null);
         Content.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 110, 22));
 
-        txtNui.setBackground(new java.awt.Color(236, 239, 244));
+        txtNui.setBackground(new java.awt.Color(216, 222, 233));
         txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtNui.setBorder(null);
         Content.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 110, 22));
 
-        txtAddress.setBackground(new java.awt.Color(236, 239, 244));
+        txtAddress.setBackground(new java.awt.Color(216, 222, 233));
         txtAddress.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtAddress.setBorder(null);
         Content.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, 22));
 
-        txtPhone.setBackground(new java.awt.Color(236, 239, 244));
+        txtPhone.setBackground(new java.awt.Color(216, 222, 233));
         txtPhone.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtPhone.setBorder(null);
         Content.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 110, 22));
 
-        txtEmail.setBackground(new java.awt.Color(236, 239, 244));
+        txtEmail.setBackground(new java.awt.Color(216, 222, 233));
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtEmail.setBorder(null);
         Content.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 110, 22));
@@ -168,7 +168,7 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
             try {
-                cn = ctn.getConnection();
+                cn = cnt.getConnection();
                 st = cn.createStatement();
                 st.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "Usuario Agregado");
