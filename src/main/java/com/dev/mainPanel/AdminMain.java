@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.*;
 import com.dev.panels.*;
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.Frame;
 
 /**
  *
@@ -40,8 +41,10 @@ public class AdminMain extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         pnlStatus = new javax.swing.JPanel();
         btnMenu = new javax.swing.JLabel();
+        btnMinimize = new javax.swing.JLabel();
         btnClose = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         pnlMenu = new javax.swing.JPanel();
         btnDashboard = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -93,6 +96,25 @@ public class AdminMain extends javax.swing.JFrame {
         });
         pnlStatus.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 40));
 
+        btnMinimize.setBackground(new java.awt.Color(180, 142, 173));
+        btnMinimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minimize.png"))); // NOI18N
+        btnMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMinimize.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMinimize.setOpaque(true);
+        btnMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMinimizeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMinimizeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMinimizeMouseExited(evt);
+            }
+        });
+        pnlStatus.add(btnMinimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 40, 40));
+
         btnClose.setBackground(new java.awt.Color(208, 135, 112));
         btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close.png"))); // NOI18N
@@ -112,9 +134,12 @@ public class AdminMain extends javax.swing.JFrame {
         pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(76, 86, 106));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("MINIMARKET QMET");
         pnlStatus.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 174, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/littleStore.png"))); // NOI18N
+        pnlStatus.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
@@ -140,7 +165,7 @@ public class AdminMain extends javax.swing.JFrame {
         btnDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard.png"))); // NOI18N
         btnDashboard.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
 
         jLabel7.setBackground(new java.awt.Color(76, 86, 106));
@@ -471,6 +496,19 @@ public class AdminMain extends javax.swing.JFrame {
         pos = 6;
     }//GEN-LAST:event_btnSettingsMouseClicked
 
+    private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
+        setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_btnMinimizeMouseClicked
+
+    private void btnMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseEntered
+        bgColorReset = btnMinimize.getBackground();
+        closeColor(btnMinimize);
+    }//GEN-LAST:event_btnMinimizeMouseEntered
+
+    private void btnMinimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseExited
+        resetColor(btnMinimize);
+    }//GEN-LAST:event_btnMinimizeMouseExited
+
     //METODOS
     private void resetColor(JLabel label) {
         label.setBackground(bgColorReset);
@@ -585,6 +623,7 @@ public class AdminMain extends javax.swing.JFrame {
     private javax.swing.JPanel btnDashboard;
     private javax.swing.JPanel btnEmployee;
     private javax.swing.JLabel btnMenu;
+    private javax.swing.JLabel btnMinimize;
     private javax.swing.JPanel btnSales;
     private javax.swing.JPanel btnSettings;
     private javax.swing.JPanel btnSupplier;
@@ -595,6 +634,7 @@ public class AdminMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

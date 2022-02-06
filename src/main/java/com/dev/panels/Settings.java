@@ -36,7 +36,7 @@ public class Settings extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(236, 239, 244));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("SETTINGS");

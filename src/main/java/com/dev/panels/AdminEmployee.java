@@ -48,7 +48,7 @@ public class AdminEmployee extends javax.swing.JPanel {
 
         Title.setBackground(new java.awt.Color(236, 239, 244));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setText("EMPLOYEE");
