@@ -26,7 +26,7 @@ public class AdminMain extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         DBConnection ctn = new DBConnection();
-
+        panelChange(pnlMain, new AdminDashboard());
     }
 
     /**

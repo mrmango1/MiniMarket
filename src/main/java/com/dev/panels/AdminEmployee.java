@@ -77,6 +77,7 @@ public class AdminEmployee extends javax.swing.JPanel {
         add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, 50));
 
         AddEmployee.setBackground(new java.awt.Color(236, 239, 244));
+        AddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddEmployeeMouseClicked(evt);
@@ -99,6 +100,7 @@ public class AdminEmployee extends javax.swing.JPanel {
         add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
         pnlBack.setBackground(new java.awt.Color(236, 239, 244));
+        pnlBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N

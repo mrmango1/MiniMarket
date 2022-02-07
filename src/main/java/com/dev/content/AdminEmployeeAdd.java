@@ -48,7 +48,7 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         txtPhone = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        btnAddEmployee = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(840, 500));
@@ -135,24 +135,24 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         jLabel10.setText("Agregar Empleados:");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
-        jLabel11.setBackground(new java.awt.Color(143, 188, 187));
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Agregar");
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel11.setOpaque(true);
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAddEmployee.setBackground(new java.awt.Color(143, 188, 187));
+        btnAddEmployee.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnAddEmployee.setForeground(new java.awt.Color(76, 86, 106));
+        btnAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAddEmployee.setText("Agregar");
+        btnAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddEmployee.setOpaque(true);
+        btnAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                btnAddEmployeeMouseClicked(evt);
             }
         });
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 120, 40));
+        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
         addEmployee();
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_btnAddEmployeeMouseClicked
 
     public void addEmployee() {
         String name = txtName.getText();
@@ -164,7 +164,7 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         String password = txtPassword.getText();
         System.out.println(name.equals(""));
         String sql = "insert into employee (nui,firstname,lastname,address,phone,mail,password,idAdmin) values ('" + nui + "','" + name + "','" + lastName + "','" + address + "','" + phone + "','" + email + "','" + password + "', 1)";
-        if (nui.equals("") || lastName.equals("") || nui.equals("") || address.equals("") || phone.equals("") || password.equals("")) {
+        if (name.equals("") || lastName.equals("") || nui.equals("") || address.equals("") || phone.equals("") || password.equals("")) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
             try {
@@ -190,8 +190,8 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Content;
+    private javax.swing.JLabel btnAddEmployee;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

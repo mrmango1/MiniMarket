@@ -6,6 +6,7 @@ package com.dev.content;
 
 import com.dev.config.DBConnection;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.sql.*;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -22,6 +23,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     Connection cn;
     Statement st;
     ResultSet rs;
+    int id;
     DefaultTableModel model;
     
     final DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
@@ -31,6 +33,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         tblEmployee.setFillsViewportHeight(true);
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
+        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));;
         listEmployee();
     }
 
@@ -46,6 +49,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmployee = new javax.swing.JTable();
+        btnDeleteEmployee = new javax.swing.JLabel();
+        btnModifyEmployee = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,9 +67,17 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "NUI", "Dirección", "Telefono", "Email"
+                "ID", "Name", "NUI", "Dirección", "Telefono", "Email"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblEmployee.setFocusable(false);
         tblEmployee.setGridColor(new java.awt.Color(216, 222, 233));
         tblEmployee.setRowHeight(40);
@@ -73,13 +86,55 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         tblEmployee.setShowGrid(false);
         tblEmployee.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblEmployee);
+        if (tblEmployee.getColumnModel().getColumnCount() > 0) {
+            tblEmployee.getColumnModel().getColumn(0).setResizable(false);
+            tblEmployee.getColumnModel().getColumn(0).setPreferredWidth(5);
+        }
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 700, 350));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 32, 780, 400));
+
+        btnDeleteEmployee.setBackground(new java.awt.Color(208, 135, 112));
+        btnDeleteEmployee.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnDeleteEmployee.setForeground(new java.awt.Color(76, 86, 106));
+        btnDeleteEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnDeleteEmployee.setText("Delete");
+        btnDeleteEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeleteEmployee.setOpaque(true);
+        btnDeleteEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDeleteEmployeeMouseClicked(evt);
+            }
+        });
+        add(btnDeleteEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 120, 40));
+
+        btnModifyEmployee.setBackground(new java.awt.Color(143, 188, 187));
+        btnModifyEmployee.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnModifyEmployee.setForeground(new java.awt.Color(76, 86, 106));
+        btnModifyEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnModifyEmployee.setText("Mofificar");
+        btnModifyEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModifyEmployee.setOpaque(true);
+        btnModifyEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnModifyEmployeeMouseClicked(evt);
+            }
+        });
+        add(btnModifyEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnDeleteEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeMouseClicked
+        deleteEmployee();
+        clearTbl();
+    }//GEN-LAST:event_btnDeleteEmployeeMouseClicked
+
+    private void btnModifyEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModifyEmployeeMouseClicked
+        modifyEmployee();
+        clearTbl();
+    }//GEN-LAST:event_btnModifyEmployeeMouseClicked
 
     public void listEmployee(){
         String sql="select * from employee";
@@ -87,14 +142,15 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
             cn=cnt.getConnection();
             st=cn.createStatement();
             rs=st.executeQuery(sql);
-            Object[] employee = new Object[5];
+            Object[] employee = new Object[6];
             model = (DefaultTableModel)tblEmployee.getModel();
             while(rs.next()){
-                employee[0]=rs.getString("firstName");
-                employee[1]=rs.getString("nui");
-                employee[2]=rs.getString("address");
-                employee[3]=rs.getString("phone");
-                employee[4]=rs.getString("mail");
+                employee[0]=rs.getString("idEmployee");
+                employee[1]=rs.getString("firstName")+" "+rs.getString("lastName");
+                employee[2]=rs.getString("nui");
+                employee[3]=rs.getString("address");
+                employee[4]=rs.getString("phone");
+                employee[5]=rs.getString("mail");
                 model.addRow(employee);
             }
             tblEmployee.setModel(model);
@@ -102,7 +158,65 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    public void modifyEmployee(){
+        String[] fullNameArray;
+        String fullName="",name="",lastName="", nui="", address="", phone="", email="";
+        int row = tblEmployee.getSelectedRow();
+        if(row==-1){
+            JOptionPane.showMessageDialog(null, "Seleccione un Empleado");
+        }else{
+            id=Integer.parseInt((String)tblEmployee.getValueAt(row,0).toString());
+            fullName=(String)tblEmployee.getValueAt(row, 1);
+            nui=(String)tblEmployee.getValueAt(row, 2);
+            address=(String)tblEmployee.getValueAt(row, 3);
+            phone=(String)tblEmployee.getValueAt(row, 4);
+            email=(String)tblEmployee.getValueAt(row, 5);
+        }
+        fullNameArray=fullName.split(" ");
+        name=fullNameArray[0];
+        lastName=fullNameArray[1];
+        String sql = "update employee set nui='" + nui + "',firstName='" + name + "',lastName='" + lastName + "',address='" + address + "',phone='" + phone + "',mail='" + email + "' where idEmployee="+id;
+        if (name.equals("") || lastName.equals("") || nui.equals("") || address.equals("") || phone.equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
+        } else {
+            try {
+                cn = cnt.getConnection();
+                st = cn.createStatement();
+                st.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Empleado Actualizado");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }
+    public void deleteEmployee(){
+        int row = tblEmployee.getSelectedRow();
+        id = getID(row);
+        if (row==-1) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un Empleado");
+        } else {
+            String sql="delete from employee where idEmployee="+id;
+            try {
+                cn = cnt.getConnection();
+                st = cn.createStatement();
+                st.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Empleado Eliminado");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }
+    public int getID(int row){
+        id=Integer.parseInt((String)tblEmployee.getValueAt(row,0).toString());
+        return id;
+    }
+    public void clearTbl(){
+        model.setRowCount(0);
+        listEmployee();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnDeleteEmployee;
+    private javax.swing.JLabel btnModifyEmployee;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblEmployee;
