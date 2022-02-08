@@ -49,8 +49,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmployee = new javax.swing.JTable();
-        btnDeleteEmployee = new javax.swing.JLabel();
-        btnModifyEmployee = new javax.swing.JLabel();
+        btnModify = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,44 +97,42 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 32, 780, 400));
 
-        btnDeleteEmployee.setBackground(new java.awt.Color(208, 135, 112));
-        btnDeleteEmployee.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        btnDeleteEmployee.setForeground(new java.awt.Color(76, 86, 106));
-        btnDeleteEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnDeleteEmployee.setText("Delete");
-        btnDeleteEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDeleteEmployee.setOpaque(true);
-        btnDeleteEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnDeleteEmployeeMouseClicked(evt);
+        btnModify.setBackground(new java.awt.Color(143, 188, 187));
+        btnModify.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnModify.setForeground(new java.awt.Color(76, 86, 106));
+        btnModify.setText("Modificar");
+        btnModify.setBorder(null);
+        btnModify.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyActionPerformed(evt);
             }
         });
-        add(btnDeleteEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 120, 40));
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
 
-        btnModifyEmployee.setBackground(new java.awt.Color(143, 188, 187));
-        btnModifyEmployee.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        btnModifyEmployee.setForeground(new java.awt.Color(76, 86, 106));
-        btnModifyEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnModifyEmployee.setText("Mofificar");
-        btnModifyEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnModifyEmployee.setOpaque(true);
-        btnModifyEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnModifyEmployeeMouseClicked(evt);
+        btnDelete.setBackground(new java.awt.Color(208, 135, 112));
+        btnDelete.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(76, 86, 106));
+        btnDelete.setText("Delete");
+        btnDelete.setBorder(null);
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
             }
         });
-        add(btnModifyEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDeleteEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeMouseClicked
-        deleteEmployee();
-        clearTbl();
-    }//GEN-LAST:event_btnDeleteEmployeeMouseClicked
-
-    private void btnModifyEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModifyEmployeeMouseClicked
+    private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         modifyEmployee();
         clearTbl();
-    }//GEN-LAST:event_btnModifyEmployeeMouseClicked
+    }//GEN-LAST:event_btnModifyActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        deleteEmployee();
+        clearTbl();
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     public void listEmployee(){
         String sql="select * from employee";
@@ -215,8 +213,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         listEmployee();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnDeleteEmployee;
-    private javax.swing.JLabel btnModifyEmployee;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnModify;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblEmployee;

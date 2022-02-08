@@ -9,7 +9,6 @@ import java.awt.Color;
 import javax.swing.*;
 import com.dev.panels.*;
 import com.formdev.flatlaf.FlatLightLaf;
-import java.awt.Frame;
 
 /**
  *
@@ -43,8 +42,7 @@ public class AdminMain extends javax.swing.JFrame {
         btnMenu = new javax.swing.JLabel();
         btnMinimize = new javax.swing.JLabel();
         btnClose = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         pnlMenu = new javax.swing.JPanel();
         btnDashboard = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -133,13 +131,11 @@ public class AdminMain extends javax.swing.JFrame {
         });
         pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("MINIMARKET QMET");
-        pnlStatus.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 174, 40));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/littleStore.png"))); // NOI18N
-        pnlStatus.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+        title.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        title.setForeground(new java.awt.Color(0, 0, 0));
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/littleStore.png"))); // NOI18N
+        title.setText("MINIMARKET QMET");
+        pnlStatus.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 210, 40));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
@@ -306,7 +302,7 @@ public class AdminMain extends javax.swing.JFrame {
 
         pnlMenu.add(btnSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 210, 45));
 
-        background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 60, 590));
+        background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 590));
 
         pnlMain.setBackground(new java.awt.Color(236, 239, 244));
         pnlMain.setLayout(new java.awt.CardLayout());
@@ -590,7 +586,6 @@ public class AdminMain extends javax.swing.JFrame {
     public void viewAddEmployee() {
         panelChange(pnlMain, new AdminEmployee());
     }
-
     /**
      * @param args the command line arguments
      */
@@ -627,14 +622,12 @@ public class AdminMain extends javax.swing.JFrame {
     private javax.swing.JPanel btnSales;
     private javax.swing.JPanel btnSettings;
     private javax.swing.JPanel btnSupplier;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -644,5 +637,6 @@ public class AdminMain extends javax.swing.JFrame {
     private javax.swing.JPanel pnlMain;
     private javax.swing.JPanel pnlMenu;
     private javax.swing.JPanel pnlStatus;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

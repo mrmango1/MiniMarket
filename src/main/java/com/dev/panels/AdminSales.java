@@ -29,6 +29,7 @@ public class AdminSales extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        Content = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -63,10 +64,16 @@ public class AdminSales extends javax.swing.JPanel {
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, -1));
+
+        Content.setBackground(new java.awt.Color(236, 239, 244));
+        Content.setPreferredSize(new java.awt.Dimension(840, 500));
+        Content.setLayout(new javax.swing.BoxLayout(Content, javax.swing.BoxLayout.LINE_AXIS));
+        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Content;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
