@@ -3,11 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.dev.mainPanel;
-
+import com.dev.panels.*;
+import com.dev.functions.Design;
 import com.dev.config.DBConnection;
+
 import java.awt.Color;
 import javax.swing.*;
-import com.dev.panels.*;
 import com.formdev.flatlaf.FlatLightLaf;
 
 /**
@@ -15,9 +16,7 @@ import com.formdev.flatlaf.FlatLightLaf;
  * @author mrmango
  */
 public class AdminMain extends javax.swing.JFrame {
-
-    Color bgColorReset;
-    int pos = 0;
+    JPanel btnActive;
     int x = 60;
 
     public AdminMain() {
@@ -25,7 +24,8 @@ public class AdminMain extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         DBConnection ctn = new DBConnection();
-        panelChange(pnlMain, new AdminDashboard());
+        Design.panelChange(pnlMain, new AdminDashboard());
+        btnActive = btnDashboard;
     }
 
     /**
@@ -39,10 +39,10 @@ public class AdminMain extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         pnlStatus = new javax.swing.JPanel();
-        btnMenu = new javax.swing.JLabel();
-        btnMinimize = new javax.swing.JLabel();
-        btnClose = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
+        btnMenu = new javax.swing.JButton();
+        btnMinimize = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         pnlMenu = new javax.swing.JPanel();
         btnDashboard = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -76,66 +76,44 @@ public class AdminMain extends javax.swing.JFrame {
         pnlStatus.setBackground(new java.awt.Color(94, 129, 172));
         pnlStatus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnMenu.setBackground(new java.awt.Color(94, 129, 172));
-        btnMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu.png"))); // NOI18N
-        btnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMenu.setOpaque(true);
-        btnMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnMenuMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnMenuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnMenuMouseExited(evt);
-            }
-        });
-        pnlStatus.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 40));
-
-        btnMinimize.setBackground(new java.awt.Color(180, 142, 173));
-        btnMinimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minimize.png"))); // NOI18N
-        btnMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMinimize.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnMinimize.setOpaque(true);
-        btnMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnMinimizeMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnMinimizeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnMinimizeMouseExited(evt);
-            }
-        });
-        pnlStatus.add(btnMinimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 40, 40));
-
-        btnClose.setBackground(new java.awt.Color(208, 135, 112));
-        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close.png"))); // NOI18N
-        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnClose.setOpaque(true);
-        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCloseMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCloseMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCloseMouseExited(evt);
-            }
-        });
-        pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
-
         title.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(0, 0, 0));
         title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/littleStore.png"))); // NOI18N
         title.setText("MINIMARKET QMET");
         pnlStatus.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 210, 40));
+
+        btnMenu.setBackground(new java.awt.Color(94, 129, 172));
+        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu.png"))); // NOI18N
+        btnMenu.setBorder(null);
+        btnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+        pnlStatus.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 40));
+
+        btnMinimize.setBackground(new java.awt.Color(180, 142, 173));
+        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minimize.png"))); // NOI18N
+        btnMinimize.setBorder(null);
+        btnMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMinimize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMinimizeActionPerformed(evt);
+            }
+        });
+        pnlStatus.add(btnMinimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 40, 40));
+
+        btnClose.setBackground(new java.awt.Color(208, 135, 112));
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close.png"))); // NOI18N
+        btnClose.setBorder(null);
+        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionPerformed(evt);
+            }
+        });
+        pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
@@ -322,270 +300,114 @@ public class AdminMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseClicked
-        menuAnimation();
-    }//GEN-LAST:event_btnMenuMouseClicked
-
-    private void btnMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseEntered
-        bgColorReset = btnMenu.getBackground();
-        menuColor(btnMenu);
-    }//GEN-LAST:event_btnMenuMouseEntered
-
-    private void btnMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseExited
-        resetColor(btnMenu);
-    }//GEN-LAST:event_btnMenuMouseExited
-
-    private void btnCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseEntered
-        bgColorReset = btnClose.getBackground();
-        closeColor(btnClose);
-    }//GEN-LAST:event_btnCloseMouseEntered
-
-    private void btnCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseExited
-        resetColor(btnClose);
-    }//GEN-LAST:event_btnCloseMouseExited
-
-    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_btnCloseMouseClicked
-
     private void btnDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseEntered
-        bgColorReset = btnDashboard.getBackground();
-        optionsColor(btnDashboard);
+        Design.optionsColor(btnDashboard);
     }//GEN-LAST:event_btnDashboardMouseEntered
 
     private void btnDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseExited
-        resetColor(btnDashboard);
+        Design.resetColor(btnDashboard);
     }//GEN-LAST:event_btnDashboardMouseExited
 
     private void btnEmployeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseEntered
-        bgColorReset = btnEmployee.getBackground();
-        optionsColor(btnEmployee);
+        Design.optionsColor(btnEmployee);
     }//GEN-LAST:event_btnEmployeeMouseEntered
 
     private void btnEmployeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseExited
-        resetColor(btnEmployee);
+        Design.resetColor(btnEmployee);
     }//GEN-LAST:event_btnEmployeeMouseExited
 
     private void btnSalesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseEntered
-        bgColorReset = btnSales.getBackground();
-        optionsColor(btnSales);
+        Design.optionsColor(btnSales);
     }//GEN-LAST:event_btnSalesMouseEntered
 
     private void btnSalesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseExited
-        resetColor(btnSales);
+        Design.resetColor(btnSales);
     }//GEN-LAST:event_btnSalesMouseExited
 
     private void btnCustomersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseEntered
-        bgColorReset = btnCustomers.getBackground();
-        optionsColor(btnCustomers);
+        Design.optionsColor(btnCustomers);
     }//GEN-LAST:event_btnCustomersMouseEntered
 
     private void btnCustomersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseExited
-        resetColor(btnCustomers);
+        Design.resetColor(btnCustomers);
     }//GEN-LAST:event_btnCustomersMouseExited
 
     private void btnSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseEntered
-        bgColorReset = btnSupplier.getBackground();
-        optionsColor(btnSupplier);
+        Design.optionsColor(btnSupplier);
     }//GEN-LAST:event_btnSupplierMouseEntered
 
     private void btnSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseExited
-        resetColor(btnSupplier);
+        Design.resetColor(btnSupplier);
     }//GEN-LAST:event_btnSupplierMouseExited
 
     private void btnSettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseEntered
-        bgColorReset = btnSettings.getBackground();
-        optionsColor(btnSettings);
+        Design.optionsColor(btnSettings);
     }//GEN-LAST:event_btnSettingsMouseEntered
 
     private void btnSettingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseExited
-        resetColor(btnSettings);
+        Design.resetColor(btnSettings);
     }//GEN-LAST:event_btnSettingsMouseExited
 
     private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
-        if (!(pos == 1)) {
-            menuColorChange();
-            btnDashboard.setBackground(new java.awt.Color(94, 129, 172));
-            bgColorReset = btnDashboard.getBackground();
-            panelChange(pnlMain, new AdminDashboard());
-        } else {
-
+        if (!(btnActive == btnDashboard)) {
+            Design.clickOptions(btnDashboard, btnActive, pnlMain, new AdminDashboard());
         }
-        if (x == 210) {
-            menuAnimation();
-        }
-        pos = 1;
+        Design.menuAnimation(pnlMenu);
+        btnActive = btnDashboard;
     }//GEN-LAST:event_btnDashboardMouseClicked
 
     private void btnEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseClicked
-        if (!(pos == 2)) {
-            menuColorChange();
-            btnEmployee.setBackground(new java.awt.Color(94, 129, 172));
-            bgColorReset = btnEmployee.getBackground();
-            panelChange(pnlMain, new AdminEmployee());
-        } else {
-
+        if (!(btnActive == btnEmployee)) {
+            Design.clickOptions(btnEmployee, btnActive, pnlMain, new AdminEmployee());
         }
-        if (x == 210) {
-            menuAnimation();
-        }
-        pos = 2;
+        Design.menuAnimation(pnlMenu);
+        btnActive = btnEmployee;
     }//GEN-LAST:event_btnEmployeeMouseClicked
 
     private void btnSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseClicked
-        if (!(pos == 3)) {
-            menuColorChange();
-            btnSales.setBackground(new java.awt.Color(94, 129, 172));
-            bgColorReset = btnSales.getBackground();
-            panelChange(pnlMain, new AdminSales());
-        } else {
-
+        if (!(btnActive ==  btnSales)) {
+            Design.clickOptions( btnSales, btnActive, pnlMain, new AdminSales());
         }
-        if (x == 210) {
-            menuAnimation();
-        }
-        pos = 3;
+        Design.menuAnimation(pnlMenu);
+        btnActive = btnSales;
     }//GEN-LAST:event_btnSalesMouseClicked
 
     private void btnCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseClicked
-        if (!(pos == 4)) {
-            menuColorChange();
-            btnCustomers.setBackground(new java.awt.Color(94, 129, 172));
-            bgColorReset = btnCustomers.getBackground();
-            panelChange(pnlMain, new AdminCustomers());
-        } else {
-
+        if (!(btnActive == btnCustomers)) {
+            Design.clickOptions(btnCustomers, btnActive, pnlMain, new AdminCustomers());
         }
-        if (x == 210) {
-            menuAnimation();
-        }
-        pos = 4;
+        Design.menuAnimation(pnlMenu);
+        btnActive = btnCustomers;
     }//GEN-LAST:event_btnCustomersMouseClicked
 
     private void btnSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseClicked
-        if (!(pos == 5)) {
-            menuColorChange();
-            btnSupplier.setBackground(new java.awt.Color(94, 129, 172));
-            bgColorReset = btnSupplier.getBackground();
-            panelChange(pnlMain, new AdminSuppliers());
-        } else {
-
+        if (!(btnActive == btnSupplier)) {
+            Design.clickOptions(btnSupplier, btnActive, pnlMain, new AdminSuppliers());
         }
-        if (x == 210) {
-            menuAnimation();
-        }
-        pos = 5;
+        Design.menuAnimation(pnlMenu);
+        btnActive = btnSupplier;
     }//GEN-LAST:event_btnSupplierMouseClicked
 
     private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
-        if (!(pos == 6)) {
-            menuColorChange();
-            btnSettings.setBackground(new java.awt.Color(94, 129, 172));
-            bgColorReset = btnSettings.getBackground();
-            panelChange(pnlMain, new Settings());
-        } else {
-
+        if (!(btnActive == btnSettings)) {
+            Design.clickOptions(btnSettings, btnActive, pnlMain, new Settings());
         }
-        if (x == 210) {
-            menuAnimation();
-        }
-        pos = 6;
+        Design.menuAnimation(pnlMenu);
+        btnActive = btnSettings;
     }//GEN-LAST:event_btnSettingsMouseClicked
 
-    private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        Design.menuAnimation(pnlMenu);
+    }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void btnMinimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizeActionPerformed
         setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_btnMinimizeMouseClicked
+    }//GEN-LAST:event_btnMinimizeActionPerformed
 
-    private void btnMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseEntered
-        bgColorReset = btnMinimize.getBackground();
-        closeColor(btnMinimize);
-    }//GEN-LAST:event_btnMinimizeMouseEntered
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCloseActionPerformed
 
-    private void btnMinimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseExited
-        resetColor(btnMinimize);
-    }//GEN-LAST:event_btnMinimizeMouseExited
-
-    //METODOS
-    private void resetColor(JLabel label) {
-        label.setBackground(bgColorReset);
-    }
-
-    private void resetColor(JPanel panel) {
-        panel.setBackground(bgColorReset);
-    }
-
-    private void optionsColor(JPanel panel) {
-        panel.setBackground(new java.awt.Color(136, 192, 208));
-    }
-
-    private void menuColor(JLabel label) {
-        label.setBackground(new java.awt.Color(129, 161, 193));
-    }
-
-    private void closeColor(JLabel label) {
-        label.setBackground(new java.awt.Color(191, 97, 106));
-    }
-
-    public void panelChange(JPanel container, JPanel content) {
-        container.removeAll();
-        container.revalidate();
-        container.repaint();
-
-        container.add(content);
-        container.revalidate();
-        container.repaint();
-    }
-
-    public void menuColorChange() {
-        btnDashboard.setBackground(new java.awt.Color(216, 222, 233));
-        btnEmployee.setBackground(new java.awt.Color(216, 222, 233));
-        btnSales.setBackground(new java.awt.Color(216, 222, 233));
-        btnCustomers.setBackground(new java.awt.Color(216, 222, 233));
-        btnSupplier.setBackground(new java.awt.Color(216, 222, 233));
-        btnSettings.setBackground(new java.awt.Color(216, 222, 233));
-    }
-
-    public void menuAnimation() {
-        if (x == 210) {
-            pnlMenu.setSize(210, 625);
-            Thread th = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 210; i >= 60; i--) {
-                            Thread.sleep(1);
-                            pnlMenu.setSize(i, 625);
-                        }
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-                }
-            };
-            th.start();
-            x = 60;
-        } else if (x == 60) {
-            pnlMenu.setSize(x, 625);
-            Thread th = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 60; i <= x; i++) {
-                            Thread.sleep(1);
-                            pnlMenu.setSize(i, 625);
-                        }
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-                }
-            };
-            th.start();
-            x = 210;
-        }
-    }
-
-    public void viewAddEmployee() {
-        panelChange(pnlMain, new AdminEmployee());
-    }
     /**
      * @param args the command line arguments
      */
@@ -613,12 +435,12 @@ public class AdminMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JLabel btnClose;
+    private javax.swing.JButton btnClose;
     private javax.swing.JPanel btnCustomers;
     private javax.swing.JPanel btnDashboard;
     private javax.swing.JPanel btnEmployee;
-    private javax.swing.JLabel btnMenu;
-    private javax.swing.JLabel btnMinimize;
+    private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnMinimize;
     private javax.swing.JPanel btnSales;
     private javax.swing.JPanel btnSettings;
     private javax.swing.JPanel btnSupplier;

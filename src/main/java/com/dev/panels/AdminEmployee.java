@@ -139,15 +139,15 @@ public class AdminEmployee extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel AddEmployee;
-    private javax.swing.JPanel Content;
-    private javax.swing.JPanel Title;
-    private javax.swing.JLabel btnBack;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel pnlBack;
+    private static javax.swing.JPanel AddEmployee;
+    private static javax.swing.JPanel Content;
+    private static javax.swing.JPanel Title;
+    private static javax.swing.JLabel btnBack;
+    private static javax.swing.JLabel jLabel3;
+    private static javax.swing.JLabel jLabel4;
+    private static javax.swing.JLabel jLabel5;
+    private static javax.swing.JLabel jLabel6;
+    private static javax.swing.JPanel pnlBack;
     // End of variables declaration//GEN-END:variables
 
 }
