@@ -3,11 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.dev.mainPanel;
+
 import com.dev.panels.*;
 import com.dev.functions.Design;
 import com.dev.config.DBConnection;
 
-import java.awt.Color;
 import javax.swing.*;
 import com.formdev.flatlaf.FlatLightLaf;
 
@@ -16,6 +16,7 @@ import com.formdev.flatlaf.FlatLightLaf;
  * @author mrmango
  */
 public class AdminMain extends javax.swing.JFrame {
+
     JPanel btnActive;
     int x = 60;
 
@@ -350,42 +351,57 @@ public class AdminMain extends javax.swing.JFrame {
 
     private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
         if (!(btnActive == btnDashboard)) {
-            Design.clickOptions(btnDashboard, pnlMenu, btnActive, pnlMain, new AdminDashboard());
+            Design.clickOptions(btnDashboard, btnActive, pnlMain, new AdminDashboard());
+        }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
         }
         btnActive = btnDashboard;
     }//GEN-LAST:event_btnDashboardMouseClicked
 
     private void btnEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseClicked
         if (!(btnActive == btnEmployee)) {
-            Design.clickOptions(btnEmployee, pnlMenu, btnActive, pnlMain, new AdminEmployee());
+            Design.clickOptions(btnEmployee, btnActive, pnlMain, new AdminEmployee());
+        }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
         }
         btnActive = btnEmployee;
     }//GEN-LAST:event_btnEmployeeMouseClicked
 
     private void btnSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseClicked
-        if (!(btnActive ==  btnSales)) {
-            Design.clickOptions( btnSales, pnlMenu, btnActive, pnlMain, new AdminSales());
+        if (!(btnActive == btnSales)) {
+            Design.clickOptions(btnSales, btnActive, pnlMain, new AdminSales());
         }
         btnActive = btnSales;
     }//GEN-LAST:event_btnSalesMouseClicked
 
     private void btnCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseClicked
         if (!(btnActive == btnCustomers)) {
-            Design.clickOptions(btnCustomers, pnlMenu, btnActive, pnlMain, new AdminCustomers());
+            Design.clickOptions(btnCustomers, btnActive, pnlMain, new AdminCustomers());
+        }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
         }
         btnActive = btnCustomers;
     }//GEN-LAST:event_btnCustomersMouseClicked
 
     private void btnSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseClicked
         if (!(btnActive == btnSupplier)) {
-            Design.clickOptions(btnSupplier, pnlMenu, btnActive, pnlMain, new AdminSuppliers());
+            Design.clickOptions(btnSupplier, btnActive, pnlMain, new AdminSuppliers());
+        }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
         }
         btnActive = btnSupplier;
     }//GEN-LAST:event_btnSupplierMouseClicked
 
     private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
         if (!(btnActive == btnSettings)) {
-            Design.clickOptions(btnSettings, pnlMenu, btnActive, pnlMain, new Settings());
+            Design.clickOptions(btnSettings, btnActive, pnlMain, new Settings());
+        }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
         }
         btnActive = btnSettings;
     }//GEN-LAST:event_btnSettingsMouseClicked
