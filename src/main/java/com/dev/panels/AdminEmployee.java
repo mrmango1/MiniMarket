@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.dev.panels;
-
+import com.dev.functions.Design;
 import javax.swing.JPanel;
 import com.dev.content.*;
 
@@ -20,7 +20,7 @@ public class AdminEmployee extends javax.swing.JPanel {
     public AdminEmployee() {
         initComponents();
         pnlBack.setVisible(false);
-        panelChange(Content, new AdminEmployeeMain());
+        Design.panelChange(Content, new AdminEmployeeMain());
     }
 
     /**
@@ -74,7 +74,7 @@ public class AdminEmployee extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, 50));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, -1, 50));
 
         AddEmployee.setBackground(new java.awt.Color(236, 239, 244));
         AddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -120,23 +120,14 @@ public class AdminEmployee extends javax.swing.JPanel {
     private void AddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEmployeeMouseClicked
         AddEmployee.setVisible(false);
         pnlBack.setVisible(true);
-        panelChange(Content, new AdminEmployeeAdd());
+        Design.panelChange(Content, new AdminEmployeeAdd());
     }//GEN-LAST:event_AddEmployeeMouseClicked
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        panelChange(Content, new AdminEmployeeMain());
+        Design.panelChange(Content, new AdminEmployeeMain());
         AddEmployee.setVisible(true);
         pnlBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
-     public void panelChange(JPanel container, JPanel content) {
-        container.removeAll();
-        container.revalidate();
-        container.repaint();
-
-        container.add(content);
-        container.revalidate();
-        container.repaint();
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JPanel AddEmployee;

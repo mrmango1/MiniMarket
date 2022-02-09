@@ -136,7 +136,7 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
         btnAddEmployee.setBackground(new java.awt.Color(143, 188, 187));
-        btnAddEmployee.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnAddEmployee.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnAddEmployee.setForeground(new java.awt.Color(76, 86, 106));
         btnAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnAddEmployee.setText("Agregar");

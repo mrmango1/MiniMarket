@@ -4,6 +4,10 @@
  */
 package com.dev.panels;
 
+import com.dev.content.AdminSalesMain;
+import com.dev.content.AdminSalesSearch;
+import com.dev.functions.Design;
+
 /**
  *
  * @author mrmango
@@ -15,6 +19,7 @@ public class AdminSales extends javax.swing.JPanel {
      */
     public AdminSales() {
         initComponents();
+        Design.panelChange(Content,new AdminSalesMain());
     }
 
     /**
@@ -26,56 +31,95 @@ public class AdminSales extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Title = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Content = new javax.swing.JPanel();
+        btnDetails = new javax.swing.JButton();
+        pnlBack = new javax.swing.JPanel();
+        btnBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(236, 239, 244));
+        Title.setBackground(new java.awt.Color(236, 239, 244));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("SALES");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
+        Title.setLayout(TitleLayout);
+        TitleLayout.setHorizontalGroup(
+            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        TitleLayout.setVerticalGroup(
+            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 10, -1, -1));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, -1, -1));
 
         Content.setBackground(new java.awt.Color(236, 239, 244));
         Content.setPreferredSize(new java.awt.Dimension(840, 500));
         Content.setLayout(new javax.swing.BoxLayout(Content, javax.swing.BoxLayout.LINE_AXIS));
         add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
+
+        btnDetails.setText("Detalle");
+        btnDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDetailsActionPerformed(evt);
+            }
+        });
+        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, -1, -1));
+
+        pnlBack.setBackground(new java.awt.Color(236, 239, 244));
+        pnlBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
+            }
+        });
+        pnlBack.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        add(pnlBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 40, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
+        Design.panelChange(Content,new AdminSalesSearch());
+    }//GEN-LAST:event_btnDetailsActionPerformed
+
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        Design.panelChange(Content, new AdminSalesMain());
+        btnDetails.setVisible(true);
+        pnlBack.setVisible(false);
+    }//GEN-LAST:event_btnBackMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JPanel Content;
+    private static javax.swing.JPanel Title;
+    private static javax.swing.JLabel btnBack;
+    private static javax.swing.JButton btnDetails;
     private static javax.swing.JLabel jLabel3;
     private static javax.swing.JLabel jLabel4;
-    private static javax.swing.JPanel jPanel1;
+    private static javax.swing.JPanel pnlBack;
     // End of variables declaration//GEN-END:variables
 }

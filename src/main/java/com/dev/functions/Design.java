@@ -52,13 +52,11 @@ public class Design {
         }
     }
 
-    public static void panelChange(JPanel container, JPanel content) {
-        container.removeAll();
-        container.revalidate();
-        container.repaint();
-        container.add(content);
-        container.revalidate();
-        container.repaint();
+    public static void panelChange(JPanel oldPanel, JPanel newPanel) {
+        oldPanel.removeAll();
+        oldPanel.add(newPanel);
+        oldPanel.revalidate();
+        oldPanel.repaint();
     }
 
     public static void resetColor(JPanel panel) {

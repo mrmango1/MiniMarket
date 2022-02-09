@@ -25,8 +25,8 @@ public class AdminMain extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         DBConnection ctn = new DBConnection();
-        Design.panelChange(pnlMain, new AdminDashboard());
         btnActive = btnDashboard;
+        Design.clickOptions(btnDashboard, btnActive, pnlMain, new AdminDashboard());
     }
 
     /**
@@ -81,7 +81,7 @@ public class AdminMain extends javax.swing.JFrame {
         title.setForeground(new java.awt.Color(0, 0, 0));
         title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/littleStore.png"))); // NOI18N
         title.setText("MINIMARKET QMET");
-        pnlStatus.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 210, 40));
+        pnlStatus.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 0, 210, 40));
 
         btnMenu.setBackground(new java.awt.Color(94, 129, 172));
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu.png"))); // NOI18N
@@ -284,7 +284,7 @@ public class AdminMain extends javax.swing.JFrame {
         background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 590));
 
         pnlMain.setBackground(new java.awt.Color(236, 239, 244));
-        pnlMain.setLayout(new java.awt.CardLayout());
+        pnlMain.setLayout(new javax.swing.BoxLayout(pnlMain, javax.swing.BoxLayout.LINE_AXIS));
         background.add(pnlMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 940, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

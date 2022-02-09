@@ -10,7 +10,6 @@ import java.awt.Font;
 import java.sql.*;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -30,10 +29,9 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     AdminEmployeeAdd add = new AdminEmployeeAdd();
     public AdminEmployeeMain() {
         initComponents();
-        tblEmployee.setFillsViewportHeight(true);
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
-        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));;
+        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));
         listEmployee();
     }
 
@@ -88,7 +86,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblEmployee);
         if (tblEmployee.getColumnModel().getColumnCount() > 0) {
             tblEmployee.getColumnModel().getColumn(0).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(0).setPreferredWidth(5);
+            tblEmployee.getColumnModel().getColumn(0).setPreferredWidth(1);
         }
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
@@ -98,7 +96,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 32, 780, 400));
 
         btnModify.setBackground(new java.awt.Color(143, 188, 187));
-        btnModify.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnModify.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnModify.setForeground(new java.awt.Color(76, 86, 106));
         btnModify.setText("Modificar");
         btnModify.setBorder(null);
@@ -111,7 +109,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
 
         btnDelete.setBackground(new java.awt.Color(208, 135, 112));
-        btnDelete.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(76, 86, 106));
         btnDelete.setText("Delete");
         btnDelete.setBorder(null);
