@@ -70,7 +70,8 @@ public class Design {
         panel.setBackground(new java.awt.Color(136, 192, 208));
     }
 
-    public static void clickOptions(JPanel btnMenu, JPanel btnActive, JPanel mainPanel, JPanel changePanel) {
+    public static void clickOptions(JPanel btnMenu, JPanel pnlMenu, JPanel btnActive, JPanel mainPanel, JPanel changePanel) {
+        menuAnimation(pnlMenu);
         btnActive.setBackground(new java.awt.Color(216, 222, 233));
         btnMenu.setBackground(new java.awt.Color(94, 129, 172));
         bgColorReset = btnMenu.getBackground();

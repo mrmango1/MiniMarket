@@ -350,49 +350,43 @@ public class AdminMain extends javax.swing.JFrame {
 
     private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
         if (!(btnActive == btnDashboard)) {
-            Design.clickOptions(btnDashboard, btnActive, pnlMain, new AdminDashboard());
+            Design.clickOptions(btnDashboard, pnlMenu, btnActive, pnlMain, new AdminDashboard());
         }
-        Design.menuAnimation(pnlMenu);
         btnActive = btnDashboard;
     }//GEN-LAST:event_btnDashboardMouseClicked
 
     private void btnEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseClicked
         if (!(btnActive == btnEmployee)) {
-            Design.clickOptions(btnEmployee, btnActive, pnlMain, new AdminEmployee());
+            Design.clickOptions(btnEmployee, pnlMenu, btnActive, pnlMain, new AdminEmployee());
         }
-        Design.menuAnimation(pnlMenu);
         btnActive = btnEmployee;
     }//GEN-LAST:event_btnEmployeeMouseClicked
 
     private void btnSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseClicked
         if (!(btnActive ==  btnSales)) {
-            Design.clickOptions( btnSales, btnActive, pnlMain, new AdminSales());
+            Design.clickOptions( btnSales, pnlMenu, btnActive, pnlMain, new AdminSales());
         }
-        Design.menuAnimation(pnlMenu);
         btnActive = btnSales;
     }//GEN-LAST:event_btnSalesMouseClicked
 
     private void btnCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseClicked
         if (!(btnActive == btnCustomers)) {
-            Design.clickOptions(btnCustomers, btnActive, pnlMain, new AdminCustomers());
+            Design.clickOptions(btnCustomers, pnlMenu, btnActive, pnlMain, new AdminCustomers());
         }
-        Design.menuAnimation(pnlMenu);
         btnActive = btnCustomers;
     }//GEN-LAST:event_btnCustomersMouseClicked
 
     private void btnSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseClicked
         if (!(btnActive == btnSupplier)) {
-            Design.clickOptions(btnSupplier, btnActive, pnlMain, new AdminSuppliers());
+            Design.clickOptions(btnSupplier, pnlMenu, btnActive, pnlMain, new AdminSuppliers());
         }
-        Design.menuAnimation(pnlMenu);
         btnActive = btnSupplier;
     }//GEN-LAST:event_btnSupplierMouseClicked
 
     private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
         if (!(btnActive == btnSettings)) {
-            Design.clickOptions(btnSettings, btnActive, pnlMain, new Settings());
+            Design.clickOptions(btnSettings, pnlMenu, btnActive, pnlMain, new Settings());
         }
-        Design.menuAnimation(pnlMenu);
         btnActive = btnSettings;
     }//GEN-LAST:event_btnSettingsMouseClicked
 
