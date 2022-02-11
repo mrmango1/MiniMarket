@@ -3,11 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.admin.container.content;
-
 import com.functions.DBConnection;
 import com.functions.DBManagement;
+
 import java.awt.Dimension;
-import java.awt.Font;
 import java.sql.*;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -32,7 +31,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         initComponents();
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
-        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));
+        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
         DBManagement.listEmployee(tblEmployee);
     }
 
@@ -97,9 +96,9 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 730, 330));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 370));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
         btnModify.setBackground(new java.awt.Color(143, 188, 187));
         btnModify.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -112,7 +111,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
                 btnModifyActionPerformed(evt);
             }
         });
-        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 120, 40));
 
         btnDelete.setBackground(new java.awt.Color(208, 135, 112));
         btnDelete.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -125,7 +124,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 120, 40));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 120, 40));
 
         search.setBackground(new java.awt.Color(136, 192, 208));
         search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -148,7 +147,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
 
-        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 170, 35));
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, 170, 35));
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -20,6 +20,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         initComponents();
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
+        jTable1.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
     }
 
     /**

@@ -23,8 +23,8 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
         jScrollPane2.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane2.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
-        tblSalesResume.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));
-        tblCustomerResume.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));
+        tblSalesResume.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
+        tblCustomerResume.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
     }
 
     /**
@@ -54,21 +54,36 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         tblSalesResume.setBackground(new java.awt.Color(229, 233, 240));
         tblSalesResume.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
                 "Producto", "Cantidad"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblSalesResume.setGridColor(new java.awt.Color(229, 233, 240));
         tblSalesResume.setSelectionBackground(new java.awt.Color(129, 161, 193));
         jScrollPane1.setViewportView(tblSalesResume);
         tblSalesResume.getTableHeader().setOpaque(false);
         tblSalesResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        if (tblSalesResume.getColumnModel().getColumnCount() > 0) {
+            tblSalesResume.getColumnModel().getColumn(0).setResizable(false);
+            tblSalesResume.getColumnModel().getColumn(1).setResizable(false);
+        }
 
-        pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 300, 360));
+        pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 380));
 
-        add(pnlSalesResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 360, 400));
+        add(pnlSalesResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 420));
 
         pnlCustomersResume.setBackground(new java.awt.Color(229, 233, 240));
         pnlCustomersResume.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,7 +91,10 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         tblCustomerResume.setBackground(new java.awt.Color(229, 233, 240));
         tblCustomerResume.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
                 "Nombre", "Cantidad"
@@ -89,24 +107,28 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblCustomerResume);
         tblCustomerResume.getTableHeader().setOpaque(false);
         tblCustomerResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        if (tblCustomerResume.getColumnModel().getColumnCount() > 0) {
+            tblCustomerResume.getColumnModel().getColumn(0).setResizable(false);
+            tblCustomerResume.getColumnModel().getColumn(1).setResizable(false);
+        }
 
-        pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 310, 360));
+        pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 380));
 
-        add(pnlCustomersResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 360, 400));
+        add(pnlCustomersResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 400, 420));
 
         jLabel2.setBackground(new java.awt.Color(76, 86, 106));
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(76, 86, 106));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ventas de Hoy");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 30, 150, 20));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 150, 20));
 
         jLabel1.setBackground(new java.awt.Color(76, 86, 106));
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(76, 86, 106));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Clientes Habituales");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 30, 150, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
