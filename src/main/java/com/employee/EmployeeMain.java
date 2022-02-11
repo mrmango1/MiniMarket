@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.admin;
+package com.employee;
 
 import com.admin.container.AdminDashboard;
 import com.admin.container.AdminCustomers;
@@ -20,12 +20,14 @@ import com.formdev.flatlaf.FlatLightLaf;
  *
  * @author mrmango
  */
-public class AdminMain extends javax.swing.JFrame {
+public class EmployeeMain extends javax.swing.JFrame {
 
     JPanel btnActive;
-    int xx,yy;
-    public AdminMain() {
+    int xx, yy;
+
+    public EmployeeMain() {
         initComponents();
+        lookAndFeel();
         setResizable(false);
         setLocationRelativeTo(null);
         DBConnection ctn = new DBConnection();
@@ -134,7 +136,7 @@ public class AdminMain extends javax.swing.JFrame {
 
         userName.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         userName.setForeground(new java.awt.Color(46, 52, 64));
-        userName.setText("ADMIN");
+        userName.setText("EMPLEADO");
         pnlStatus.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
@@ -445,37 +447,24 @@ public class AdminMain extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlStatusMousePressed
 
     private void pnlStatusMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlStatusMouseDragged
-       int x=evt.getXOnScreen();
-       int y=evt.getYOnScreen();
-       this.setLocation(x-xx, y-yy);
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xx, y - yy);
     }//GEN-LAST:event_pnlStatusMouseDragged
-    public void setUserName(String user){
-        userName.setText(user);
-    }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    public void lookAndFeel() {
         try {
             UIManager.setLookAndFeel(new FlatLightLaf());
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");
         }
-
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminMain().setVisible(true);
-            }
-        });
     }
+
+    public void setUserName(String user) {
+        userName.setText(user);
+    }
+    /**
+     * @param args the command line arguments
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;

@@ -5,6 +5,7 @@
 package com.mainPanel;
 
 import com.admin.AdminMain;
+import com.employee.EmployeeMain;
 import com.functions.DBManagement;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Image;
@@ -68,13 +69,13 @@ public class Login extends javax.swing.JFrame {
         lblTitle.setForeground(new java.awt.Color(76, 86, 106));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("LOGIN");
-        pnlTittle.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 120, 90));
+        pnlTittle.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 120, 60));
 
         lblTitleIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitleIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store.png"))); // NOI18N
-        pnlTittle.add(lblTitleIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 80, -1));
+        pnlTittle.add(lblTitleIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, 130));
 
-        pnlBg.add(pnlTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 180, 190));
+        pnlBg.add(pnlTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 180, 240));
 
         jButton1.setBackground(new java.awt.Color(76, 86, 106));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -175,7 +176,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addComponent(pnlBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,14 +207,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_pwdUserFocusLost
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        AdminMain Main = new AdminMain();
+        AdminMain adminMain = new AdminMain();
+        EmployeeMain employeeMain = new EmployeeMain();
         if(DBManagement.login(txtUser.getText(), pwdUser.getText())==1){
-            Main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            Main.setVisible(true);
+            adminMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            adminMain.setUserName(DBManagement.getUserName());
+            adminMain.setVisible(true);
             dispose();
         }
         else if(DBManagement.login(txtUser.getText(), pwdUser.getText())==2){
-            JOptionPane.showMessageDialog(null, "Funcion en desarrollo");
+            employeeMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            employeeMain.setUserName(DBManagement.getUserName());
+            employeeMain.setVisible(true);
+            dispose();
         }
         else{
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");

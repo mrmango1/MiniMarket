@@ -34,9 +34,10 @@ public class AdminCustomersMain extends javax.swing.JPanel {
         panelContenidoClientes = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        panelBusquedaID = new javax.swing.JPanel();
-        textField1 = new java.awt.TextField();
-        label1 = new java.awt.Label();
+        pnlSearch = new java.awt.Panel();
+        id = new javax.swing.JLabel();
+        search_icon = new javax.swing.JLabel();
+        search = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,39 +65,45 @@ public class AdminCustomersMain extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        panelContenidoClientes.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 550, 210));
+        panelContenidoClientes.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 700, 350));
 
-        add(panelContenidoClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 710, 330));
+        add(panelContenidoClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 780, 400));
 
-        panelBusquedaID.setBackground(new java.awt.Color(236, 239, 244));
-        panelBusquedaID.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlSearch.setBackground(new java.awt.Color(236, 239, 244));
+        pnlSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textField1.setBackground(new java.awt.Color(136, 192, 208));
-        textField1.addActionListener(new java.awt.event.ActionListener() {
+        id.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        id.setText("ID");
+        pnlSearch.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 30));
+
+        search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
+        pnlSearch.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 20, 30));
+
+        search.setBackground(new java.awt.Color(136, 192, 208));
+        search.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        search.setBorder(null);
+        search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField1ActionPerformed(evt);
+                searchActionPerformed(evt);
             }
         });
-        panelBusquedaID.add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 200, 30));
+        pnlSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 140, 30));
 
-        label1.setName("ID"); // NOI18N
-        label1.setText("ID");
-        panelBusquedaID.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
-
-        add(panelBusquedaID, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, 280, 80));
+        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 180, 60));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField1ActionPerformed
+    }//GEN-LAST:event_searchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel id;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private java.awt.Label label1;
-    private javax.swing.JPanel panelBusquedaID;
     private javax.swing.JPanel panelContenidoClientes;
-    private java.awt.TextField textField1;
+    private java.awt.Panel pnlSearch;
+    private javax.swing.JTextField search;
+    private javax.swing.JLabel search_icon;
     // End of variables declaration//GEN-END:variables
 }

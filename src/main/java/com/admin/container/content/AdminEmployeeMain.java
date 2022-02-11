@@ -4,7 +4,6 @@
  */
 package com.admin.container.content;
 
-import com.admin.container.content.AdminEmployeeAdd;
 import com.functions.DBConnection;
 import com.functions.DBManagement;
 import java.awt.Dimension;
@@ -12,7 +11,6 @@ import java.awt.Font;
 import java.sql.*;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 /**

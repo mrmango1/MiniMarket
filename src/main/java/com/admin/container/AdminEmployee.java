@@ -21,7 +21,7 @@ public class AdminEmployee extends javax.swing.JPanel {
     public AdminEmployee() {
         initComponents();
         pnlBack.setVisible(false);
-        Design.panelChange(Content, new AdminEmployeeMain());
+        Design.panelChange(pnlContent, new AdminEmployeeMain());
     }
 
     /**
@@ -39,7 +39,7 @@ public class AdminEmployee extends javax.swing.JPanel {
         AddEmployee = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        Content = new javax.swing.JPanel();
+        pnlContent = new javax.swing.JPanel();
         pnlBack = new javax.swing.JPanel();
         btnBack = new javax.swing.JLabel();
 
@@ -48,32 +48,15 @@ public class AdminEmployee extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Title.setBackground(new java.awt.Color(236, 239, 244));
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee.png"))); // NOI18N
+        Title.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(46, 52, 64));
         jLabel6.setText("EMPLOYEE");
-
-        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
-        Title.setLayout(TitleLayout);
-        TitleLayout.setHorizontalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        TitleLayout.setVerticalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        Title.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 6, -1, 36));
 
         add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, -1, 50));
 
@@ -95,10 +78,10 @@ public class AdminEmployee extends javax.swing.JPanel {
 
         add(AddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, 140, 40));
 
-        Content.setBackground(new java.awt.Color(236, 239, 244));
-        Content.setPreferredSize(new java.awt.Dimension(840, 500));
-        Content.setLayout(new javax.swing.BoxLayout(Content, javax.swing.BoxLayout.LINE_AXIS));
-        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
+        pnlContent.setPreferredSize(new java.awt.Dimension(840, 500));
+        pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
         pnlBack.setBackground(new java.awt.Color(236, 239, 244));
         pnlBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -121,18 +104,17 @@ public class AdminEmployee extends javax.swing.JPanel {
     private void AddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEmployeeMouseClicked
         AddEmployee.setVisible(false);
         pnlBack.setVisible(true);
-        Design.panelChange(Content, new AdminEmployeeAdd());
+        Design.panelChange(pnlContent, new AdminEmployeeAdd());
     }//GEN-LAST:event_AddEmployeeMouseClicked
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(Content, new AdminEmployeeMain());
+        Design.panelChange(pnlContent, new AdminEmployeeMain());
         AddEmployee.setVisible(true);
         pnlBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JPanel AddEmployee;
-    private static javax.swing.JPanel Content;
     private static javax.swing.JPanel Title;
     private static javax.swing.JLabel btnBack;
     private static javax.swing.JLabel jLabel3;
@@ -140,6 +122,7 @@ public class AdminEmployee extends javax.swing.JPanel {
     private static javax.swing.JLabel jLabel5;
     private static javax.swing.JLabel jLabel6;
     private static javax.swing.JPanel pnlBack;
+    private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 
 }

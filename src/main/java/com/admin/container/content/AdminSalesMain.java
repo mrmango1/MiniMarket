@@ -76,10 +76,9 @@ public class AdminSalesMain extends javax.swing.JPanel {
         pnlSearch.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 30));
 
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
-        search_icon.setText("jLabel2");
-        pnlSearch.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 30, 30));
+        pnlSearch.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 20, 30));
 
-        search.setBackground(new java.awt.Color(229, 233, 240));
+        search.setBackground(new java.awt.Color(136, 192, 208));
         search.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         search.setBorder(null);
         search.addActionListener(new java.awt.event.ActionListener() {
@@ -89,9 +88,9 @@ public class AdminSalesMain extends javax.swing.JPanel {
         });
         pnlSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 140, 30));
 
-        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 230, 60));
+        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 180, 60));
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchActionPerformed

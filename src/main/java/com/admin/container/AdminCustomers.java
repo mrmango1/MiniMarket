@@ -38,37 +38,23 @@ public class AdminCustomers extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Title.setBackground(new java.awt.Color(236, 239, 244));
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Title.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
         jLabel4.setText("CUSTOMERS");
+        Title.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 6, -1, 36));
 
-        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
-        Title.setLayout(TitleLayout);
-        TitleLayout.setHorizontalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        TitleLayout.setVerticalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, 160, -1));
 
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, 150, -1));
-
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
+        pnlContent.setPreferredSize(new java.awt.Dimension(840, 500));
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
-        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 810, 460));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
     }// </editor-fold>//GEN-END:initComponents
 
 

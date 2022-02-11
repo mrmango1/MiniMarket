@@ -19,7 +19,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
      */
     public AdminSuppliers() {
         initComponents();
-        Design.panelChange(Content, new AdminSupplierMain());
+        Design.panelChange(pnlContent, new AdminSupplierMain());
         btnBack.setVisible(false);
     }
 
@@ -35,7 +35,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
         Title = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        Content = new javax.swing.JPanel();
+        pnlContent = new javax.swing.JPanel();
         btnBack = new javax.swing.JLabel();
         btnAddSupplier = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -49,39 +49,23 @@ public class AdminSuppliers extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Title.setBackground(new java.awt.Color(236, 239, 244));
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier.png"))); // NOI18N
+        Title.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, -4, 40, 50));
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(46, 52, 64));
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
         jLabel4.setText("SUPPLIERS");
-
-        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
-        Title.setLayout(TitleLayout);
-        TitleLayout.setHorizontalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        TitleLayout.setVerticalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        Title.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 6, -1, 36));
 
         add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, -1, -1));
 
-        Content.setBackground(new java.awt.Color(236, 239, 244));
-        Content.setPreferredSize(new java.awt.Dimension(840, 500));
-        Content.setLayout(new javax.swing.BoxLayout(Content, javax.swing.BoxLayout.LINE_AXIS));
-        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
+        pnlContent.setPreferredSize(new java.awt.Dimension(840, 500));
+        pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -133,17 +117,17 @@ public class AdminSuppliers extends javax.swing.JPanel {
         btnAddSupplier.setVisible(true);
         btnBack.setVisible(false);
         btnAddProducts.setVisible(true);
-        Design.panelChange(Content, new AdminSupplierMain());
+        Design.panelChange(pnlContent, new AdminSupplierMain());
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void btnAddSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSupplierMouseClicked
         btnBack.setVisible(true);
         btnAddSupplier.setVisible(false);
-        Design.panelChange(Content, new AdminSuppliersAddSuppliers());
+        Design.panelChange(pnlContent, new AdminSuppliersAddSuppliers());
     }//GEN-LAST:event_btnAddSupplierMouseClicked
 
     private void btnAddProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddProductsMouseClicked
-        Design.panelChange(Content, new AdminSuppliersAddProducts());
+        Design.panelChange(pnlContent, new AdminSuppliersAddProducts());
         btnAddProducts.setVisible(false);
         btnAddSupplier.setVisible(false);
         btnBack.setVisible(true);
@@ -151,7 +135,6 @@ public class AdminSuppliers extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JPanel Content;
     private static javax.swing.JPanel Title;
     private static javax.swing.JPanel btnAddProducts;
     private static javax.swing.JPanel btnAddSupplier;
@@ -162,5 +145,6 @@ public class AdminSuppliers extends javax.swing.JPanel {
     private static javax.swing.JLabel jLabel5;
     private static javax.swing.JLabel jLabel6;
     private static javax.swing.JLabel jLabel9;
+    private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

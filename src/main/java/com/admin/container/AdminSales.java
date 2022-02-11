@@ -19,7 +19,7 @@ public class AdminSales extends javax.swing.JPanel {
      */
     public AdminSales() {
         initComponents();
-        Design.panelChange(Content,new AdminSalesMain());
+        Design.panelChange(pnlContent,new AdminSalesMain());
     }
 
     /**
@@ -34,7 +34,7 @@ public class AdminSales extends javax.swing.JPanel {
         Title = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        Content = new javax.swing.JPanel();
+        pnlContent = new javax.swing.JPanel();
         btnDetails = new javax.swing.JButton();
         pnlBack = new javax.swing.JPanel();
         btnBack = new javax.swing.JLabel();
@@ -44,39 +44,23 @@ public class AdminSales extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Title.setBackground(new java.awt.Color(236, 239, 244));
+        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
+        Title.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(46, 52, 64));
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
         jLabel4.setText("SALES");
-
-        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
-        Title.setLayout(TitleLayout);
-        TitleLayout.setHorizontalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        TitleLayout.setVerticalGroup(
-            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        Title.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 6, -1, 36));
 
         add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, -1, -1));
 
-        Content.setBackground(new java.awt.Color(236, 239, 244));
-        Content.setPreferredSize(new java.awt.Dimension(840, 500));
-        Content.setLayout(new javax.swing.BoxLayout(Content, javax.swing.BoxLayout.LINE_AXIS));
-        add(Content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
+        pnlContent.setPreferredSize(new java.awt.Dimension(840, 500));
+        pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
         btnDetails.setBackground(new java.awt.Color(143, 188, 187));
         btnDetails.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -107,23 +91,23 @@ public class AdminSales extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
-        Design.panelChange(Content,new AdminSalesSearch());
+        Design.panelChange(pnlContent,new AdminSalesSearch());
     }//GEN-LAST:event_btnDetailsActionPerformed
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(Content, new AdminSalesMain());
+        Design.panelChange(pnlContent, new AdminSalesMain());
         btnDetails.setVisible(true);
         pnlBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JPanel Content;
     private static javax.swing.JPanel Title;
     private static javax.swing.JLabel btnBack;
     private static javax.swing.JButton btnDetails;
     private static javax.swing.JLabel jLabel3;
     private static javax.swing.JLabel jLabel4;
     private static javax.swing.JPanel pnlBack;
+    private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

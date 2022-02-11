@@ -24,13 +24,39 @@ public class DBManagement {
     static Statement st;
     static ResultSet rs;
     static int id;
+    static String userName;
     static DefaultTableModel model;
 
+    public static void setUserName(String name) {
+        userName = name;
+    }
+
+    public static String getUserName() {
+        return userName;
+    }
+
     public static int login(String user, String password) {
-        if (user.equals("admin") && password.equals("1234")) {
-            return 1;
-        } else if (user.equals("other") && password.equals("1234")) {
-            return 2;
+        String sqlAdmin = "select name, mail, password from admin";
+        String sqlEmployee = "select firstName, mail, password from employee";
+        try {
+            cn = cnt.getConnection();
+            st = cn.createStatement();
+            rs = st.executeQuery(sqlAdmin);
+            while (rs.next()) {
+                if (rs.getString("mail").equals(user) && rs.getString("password").equals(password)) {
+                    setUserName(rs.getString("name"));
+                    return 1;
+                }
+            }
+            rs = st.executeQuery(sqlEmployee);
+            while (rs.next()) {
+                if (rs.getString("mail").equals(user) && rs.getString("password").equals(password)) {
+                    setUserName(rs.getString("firstName"));
+                    return 2;
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
         return 0;
     }
