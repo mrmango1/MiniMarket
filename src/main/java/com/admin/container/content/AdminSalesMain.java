@@ -38,7 +38,7 @@ public class AdminSalesMain extends javax.swing.JPanel {
         pnlSearch = new java.awt.Panel();
         search = new javax.swing.JPanel();
         txtFldSearch = new javax.swing.JTextField();
-        id = new javax.swing.JLabel();
+        searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
@@ -76,26 +76,26 @@ public class AdminSalesMain extends javax.swing.JPanel {
         search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
-        txtFldSearch.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtFldSearch.setBorder(null);
         txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFldSearchActionPerformed(evt);
             }
         });
-        search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 8, 160, 20));
+        search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
 
-        id.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
-        id.setForeground(new java.awt.Color(60, 63, 65));
-        id.setText("ID");
-        search.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
+        searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        searchID.setForeground(new java.awt.Color(60, 63, 65));
+        searchID.setText("ID");
+        search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
 
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
-        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 8, 20, 20));
+        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
 
-        pnlSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 35));
+        pnlSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 170, 35));
 
-        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 220, 40));
+        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 230, 40));
     }// </editor-fold>//GEN-END:initComponents
     
     private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
@@ -104,12 +104,12 @@ public class AdminSalesMain extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel id;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel pnlContent;
     private java.awt.Panel pnlSearch;
     private javax.swing.JPanel search;
+    private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables

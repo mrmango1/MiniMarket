@@ -34,11 +34,10 @@ public class AdminCustomersMain extends javax.swing.JPanel {
         panelContenidoClientes = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        pnlSearch1 = new java.awt.Panel();
-        search1 = new javax.swing.JPanel();
+        search = new javax.swing.JPanel();
         txtFldSearch = new javax.swing.JTextField();
-        id1 = new javax.swing.JLabel();
-        search_icon1 = new javax.swing.JLabel();
+        searchID = new javax.swing.JLabel();
+        search_icon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,33 +69,28 @@ public class AdminCustomersMain extends javax.swing.JPanel {
 
         add(panelContenidoClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 420));
 
-        pnlSearch1.setBackground(new java.awt.Color(236, 239, 244));
-        pnlSearch1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        search1.setBackground(new java.awt.Color(136, 192, 208));
-        search1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        search.setBackground(new java.awt.Color(136, 192, 208));
+        search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
-        txtFldSearch.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtFldSearch.setBorder(null);
         txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFldSearchActionPerformed(evt);
             }
         });
-        search1.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 8, 160, 20));
+        search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
 
-        id1.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
-        id1.setForeground(new java.awt.Color(60, 63, 65));
-        id1.setText("ID");
-        search1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
+        searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        searchID.setForeground(new java.awt.Color(60, 63, 65));
+        searchID.setText("ID");
+        search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
 
-        search_icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
-        search1.add(search_icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 8, 20, 20));
+        search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
+        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
 
-        pnlSearch1.add(search1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 35));
-
-        add(pnlSearch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 220, 40));
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
@@ -105,13 +99,12 @@ public class AdminCustomersMain extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel id1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel panelContenidoClientes;
-    private java.awt.Panel pnlSearch1;
-    private javax.swing.JPanel search1;
-    private javax.swing.JLabel search_icon1;
+    private javax.swing.JPanel search;
+    private javax.swing.JLabel searchID;
+    private javax.swing.JLabel search_icon;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

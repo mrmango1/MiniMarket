@@ -30,27 +30,12 @@ public class Settings extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Title = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
+        Title = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Title.setBackground(new java.awt.Color(236, 239, 244));
-        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
-        Title.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
-        jLabel4.setText("SETTINGS");
-        Title.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 6, -1, 36));
-
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 15, 140, -1));
 
         btnLogout.setBackground(new java.awt.Color(208, 135, 112));
         btnLogout.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -64,6 +49,13 @@ public class Settings extends javax.swing.JPanel {
             }
         });
         add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 120, 40));
+
+        Title.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        Title.setForeground(new java.awt.Color(46, 52, 64));
+        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
+        Title.setText("CONFIGURACION");
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 200, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -76,9 +68,7 @@ public class Settings extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JPanel Title;
+    private static javax.swing.JLabel Title;
     private static javax.swing.JButton btnLogout;
-    private static javax.swing.JLabel jLabel3;
-    private static javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

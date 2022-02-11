@@ -97,14 +97,16 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         jLabel2.setBackground(new java.awt.Color(76, 86, 106));
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(76, 86, 106));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ventas de Hoy");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 30, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 30, 150, 20));
 
         jLabel1.setBackground(new java.awt.Color(76, 86, 106));
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(76, 86, 106));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Clientes Habituales");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 30, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 30, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -28,40 +28,28 @@ public class AdminCustomers extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Title = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         pnlContent = new javax.swing.JPanel();
+        Title = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Title.setBackground(new java.awt.Color(236, 239, 244));
-        Title.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Title.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
-        jLabel4.setText("CUSTOMERS");
-        Title.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 6, -1, 36));
-
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 15, 160, -1));
-
         pnlContent.setBackground(new java.awt.Color(236, 239, 244));
         pnlContent.setPreferredSize(new java.awt.Dimension(840, 500));
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
+
+        Title.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        Title.setForeground(new java.awt.Color(46, 52, 64));
+        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
+        Title.setText("CLIENTES");
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 36));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JPanel Title;
-    private static javax.swing.JLabel jLabel3;
-    private static javax.swing.JLabel jLabel4;
+    private static javax.swing.JLabel Title;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

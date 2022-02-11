@@ -41,6 +41,7 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         AddButtonSupplier = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 239, 244));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(229, 233, 240));
@@ -55,7 +56,7 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         nameTextField1.setBackground(new java.awt.Color(236, 239, 244));
         nameTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         nameTextField1.setBorder(null);
-        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 130, 20));
+        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 190, 22));
 
         phone.setBackground(new java.awt.Color(76, 86, 106));
         phone.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -66,12 +67,12 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         addressTextField.setBackground(new java.awt.Color(236, 239, 244));
         addressTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         addressTextField.setBorder(null);
-        jPanel2.add(addressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 130, 20));
+        jPanel2.add(addressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 190, 22));
 
         mailTextField2.setBackground(new java.awt.Color(236, 239, 244));
         mailTextField2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         mailTextField2.setBorder(null);
-        jPanel2.add(mailTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 130, 20));
+        jPanel2.add(mailTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 190, 22));
 
         address.setBackground(new java.awt.Color(76, 86, 106));
         address.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -82,7 +83,7 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         rucTextField3.setBackground(new java.awt.Color(236, 239, 244));
         rucTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         rucTextField3.setBorder(null);
-        jPanel2.add(rucTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 130, 20));
+        jPanel2.add(rucTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 190, 22));
 
         ruc.setBackground(new java.awt.Color(76, 86, 106));
         ruc.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -93,7 +94,7 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         phoneTextField3.setBackground(new java.awt.Color(236, 239, 244));
         phoneTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         phoneTextField3.setBorder(null);
-        jPanel2.add(phoneTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 130, 20));
+        jPanel2.add(phoneTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 190, 22));
 
         mail.setBackground(new java.awt.Color(76, 86, 106));
         mail.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -109,11 +110,13 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         addSuppliers.setToolTipText("");
         add(addSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, -1));
 
-        AddButtonSupplier.setBackground(new java.awt.Color(76, 86, 106));
+        AddButtonSupplier.setBackground(new java.awt.Color(143, 188, 187));
         AddButtonSupplier.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        AddButtonSupplier.setForeground(new java.awt.Color(229, 229, 229));
+        AddButtonSupplier.setForeground(new java.awt.Color(76, 86, 106));
         AddButtonSupplier.setText("Agregar");
-        add(AddButtonSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 100, 30));
+        AddButtonSupplier.setBorder(null);
+        AddButtonSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(AddButtonSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -50,6 +50,10 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         tblEmployee = new javax.swing.JTable();
         btnModify = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        search = new javax.swing.JPanel();
+        txtFldSearch = new javax.swing.JTextField();
+        searchID = new javax.swing.JLabel();
+        search_icon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -92,9 +96,9 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 700, 340));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 700, 340));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 32, 780, 400));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 370));
 
         btnModify.setBackground(new java.awt.Color(143, 188, 187));
         btnModify.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -121,6 +125,29 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
             }
         });
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 120, 40));
+
+        search.setBackground(new java.awt.Color(136, 192, 208));
+        search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
+        txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtFldSearch.setBorder(null);
+        txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFldSearchActionPerformed(evt);
+            }
+        });
+        search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
+
+        searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        searchID.setForeground(new java.awt.Color(60, 63, 65));
+        searchID.setText("ID");
+        search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
+
+        search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
+        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
+
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
@@ -134,6 +161,10 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         DBManagement.clearTbl();
         DBManagement.listEmployee(tblEmployee);
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFldSearchActionPerformed
 
     public void listEmployee(){
         String sql="select * from employee";
@@ -218,6 +249,10 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     private javax.swing.JButton btnModify;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel search;
+    private javax.swing.JLabel searchID;
+    private javax.swing.JLabel search_icon;
     private javax.swing.JTable tblEmployee;
+    private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

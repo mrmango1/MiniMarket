@@ -76,6 +76,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(76, 86, 106));
         jButton1.setText("Modificar");
         jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 120, 40));
 
         jButton2.setBackground(new java.awt.Color(208, 135, 112));
@@ -83,6 +84,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jButton2.setForeground(new java.awt.Color(76, 86, 106));
         jButton2.setText("Eliminar");
         jButton2.setBorder(null);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

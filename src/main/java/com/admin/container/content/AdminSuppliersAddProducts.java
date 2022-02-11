@@ -53,18 +53,18 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         name.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         name.setForeground(new java.awt.Color(76, 86, 106));
         name.setText("Nombre:");
-        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
         nameTextField1.setBackground(new java.awt.Color(236, 239, 244));
         nameTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         nameTextField1.setBorder(null);
-        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 190, 22));
+        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 190, 22));
 
         pvp.setBackground(new java.awt.Color(76, 86, 106));
         pvp.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         pvp.setForeground(new java.awt.Color(76, 86, 106));
         pvp.setText("PVP:");
-        jPanel2.add(pvp, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
+        jPanel2.add(pvp, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, -1, -1));
 
         priceTextField.setBackground(new java.awt.Color(236, 239, 244));
         priceTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -75,12 +75,12 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         Discount.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         Discount.setForeground(new java.awt.Color(76, 86, 106));
         Discount.setText("Descripción:");
-        jPanel2.add(Discount, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, -1));
+        jPanel2.add(Discount, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, -1, -1));
 
         discountTextField2.setBackground(new java.awt.Color(236, 239, 244));
         discountTextField2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         discountTextField2.setBorder(null);
-        jPanel2.add(discountTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 190, 22));
+        jPanel2.add(discountTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, 22));
 
         price1.setBackground(new java.awt.Color(76, 86, 106));
         price1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -102,13 +102,13 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         pvpTextField3.setBackground(new java.awt.Color(236, 239, 244));
         pvpTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         pvpTextField3.setBorder(null);
-        jPanel2.add(pvpTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 190, 22));
+        jPanel2.add(pvpTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 190, 22));
 
         Discount1.setBackground(new java.awt.Color(76, 86, 106));
         Discount1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         Discount1.setForeground(new java.awt.Color(76, 86, 106));
         Discount1.setText("Descuento:");
-        jPanel2.add(Discount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+        jPanel2.add(Discount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
 
         descriptionTextArea1.setBackground(new java.awt.Color(236, 239, 244));
         descriptionTextArea1.setColumns(20);
@@ -117,9 +117,9 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         descriptionTextArea1.setBorder(null);
         jScrollPane1.setViewportView(descriptionTextArea1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 240, 130));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 240, 130));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 32, 780, 400));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 800, 380));
 
         AgregarProductos.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         AgregarProductos.setForeground(new java.awt.Color(76, 86, 106));
@@ -132,6 +132,7 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         AddButton.setForeground(new java.awt.Color(76, 86, 106));
         AddButton.setText("Agregar");
         AddButton.setBorder(null);
+        AddButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
