@@ -99,7 +99,7 @@ public class AdminMain extends javax.swing.JFrame {
         title.setForeground(new java.awt.Color(0, 0, 0));
         title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/littleStore.png"))); // NOI18N
         title.setText("MINIMARKET QMET");
-        pnlStatus.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 0, 210, 40));
+        pnlStatus.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 0, 210, 40));
 
         btnMenu.setBackground(new java.awt.Color(94, 129, 172));
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu.png"))); // NOI18N
@@ -137,7 +137,7 @@ public class AdminMain extends javax.swing.JFrame {
         userName.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         userName.setForeground(new java.awt.Color(46, 52, 64));
         userName.setText("ADMIN");
-        pnlStatus.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+        pnlStatus.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, 40));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 

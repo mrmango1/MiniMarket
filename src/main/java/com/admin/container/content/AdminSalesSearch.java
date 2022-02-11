@@ -20,7 +20,6 @@ public class AdminSalesSearch extends javax.swing.JPanel {
      */
     public AdminSalesSearch() {
         initComponents();
-        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
         jTable1.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));
     }
@@ -58,9 +57,9 @@ public class AdminSalesSearch extends javax.swing.JPanel {
         factura.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         factura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/factura.png"))); // NOI18N
         factura.setText("FACTURA");
-        add(factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+        add(factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 100, -1));
 
-        pnlContent.setBackground(new java.awt.Color(229, 233, 240));
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fecha.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -85,7 +84,7 @@ public class AdminSalesSearch extends javax.swing.JPanel {
 
         total.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         total.setText("TOTAL:");
-        pnlContent.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 365, -1, -1));
+        pnlContent.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 365, -1, -1));
 
         jTable1.setBackground(new java.awt.Color(229, 233, 240));
         jTable1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -97,9 +96,10 @@ public class AdminSalesSearch extends javax.swing.JPanel {
                 "Cantidad", "Descripción", "Precio Unitario", "IVA", "Descuento", "Subtotal"
             }
         ));
+        jTable1.setShowGrid(true);
         jScrollPane1.setViewportView(jTable1);
         jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        jTable1.getTableHeader().setBackground(new java.awt.Color(129,161,193));
 
         pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 730, 210));
 
@@ -146,9 +146,9 @@ public class AdminSalesSearch extends javax.swing.JPanel {
                 total_ActionPerformed(evt);
             }
         });
-        pnlContent.add(total_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 365, 130, 22));
+        pnlContent.add(total_, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 365, 130, 22));
 
-        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 810, 400));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 810, 410));
     }// </editor-fold>//GEN-END:initComponents
 
     private void fecha_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecha_ActionPerformed

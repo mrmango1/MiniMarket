@@ -48,14 +48,14 @@ public class Settings extends javax.swing.JPanel {
                 btnLogoutActionPerformed(evt);
             }
         });
-        add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 120, 40));
+        add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 120, 40));
 
         Title.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         Title.setForeground(new java.awt.Color(46, 52, 64));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
         Title.setText("CONFIGURACION");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 200, 40));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 200, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
