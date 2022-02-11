@@ -81,7 +81,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jButton1.setText("Modificar");
         jButton1.setBorder(null);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 120, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
 
         jButton2.setBackground(new java.awt.Color(208, 135, 112));
         jButton2.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -94,7 +94,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 120, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 120, 40));
 
         search.setBackground(new java.awt.Color(136, 192, 208));
         search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

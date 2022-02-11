@@ -54,6 +54,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         txtFldSearch = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,7 +112,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
                 btnModifyActionPerformed(evt);
             }
         });
-        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 120, 40));
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
 
         btnDelete.setBackground(new java.awt.Color(208, 135, 112));
         btnDelete.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -124,7 +125,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 120, 40));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 120, 40));
 
         search.setBackground(new java.awt.Color(136, 192, 208));
         search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -148,6 +149,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
 
         add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 170, 35));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
@@ -248,6 +250,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnModify;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel search;
     private javax.swing.JLabel searchID;
