@@ -96,7 +96,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 700, 340));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 730, 330));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 370));
 
@@ -116,7 +116,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         btnDelete.setBackground(new java.awt.Color(208, 135, 112));
         btnDelete.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(76, 86, 106));
-        btnDelete.setText("Delete");
+        btnDelete.setText("Eliminar");
         btnDelete.setBorder(null);
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {

@@ -36,6 +36,10 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        search = new javax.swing.JPanel();
+        txtFldSearch = new javax.swing.JTextField();
+        searchID = new javax.swing.JLabel();
+        search_icon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,9 +71,9 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 700, 340));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 730, 330));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 32, 780, 400));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 370));
 
         jButton1.setBackground(new java.awt.Color(143, 188, 187));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -91,11 +95,38 @@ public class AdminSupplierMain extends javax.swing.JPanel {
             }
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 120, 40));
+
+        search.setBackground(new java.awt.Color(136, 192, 208));
+        search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
+        txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtFldSearch.setBorder(null);
+        txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFldSearchActionPerformed(evt);
+            }
+        });
+        search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
+
+        searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        searchID.setForeground(new java.awt.Color(60, 63, 65));
+        searchID.setText("ID");
+        search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
+
+        search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
+        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
+
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFldSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -104,5 +135,9 @@ public class AdminSupplierMain extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JPanel search;
+    private javax.swing.JLabel searchID;
+    private javax.swing.JLabel search_icon;
+    private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

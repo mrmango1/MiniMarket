@@ -65,7 +65,7 @@ public class AdminSalesMain extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 700, 370));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 720, 380));
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 420));
 

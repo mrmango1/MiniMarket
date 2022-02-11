@@ -85,7 +85,7 @@ public class AdminSalesSearch extends javax.swing.JPanel {
 
         total.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         total.setText("TOTAL:");
-        pnlContent.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, -1, -1));
+        pnlContent.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 365, -1, -1));
 
         jTable1.setBackground(new java.awt.Color(229, 233, 240));
         jTable1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -101,7 +101,7 @@ public class AdminSalesSearch extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 690, 220));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 730, 210));
 
         fecha_.setBackground(new java.awt.Color(229, 233, 240));
         fecha_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
@@ -146,7 +146,7 @@ public class AdminSalesSearch extends javax.swing.JPanel {
                 total_ActionPerformed(evt);
             }
         });
-        pnlContent.add(total_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 22));
+        pnlContent.add(total_, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 365, 130, 22));
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 810, 400));
     }// </editor-fold>//GEN-END:initComponents
