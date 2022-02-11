@@ -36,9 +36,10 @@ public class AdminSalesMain extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         pnlSearch = new java.awt.Panel();
+        search = new javax.swing.JPanel();
+        txtFldSearch = new javax.swing.JTextField();
         id = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
-        search = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setMinimumSize(new java.awt.Dimension(810, 490));
@@ -64,36 +65,42 @@ public class AdminSalesMain extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 700, 350));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 700, 370));
 
-        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 780, 400));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 420));
 
         pnlSearch.setBackground(new java.awt.Color(236, 239, 244));
         pnlSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        id.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
-        id.setText("ID");
-        pnlSearch.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 30));
-
-        search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
-        pnlSearch.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 20, 30));
-
         search.setBackground(new java.awt.Color(136, 192, 208));
-        search.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        search.setBorder(null);
-        search.addActionListener(new java.awt.event.ActionListener() {
+        search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
+        txtFldSearch.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtFldSearch.setBorder(null);
+        txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchActionPerformed(evt);
+                txtFldSearchActionPerformed(evt);
             }
         });
-        pnlSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 140, 30));
+        search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 8, 160, 20));
 
-        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 180, 60));
+        id.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        id.setForeground(new java.awt.Color(60, 63, 65));
+        id.setText("ID");
+        search.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
+
+        search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
+        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 8, 20, 20));
+
+        pnlSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 35));
+
+        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 220, 40));
     }// </editor-fold>//GEN-END:initComponents
     
-    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+    private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_searchActionPerformed
+    }//GEN-LAST:event_txtFldSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -102,7 +109,8 @@ public class AdminSalesMain extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel pnlContent;
     private java.awt.Panel pnlSearch;
-    private javax.swing.JTextField search;
+    private javax.swing.JPanel search;
     private javax.swing.JLabel search_icon;
+    private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

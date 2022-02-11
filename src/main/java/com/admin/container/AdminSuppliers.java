@@ -74,7 +74,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
                 btnBackMouseClicked(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 40, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 40, -1));
 
         btnAddSupplier.setBackground(new java.awt.Color(236, 239, 244));
         btnAddSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -88,7 +88,8 @@ public class AdminSuppliers extends javax.swing.JPanel {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
         btnAddSupplier.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 20));
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(46, 52, 64));
         jLabel6.setText("Añadir Proveedores");
         btnAddSupplier.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 20));
 
@@ -106,7 +107,8 @@ public class AdminSuppliers extends javax.swing.JPanel {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
         btnAddProducts.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 20));
 
-        jLabel10.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(46, 52, 64));
         jLabel10.setText("Añadir Productos");
         btnAddProducts.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 20));
 

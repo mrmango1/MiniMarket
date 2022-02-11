@@ -70,9 +70,10 @@ public class AdminEmployee extends javax.swing.JPanel {
         AddEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
-        AddEmployee.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 41, -1));
+        AddEmployee.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 41, -1));
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
         jLabel4.setText("Add Employee");
         AddEmployee.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 7, -1, 20));
 
@@ -94,7 +95,7 @@ public class AdminEmployee extends javax.swing.JPanel {
                 btnBackMouseClicked(evt);
             }
         });
-        pnlBack.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlBack.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         add(pnlBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 40, 40));
 

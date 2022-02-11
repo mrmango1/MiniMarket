@@ -4,9 +4,7 @@
  */
 package com.admin.container.content;
 
-import com.functions.DBConnection;
 import com.functions.DBManagement;
-import java.sql.*;
 import javax.swing.JOptionPane;
 
 /**

@@ -19,7 +19,8 @@ public class AdminSales extends javax.swing.JPanel {
      */
     public AdminSales() {
         initComponents();
-        Design.panelChange(pnlContent,new AdminSalesMain());
+        pnlBack.setVisible(false);
+        Design.panelChange(pnlContent, new AdminSalesMain());
     }
 
     /**
@@ -67,6 +68,7 @@ public class AdminSales extends javax.swing.JPanel {
         btnDetails.setForeground(new java.awt.Color(76, 86, 106));
         btnDetails.setText("Detalle");
         btnDetails.setBorder(null);
+        btnDetails.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDetailsActionPerformed(evt);
@@ -85,13 +87,15 @@ public class AdminSales extends javax.swing.JPanel {
                 btnBackMouseClicked(evt);
             }
         });
-        pnlBack.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlBack.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         add(pnlBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 40, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
-        Design.panelChange(pnlContent,new AdminSalesSearch());
+        btnDetails.setVisible(false);
+        pnlBack.setVisible(true);
+        Design.panelChange(pnlContent, new AdminSalesSearch());
     }//GEN-LAST:event_btnDetailsActionPerformed
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked

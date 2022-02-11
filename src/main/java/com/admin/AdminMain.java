@@ -23,9 +23,11 @@ import com.formdev.flatlaf.FlatLightLaf;
 public class AdminMain extends javax.swing.JFrame {
 
     JPanel btnActive;
-    int xx,yy;
+    int xx, yy;
+
     public AdminMain() {
         initComponents();
+        lookAndFeel();
         setResizable(false);
         setLocationRelativeTo(null);
         DBConnection ctn = new DBConnection();
@@ -445,36 +447,19 @@ public class AdminMain extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlStatusMousePressed
 
     private void pnlStatusMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlStatusMouseDragged
-       int x=evt.getXOnScreen();
-       int y=evt.getYOnScreen();
-       this.setLocation(x-xx, y-yy);
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xx, y - yy);
     }//GEN-LAST:event_pnlStatusMouseDragged
-    public void setUserName(String user){
+    public void setUserName(String user) {
         userName.setText(user);
     }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    public void lookAndFeel() {
         try {
             UIManager.setLookAndFeel(new FlatLightLaf());
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");
         }
-
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminMain().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

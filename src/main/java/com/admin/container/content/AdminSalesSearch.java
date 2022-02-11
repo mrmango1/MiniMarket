@@ -6,6 +6,7 @@
 package com.admin.container.content;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import javax.swing.BorderFactory;
 
 /**
@@ -21,6 +22,7 @@ public class AdminSalesSearch extends javax.swing.JPanel {
         initComponents();
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
+        jTable1.getTableHeader().setFont(new java.awt.Font("Roboto", Font.BOLD, 15));
     }
 
     /**
