@@ -29,8 +29,6 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     AdminEmployeeAdd add = new AdminEmployeeAdd();
     public AdminEmployeeMain() {
         initComponents();
-        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
-        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
         DBManagement.listEmployee(tblEmployee);
     }
 
@@ -63,7 +61,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
 
         tblEmployee.setAutoCreateRowSorter(true);
         tblEmployee.setBackground(new java.awt.Color(229, 233, 240));
-        tblEmployee.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
+        tblEmployee.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblEmployee.setForeground(new java.awt.Color(67, 76, 94));
         tblEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -94,15 +93,18 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         }
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
-        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
+        tblEmployee.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
+        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
         btnModify.setBackground(new java.awt.Color(163, 190, 140));
         btnModify.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnModify.setForeground(new java.awt.Color(76, 86, 106));
+        btnModify.setForeground(new java.awt.Color(67, 76, 94));
         btnModify.setText("Modificar");
         btnModify.setBorder(null);
         btnModify.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -115,7 +117,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
 
         btnDelete.setBackground(new java.awt.Color(208, 135, 112));
         btnDelete.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(76, 86, 106));
+        btnDelete.setForeground(new java.awt.Color(67, 76, 94));
         btnDelete.setText("Eliminar");
         btnDelete.setBorder(null);
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -131,6 +133,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
 
         txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
         txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtFldSearch.setForeground(new java.awt.Color(46, 52, 64));
         txtFldSearch.setBorder(null);
         txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +143,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
 
         searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
-        searchID.setForeground(new java.awt.Color(60, 63, 65));
+        searchID.setForeground(new java.awt.Color(59, 66, 82));
         searchID.setText("ID");
         search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
 

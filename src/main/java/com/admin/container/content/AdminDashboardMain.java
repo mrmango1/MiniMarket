@@ -19,12 +19,6 @@ public class AdminDashboardMain extends javax.swing.JPanel {
      */
     public AdminDashboardMain() {
         initComponents();
-        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
-        jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
-        jScrollPane2.setBorder(BorderFactory.createEmptyBorder());
-        jScrollPane2.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
-        tblSalesResume.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
-        tblCustomerResume.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
     }
 
     /**
@@ -53,7 +47,8 @@ public class AdminDashboardMain extends javax.swing.JPanel {
 
         tblSalesResume.setAutoCreateRowSorter(true);
         tblSalesResume.setBackground(new java.awt.Color(229, 233, 240));
-        tblSalesResume.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
+        tblSalesResume.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblSalesResume.setForeground(new java.awt.Color(67, 76, 94));
         tblSalesResume.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -77,8 +72,12 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblSalesResume);
         tblSalesResume.getTableHeader().setOpaque(false);
         tblSalesResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblSalesResume.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblSalesResume.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
+        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
+        jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 
         add(pnlSalesResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 400, 430));
 
@@ -86,7 +85,8 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         pnlCustomersResume.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblCustomerResume.setBackground(new java.awt.Color(229, 233, 240));
-        tblCustomerResume.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
+        tblCustomerResume.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblCustomerResume.setForeground(new java.awt.Color(67, 76, 94));
         tblCustomerResume.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -103,8 +103,12 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblCustomerResume);
         tblCustomerResume.getTableHeader().setOpaque(false);
         tblCustomerResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblCustomerResume.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblCustomerResume.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
+        jScrollPane2.setBorder(BorderFactory.createEmptyBorder());
+        jScrollPane2.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 
         add(pnlCustomersResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 400, 430));
 

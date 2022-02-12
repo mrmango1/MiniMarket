@@ -41,6 +41,7 @@
       <SubComponents>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jScrollPane1.setBorder(BorderFactory.createEmptyBorder());&#xa;jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));"/>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
           <Constraints>
@@ -58,7 +59,10 @@
                   <Color blue="f0" green="e9" red="e5" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Roboto Light" size="13" style="0"/>
+                  <Font name="Roboto Medium" size="13" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="5e" green="4c" red="43" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="2" rowCount="0">
@@ -66,7 +70,7 @@
                     <Column editable="false" title="Cantidad" type="java.lang.Object"/>
                   </Table>
                 </Property>
-                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" preCode="tblSalesResume.getTableHeader().setOpaque(false);&#xa;tblSalesResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));">
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" preCode="tblSalesResume.getTableHeader().setOpaque(false);" postCode="tblSalesResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));&#xa;tblSalesResume.getTableHeader().setForeground(new java.awt.Color(46,52,64));&#xa;tblSalesResume.getTableHeader().setFont(new java.awt.Font(&quot;Roboto&quot;, 1, 14));">
                   <TableColumnModel selectionModel="0">
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
@@ -114,6 +118,7 @@
       <SubComponents>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jScrollPane2.setBorder(BorderFactory.createEmptyBorder());&#xa;jScrollPane2.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));"/>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
           <Constraints>
@@ -130,7 +135,10 @@
                   <Color blue="f0" green="e9" red="e5" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Roboto Light" size="13" style="0"/>
+                  <Font name="Roboto Medium" size="13" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="5e" green="4c" red="43" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="2" rowCount="0">
@@ -138,7 +146,7 @@
                     <Column editable="true" title="Cantidad" type="java.lang.Object"/>
                   </Table>
                 </Property>
-                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" preCode="tblCustomerResume.getTableHeader().setOpaque(false);&#xa;tblCustomerResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));">
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" preCode="tblCustomerResume.getTableHeader().setOpaque(false);" postCode="tblCustomerResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));&#xa;tblCustomerResume.getTableHeader().setForeground(new java.awt.Color(46,52,64));&#xa;tblCustomerResume.getTableHeader().setFont(new java.awt.Font(&quot;Roboto&quot;, 1, 14));">
                   <TableColumnModel selectionModel="0">
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>

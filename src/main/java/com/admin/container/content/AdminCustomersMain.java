@@ -18,9 +18,6 @@ public class AdminCustomersMain extends javax.swing.JPanel {
      */
     public AdminCustomersMain() {
         initComponents();
-        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
-        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
-        jTable1.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
     }
 
     /**
@@ -34,7 +31,7 @@ public class AdminCustomersMain extends javax.swing.JPanel {
 
         panelContenidoClientes = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCustomers = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         search = new javax.swing.JPanel();
@@ -48,8 +45,10 @@ public class AdminCustomersMain extends javax.swing.JPanel {
         panelContenidoClientes.setBackground(new java.awt.Color(229, 233, 240));
         panelContenidoClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(229, 233, 240));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCustomers.setBackground(new java.awt.Color(229, 233, 240));
+        tblCustomers.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblCustomers.setForeground(new java.awt.Color(67, 76, 94));
+        tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -57,19 +56,23 @@ public class AdminCustomersMain extends javax.swing.JPanel {
                 "ID", "Nombre", "NUI", "Direccion", "Telefono", "Email"
             }
         ));
-        jTable1.setFocusable(false);
-        jTable1.setRowHeight(35);
-        jTable1.setSelectionBackground(new java.awt.Color(235, 203, 139));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(50);
+        tblCustomers.setFocusable(false);
+        tblCustomers.setRowHeight(35);
+        tblCustomers.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblCustomers.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblCustomers);
+        if (tblCustomers.getColumnModel().getColumnCount() > 0) {
+            tblCustomers.getColumnModel().getColumn(0).setPreferredWidth(10);
+            tblCustomers.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
-        jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblCustomers.getTableHeader().setOpaque(false);
+        tblCustomers.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblCustomers.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblCustomers.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         panelContenidoClientes.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
+        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
         add(panelContenidoClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
@@ -132,11 +135,11 @@ public class AdminCustomersMain extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel panelContenidoClientes;
     private javax.swing.JPanel search;
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
+    private javax.swing.JTable tblCustomers;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

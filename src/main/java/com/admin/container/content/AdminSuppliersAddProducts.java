@@ -31,18 +31,18 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         name = new javax.swing.JLabel();
-        nameTextField1 = new javax.swing.JTextField();
         pvp = new javax.swing.JLabel();
-        priceTextField = new javax.swing.JTextField();
         Discount = new javax.swing.JLabel();
-        discountTextField2 = new javax.swing.JTextField();
-        price1 = new javax.swing.JLabel();
-        quantityTextField3 = new javax.swing.JTextField();
-        quantity2 = new javax.swing.JLabel();
-        pvpTextField3 = new javax.swing.JTextField();
-        Discount1 = new javax.swing.JLabel();
+        price = new javax.swing.JLabel();
+        amount = new javax.swing.JLabel();
+        discount = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtAmount = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JTextField();
+        txtPvp = new javax.swing.JTextField();
+        txtDiscount = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        descriptionTextArea1 = new javax.swing.JTextArea();
+        txtDescription = new javax.swing.JTextArea();
         AddButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 239, 244));
@@ -57,21 +57,11 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         name.setText("Nombre:");
         jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, 35));
 
-        nameTextField1.setBackground(new java.awt.Color(229, 233, 240));
-        nameTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        nameTextField1.setBorder(null);
-        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 190, 35));
-
         pvp.setBackground(new java.awt.Color(76, 86, 106));
         pvp.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         pvp.setForeground(new java.awt.Color(76, 86, 106));
         pvp.setText("PVP:");
         jPanel2.add(pvp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, 35));
-
-        priceTextField.setBackground(new java.awt.Color(229, 233, 240));
-        priceTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        priceTextField.setBorder(null);
-        jPanel2.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, 35));
 
         Discount.setBackground(new java.awt.Color(76, 86, 106));
         Discount.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -79,45 +69,67 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         Discount.setText("Descripción:");
         jPanel2.add(Discount, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, 35));
 
-        discountTextField2.setBackground(new java.awt.Color(229, 233, 240));
-        discountTextField2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        discountTextField2.setBorder(null);
-        jPanel2.add(discountTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 190, 35));
+        price.setBackground(new java.awt.Color(76, 86, 106));
+        price.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        price.setForeground(new java.awt.Color(76, 86, 106));
+        price.setText("Precio:");
+        jPanel2.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, 35));
 
-        price1.setBackground(new java.awt.Color(76, 86, 106));
-        price1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        price1.setForeground(new java.awt.Color(76, 86, 106));
-        price1.setText("Precio:");
-        jPanel2.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, 35));
+        amount.setBackground(new java.awt.Color(76, 86, 106));
+        amount.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        amount.setForeground(new java.awt.Color(76, 86, 106));
+        amount.setText("Cantidad:");
+        jPanel2.add(amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, 35));
 
-        quantityTextField3.setBackground(new java.awt.Color(229, 233, 240));
-        quantityTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        quantityTextField3.setBorder(null);
-        jPanel2.add(quantityTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, 35));
+        discount.setBackground(new java.awt.Color(76, 86, 106));
+        discount.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        discount.setForeground(new java.awt.Color(76, 86, 106));
+        discount.setText("Descuento:");
+        jPanel2.add(discount, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, 35));
 
-        quantity2.setBackground(new java.awt.Color(76, 86, 106));
-        quantity2.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        quantity2.setForeground(new java.awt.Color(76, 86, 106));
-        quantity2.setText("Cantidad:");
-        jPanel2.add(quantity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, 35));
+        txtName.setBackground(new java.awt.Color(229, 233, 240));
+        txtName.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtName.setForeground(new java.awt.Color(130, 147, 181));
+        txtName.setBorder(null);
+        jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 190, 35));
+        txtName.setBorder(BorderFactory.createCompoundBorder(txtName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        pvpTextField3.setBackground(new java.awt.Color(229, 233, 240));
-        pvpTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        pvpTextField3.setBorder(null);
-        jPanel2.add(pvpTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 190, 35));
+        txtAmount.setBackground(new java.awt.Color(229, 233, 240));
+        txtAmount.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtAmount.setForeground(new java.awt.Color(130, 147, 181));
+        txtAmount.setBorder(null);
+        jPanel2.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, 35));
+        txtAmount.setBorder(BorderFactory.createCompoundBorder(txtAmount.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        Discount1.setBackground(new java.awt.Color(76, 86, 106));
-        Discount1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        Discount1.setForeground(new java.awt.Color(76, 86, 106));
-        Discount1.setText("Descuento:");
-        jPanel2.add(Discount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, 35));
+        txtPrice.setBackground(new java.awt.Color(229, 233, 240));
+        txtPrice.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtPrice.setForeground(new java.awt.Color(130, 147, 181));
+        txtPrice.setBorder(null);
+        jPanel2.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, 35));
+        txtPrice.setBorder(BorderFactory.createCompoundBorder(txtPrice.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        descriptionTextArea1.setBackground(new java.awt.Color(229, 233, 240));
-        descriptionTextArea1.setColumns(20);
-        descriptionTextArea1.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        descriptionTextArea1.setRows(5);
-        descriptionTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(descriptionTextArea1);
+        txtPvp.setBackground(new java.awt.Color(229, 233, 240));
+        txtPvp.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtPvp.setForeground(new java.awt.Color(130, 147, 181));
+        txtPvp.setBorder(null);
+        jPanel2.add(txtPvp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 190, 35));
+        txtPvp.setBorder(BorderFactory.createCompoundBorder(txtPvp.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
+
+        txtDiscount.setBackground(new java.awt.Color(229, 233, 240));
+        txtDiscount.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtDiscount.setForeground(new java.awt.Color(130, 147, 181));
+        txtDiscount.setBorder(null);
+        jPanel2.add(txtDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 190, 35));
+        txtDiscount.setBorder(BorderFactory.createCompoundBorder(txtDiscount.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
+
+        txtDescription.setBackground(new java.awt.Color(229, 233, 240));
+        txtDescription.setColumns(20);
+        txtDescription.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtDescription.setForeground(new java.awt.Color(130, 147, 181));
+        txtDescription.setRows(5);
+        txtDescription.setBorder(null);
+        jScrollPane1.setViewportView(txtDescription);
+        txtDescription.setBorder(BorderFactory.createCompoundBorder(txtDescription.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 290, 130));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
@@ -139,18 +151,18 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButton;
     private javax.swing.JLabel Discount;
-    private javax.swing.JLabel Discount1;
-    private javax.swing.JTextArea descriptionTextArea1;
-    private javax.swing.JTextField discountTextField2;
+    private javax.swing.JLabel amount;
+    private javax.swing.JLabel discount;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel name;
-    private javax.swing.JTextField nameTextField1;
-    private javax.swing.JLabel price1;
-    private javax.swing.JTextField priceTextField;
+    private javax.swing.JLabel price;
     private javax.swing.JLabel pvp;
-    private javax.swing.JTextField pvpTextField3;
-    private javax.swing.JLabel quantity2;
-    private javax.swing.JTextField quantityTextField3;
+    private javax.swing.JTextField txtAmount;
+    private javax.swing.JTextArea txtDescription;
+    private javax.swing.JTextField txtDiscount;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtPvp;
     // End of variables declaration//GEN-END:variables
 }

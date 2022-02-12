@@ -18,9 +18,6 @@ public class AdminSupplierMain extends javax.swing.JPanel {
      */
     public AdminSupplierMain() {
         initComponents();
-        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
-        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
-        jTable1.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
     }
 
     /**
@@ -34,7 +31,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSupplier = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         search = new javax.swing.JPanel();
@@ -49,11 +46,11 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jPanel2.setPreferredSize(new java.awt.Dimension(740, 370));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBackground(new java.awt.Color(229, 233, 240));
-        jTable1.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(76, 86, 106));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSupplier.setAutoCreateRowSorter(true);
+        tblSupplier.setBackground(new java.awt.Color(229, 233, 240));
+        tblSupplier.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblSupplier.setForeground(new java.awt.Color(67, 76, 94));
+        tblSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -61,17 +58,21 @@ public class AdminSupplierMain extends javax.swing.JPanel {
                 "ID", "Nombre Proveedor", "RUC", "Dirección", "Teléfono", "Correo"
             }
         ));
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(236, 239, 244));
-        jTable1.setRowHeight(35);
-        jTable1.setSelectionBackground(new java.awt.Color(235, 203, 139));
-        jTable1.setSelectionForeground(new java.awt.Color(236, 239, 244));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblSupplier.setFocusable(false);
+        tblSupplier.setGridColor(new java.awt.Color(236, 239, 244));
+        tblSupplier.setRowHeight(35);
+        tblSupplier.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblSupplier.setSelectionForeground(new java.awt.Color(236, 239, 244));
+        tblSupplier.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblSupplier);
+        tblSupplier.getTableHeader().setOpaque(false);
+        tblSupplier.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblSupplier.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblSupplier.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
+        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
@@ -135,10 +136,10 @@ public class AdminSupplierMain extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel search;
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
+    private javax.swing.JTable tblSupplier;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -113,7 +113,7 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         jPanel2.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 190, 35));
         txtPhone.setBorder(BorderFactory.createCompoundBorder(txtPhone.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 460, 410));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 460, 410));
 
         AddButtonSupplier.setBackground(new java.awt.Color(163, 190, 140));
         AddButtonSupplier.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N

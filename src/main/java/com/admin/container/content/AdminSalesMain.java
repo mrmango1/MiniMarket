@@ -19,9 +19,6 @@ public class AdminSalesMain extends javax.swing.JPanel {
      */
     public AdminSalesMain() {
         initComponents();
-        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
-        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
-        jTable1.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
     }
 
     /**
@@ -35,7 +32,7 @@ public class AdminSalesMain extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSales = new javax.swing.JTable();
         search = new javax.swing.JPanel();
         txtFldSearch = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
@@ -51,9 +48,10 @@ public class AdminSalesMain extends javax.swing.JPanel {
         pnlContent.setPreferredSize(new java.awt.Dimension(454, 239));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(229, 233, 240));
-        jTable1.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSales.setBackground(new java.awt.Color(229, 233, 240));
+        tblSales.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblSales.setForeground(new java.awt.Color(67, 76, 94));
+        tblSales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -61,15 +59,19 @@ public class AdminSalesMain extends javax.swing.JPanel {
                 "ID", "ID.Empleado", "ID.Cliente", "Fecha", "Total Productos", "Subtotal", "Venta Total"
             }
         ));
-        jTable1.setFocusable(false);
-        jTable1.setRowHeight(35);
-        jTable1.setSelectionBackground(new java.awt.Color(235, 203, 139));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblSales.setFocusable(false);
+        tblSales.setRowHeight(35);
+        tblSales.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblSales.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblSales);
+        tblSales.getTableHeader().setOpaque(false);
+        tblSales.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblSales.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblSales.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
+        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
@@ -105,11 +107,11 @@ public class AdminSalesMain extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel search;
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
+    private javax.swing.JTable tblSales;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

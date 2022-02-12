@@ -90,43 +90,50 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         pnlContent.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, 30));
 
         txtNui.setBackground(new java.awt.Color(229, 233, 240));
-        txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtNui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtNui.setForeground(new java.awt.Color(130, 147, 181));
         txtNui.setBorder(null);
         pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 190, 30));
         txtNui.setBorder(BorderFactory.createCompoundBorder(txtNui.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtName.setBackground(new java.awt.Color(229, 233, 240));
-        txtName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtName.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtName.setForeground(new java.awt.Color(130, 147, 181));
         txtName.setBorder(null);
         pnlContent.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 190, 30));
         txtName.setBorder(BorderFactory.createCompoundBorder(txtName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtLastName.setBackground(new java.awt.Color(229, 233, 240));
-        txtLastName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtLastName.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtLastName.setForeground(new java.awt.Color(130, 147, 181));
         txtLastName.setBorder(null);
         pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 190, 30));
         txtLastName.setBorder(BorderFactory.createCompoundBorder(txtLastName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtAddress.setBackground(new java.awt.Color(229, 233, 240));
-        txtAddress.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtAddress.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtAddress.setForeground(new java.awt.Color(130, 147, 181));
         txtAddress.setBorder(null);
         pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 190, 30));
         txtAddress.setBorder(BorderFactory.createCompoundBorder(txtAddress.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtPhone.setBackground(new java.awt.Color(229, 233, 240));
-        txtPhone.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtPhone.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtPhone.setForeground(new java.awt.Color(130, 147, 181));
         txtPhone.setBorder(null);
         pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 190, 30));
         txtPhone.setBorder(BorderFactory.createCompoundBorder(txtPhone.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtEmail.setBackground(new java.awt.Color(229, 233, 240));
-        txtEmail.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(130, 147, 181));
         txtEmail.setBorder(null);
         pnlContent.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 190, 30));
         txtEmail.setBorder(BorderFactory.createCompoundBorder(txtEmail.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtPassword.setBackground(new java.awt.Color(229, 233, 240));
-        txtPassword.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(130, 147, 181));
         txtPassword.setBorder(null);
         pnlContent.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 190, 30));
         txtPassword.setBorder(BorderFactory.createCompoundBorder(txtPassword.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
