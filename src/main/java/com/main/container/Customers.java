@@ -15,9 +15,15 @@ public class Customers extends javax.swing.JPanel {
     /**
      * Creates new form AdminEmployeeMain
      */
-    public Customers() {
+    boolean admin;
+    public Customers(boolean admin) {
         initComponents();
-        Design.panelChange(pnlContent, new CustomersMain());
+        this.admin = admin;
+        if(!admin){
+            btnAddCustomers.setVisible(false);
+        }
+        Design.panelChange(pnlContent, new CustomersMain(admin));
+        btnBack.setVisible(false);
     }
 
     /**
@@ -31,7 +37,7 @@ public class Customers extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
-        btnAddEmployee = new javax.swing.JLabel();
+        btnAddCustomers = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
@@ -49,17 +55,17 @@ public class Customers extends javax.swing.JPanel {
         lblTitle.setText("CLIENTES");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
 
-        btnAddEmployee.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnAddEmployee.setForeground(new java.awt.Color(46, 52, 64));
-        btnAddEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
-        btnAddEmployee.setText("Cliente");
-        btnAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAddCustomers.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnAddCustomers.setForeground(new java.awt.Color(46, 52, 64));
+        btnAddCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
+        btnAddCustomers.setText("Cliente");
+        btnAddCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddEmployeeMouseClicked(evt);
+                btnAddCustomersMouseClicked(evt);
             }
         });
-        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 25, -1, 20));
+        add(btnAddCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 25, -1, 20));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -71,21 +77,21 @@ public class Customers extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, -1, 20));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
+    private void btnAddCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCustomersMouseClicked
         Design.panelChange(pnlContent, new CustomersAdd());
-        btnAddEmployee.setVisible(false);
+        btnAddCustomers.setVisible(false);
         btnBack.setVisible(true);
-    }//GEN-LAST:event_btnAddEmployeeMouseClicked
+    }//GEN-LAST:event_btnAddCustomersMouseClicked
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(pnlContent, new CustomersMain());
-        btnAddEmployee.setVisible(true);
+        Design.panelChange(pnlContent, new CustomersMain(this.admin));
+        btnAddCustomers.setVisible(true);
         btnBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel btnAddEmployee;
+    private static javax.swing.JLabel btnAddCustomers;
     private static javax.swing.JLabel btnBack;
     private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;

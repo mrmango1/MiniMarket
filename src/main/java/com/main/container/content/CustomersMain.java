@@ -16,8 +16,12 @@ public class CustomersMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminCustomersMain
      */
-    public CustomersMain() {
+    public CustomersMain(boolean admin) {
         initComponents();
+        if(!admin){
+            btnDelete.setVisible(false);
+            btnModify.setVisible(false);
+        }
     }
 
     /**

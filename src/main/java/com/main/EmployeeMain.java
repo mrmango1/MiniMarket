@@ -6,7 +6,6 @@ package com.main;
 
 import com.main.container.Dashboard;
 import com.main.container.Customers;
-import com.main.container.Suppliers;
 import com.main.container.Settings;
 import com.main.container.Sales;
 import com.main.container.Employee;
@@ -419,7 +418,7 @@ public class EmployeeMain extends javax.swing.JFrame {
 
     private void btnCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseClicked
         if (!(btnActive == btnCustomers)) {
-            Design.clickOptions(btnCustomers, btnActive, pnlMain, new Customers());
+            Design.clickOptions(btnCustomers, btnActive, pnlMain, new Customers(false));
         }
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
