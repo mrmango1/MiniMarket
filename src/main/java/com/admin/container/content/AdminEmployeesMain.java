@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author mrmango
  */
-public class AdminEmployeeMain extends javax.swing.JPanel {
+public class AdminEmployeesMain extends javax.swing.JPanel {
 
     DBConnection cnt = new DBConnection();
     Connection cn;
@@ -26,8 +26,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     DefaultTableModel model;
     
     final DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-    AdminEmployeeAdd add = new AdminEmployeeAdd();
-    public AdminEmployeeMain() {
+    AdminEmployeesAdd add = new AdminEmployeesAdd();
+    public AdminEmployeesMain() {
         initComponents();
         DBManagement.listEmployee(tblEmployee);
     }

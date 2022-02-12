@@ -13,9 +13,9 @@ import javax.swing.JOptionPane;
  *
  * @author mrmango
  */
-public class AdminEmployeeAdd extends javax.swing.JPanel {
+public class AdminEmployeesAdd extends javax.swing.JPanel {
 
-    public AdminEmployeeAdd() {
+    public AdminEmployeesAdd() {
         initComponents();
         
     }

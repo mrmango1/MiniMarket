@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.admin.container;
-import com.admin.container.content.AdminEmployeeMain;
-import com.admin.container.content.AdminEmployeeAdd;
+import com.admin.container.content.AdminEmployeesMain;
+import com.admin.container.content.AdminEmployeesAdd;
 import com.functions.Design;
 import javax.swing.JPanel;
 
@@ -21,7 +21,7 @@ public class AdminEmployee extends javax.swing.JPanel {
     public AdminEmployee() {
         initComponents();
         btnBack.setVisible(false);
-        Design.panelChange(pnlContent, new AdminEmployeeMain());
+        Design.panelChange(pnlContent, new AdminEmployeesMain());
     }
 
     /**
@@ -79,13 +79,13 @@ public class AdminEmployee extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(pnlContent, new AdminEmployeeMain());
+        Design.panelChange(pnlContent, new AdminEmployeesMain());
         btnAddEmployee.setVisible(true);
         btnBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
-        Design.panelChange(pnlContent, new AdminEmployeeAdd());
+        Design.panelChange(pnlContent, new AdminEmployeesAdd());
         btnAddEmployee.setVisible(false);
         btnBack.setVisible(true);
     }//GEN-LAST:event_btnAddEmployeeMouseClicked
