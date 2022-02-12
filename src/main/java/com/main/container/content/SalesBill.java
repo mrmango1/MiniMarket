@@ -4,6 +4,7 @@
  */
 package com.main.container.content;
 
+import java.awt.Dimension;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,6 +45,7 @@ public class SalesBill extends javax.swing.JPanel {
         txtPhone = new javax.swing.JTextField();
         txtTotalPrice = new javax.swing.JTextField();
         btnPrint = new javax.swing.JButton();
+        btnPrint1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,6 +79,7 @@ public class SalesBill extends javax.swing.JPanel {
         tblBill.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
 
         pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 840, 310));
+        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
         lblDate.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         lblDate.setForeground(new java.awt.Color(59, 66, 82));
@@ -172,6 +175,19 @@ public class SalesBill extends javax.swing.JPanel {
             }
         });
         add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
+
+        btnPrint1.setBackground(new java.awt.Color(180, 142, 173));
+        btnPrint1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnPrint1.setForeground(new java.awt.Color(67, 76, 94));
+        btnPrint1.setText("IMPRIMIR");
+        btnPrint1.setBorder(null);
+        btnPrint1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPrint1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPrint1MouseClicked(evt);
+            }
+        });
+        add(btnPrint1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerActionPerformed
@@ -190,9 +206,14 @@ public class SalesBill extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Funcion en desarrollo");
     }//GEN-LAST:event_btnPrintMouseClicked
 
+    private void btnPrint1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrint1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPrint1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPrint;
+    private javax.swing.JButton btnPrint1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCustomer;

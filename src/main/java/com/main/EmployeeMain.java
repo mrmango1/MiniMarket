@@ -8,13 +8,13 @@ import com.main.container.Dashboard;
 import com.main.container.Customers;
 import com.main.container.Settings;
 import com.main.container.Sales;
-import com.main.container.Employee;
 import com.main.container.Products;
 import com.functions.Design;
 import com.functions.DBConnection;
 
 import javax.swing.*;
 import com.formdev.flatlaf.FlatLightLaf;
+import com.main.container.Sell;
 
 /**
  *
@@ -392,7 +392,7 @@ public class EmployeeMain extends javax.swing.JFrame {
 
     private void btnSellMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSellMouseClicked
         if (!(btnActive == btnSell)) {
-            Design.clickOptions(btnSell, btnActive, pnlMain, new Employee());
+            Design.clickOptions(btnSell, btnActive, pnlMain, new Sell());
         }
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
