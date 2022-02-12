@@ -80,7 +80,7 @@ public class AdminSales extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(46, 52, 64));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
         jLabel4.setText("SALES");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 20, 90, 36));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 20, 90, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed

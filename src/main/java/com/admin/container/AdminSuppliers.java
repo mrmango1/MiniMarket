@@ -66,7 +66,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
                 btnAddSupplierMouseClicked(evt);
             }
         });
-        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 10, 160, 30));
+        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(735, 10, 155, 30));
 
         btnAddProducts.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnAddProducts.setForeground(new java.awt.Color(46, 52, 64));
@@ -78,14 +78,14 @@ public class AdminSuppliers extends javax.swing.JPanel {
                 btnAddProductsMouseClicked(evt);
             }
         });
-        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 160, 30));
+        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, 140, 30));
 
         jLabel4.setBackground(new java.awt.Color(46, 52, 64));
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(46, 52, 64));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier.png"))); // NOI18N
         jLabel4.setText("SUPPLIERS");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 20, 130, 36));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 20, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked

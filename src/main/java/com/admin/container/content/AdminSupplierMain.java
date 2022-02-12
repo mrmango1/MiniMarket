@@ -72,9 +72,9 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 730, 330));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 780, 370));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
         jButton1.setBackground(new java.awt.Color(143, 188, 187));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -82,7 +82,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jButton1.setText("Modificar");
         jButton1.setBorder(null);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 120, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 120, 40));
 
         jButton2.setBackground(new java.awt.Color(208, 135, 112));
         jButton2.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -95,7 +95,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 120, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 120, 40));
 
         search.setBackground(new java.awt.Color(136, 192, 208));
         search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -115,10 +115,11 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         searchID.setText("ID");
         search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
 
+        search_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
-        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
+        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 30, 20));
 
-        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 170, 35));
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

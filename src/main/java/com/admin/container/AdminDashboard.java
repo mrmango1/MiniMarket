@@ -48,7 +48,7 @@ public class AdminDashboard extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard.png"))); // NOI18N
         jLabel4.setText("DASHBOARD");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 36));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 

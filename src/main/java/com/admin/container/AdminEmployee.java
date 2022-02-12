@@ -52,7 +52,7 @@ public class AdminEmployee extends javax.swing.JPanel {
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee.png"))); // NOI18N
         Title.setText("EMPLEADOS");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 20, 150, 36));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 20, 150, 30));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -72,7 +72,7 @@ public class AdminEmployee extends javax.swing.JPanel {
                 btnAddEmployeeMouseClicked(evt);
             }
         });
-        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 120, 20));
+        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 25, 120, 20));
 
         getAccessibleContext().setAccessibleName("pnlMain");
     }// </editor-fold>//GEN-END:initComponents

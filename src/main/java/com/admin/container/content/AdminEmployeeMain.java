@@ -53,7 +53,6 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         txtFldSearch = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,11 +143,11 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         searchID.setText("ID");
         search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
 
+        search_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
-        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 20, 20));
+        search.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 30, 20));
 
-        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, 170, 35));
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, -1));
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
@@ -249,7 +248,6 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnModify;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel search;
     private javax.swing.JLabel searchID;

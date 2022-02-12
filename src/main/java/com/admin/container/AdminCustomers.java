@@ -44,7 +44,7 @@ public class AdminCustomers extends javax.swing.JPanel {
         Title.setForeground(new java.awt.Color(46, 52, 64));
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
         Title.setText("CLIENTES");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 35));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 

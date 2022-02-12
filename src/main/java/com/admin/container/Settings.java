@@ -55,7 +55,7 @@ public class Settings extends javax.swing.JPanel {
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
         Title.setText("CONFIGURACION");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 200, 40));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 200, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
