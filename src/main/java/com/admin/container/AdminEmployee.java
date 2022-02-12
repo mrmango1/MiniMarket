@@ -34,7 +34,7 @@ public class AdminEmployee extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlContent = new javax.swing.JPanel();
-        Title = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
         btnAddEmployee = new javax.swing.JLabel();
 
@@ -47,12 +47,12 @@ public class AdminEmployee extends javax.swing.JPanel {
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
-        Title.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        Title.setForeground(new java.awt.Color(46, 52, 64));
-        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee.png"))); // NOI18N
-        Title.setText("EMPLEADOS");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 20, 150, 30));
+        lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee.png"))); // NOI18N
+        lblTitle.setText("EMPLEADOS");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 20, 150, 30));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -91,9 +91,9 @@ public class AdminEmployee extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAddEmployeeMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel Title;
     private static javax.swing.JLabel btnAddEmployee;
     private static javax.swing.JLabel btnBack;
+    private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 

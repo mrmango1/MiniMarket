@@ -33,10 +33,10 @@ public class AdminSuppliers extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlContent = new javax.swing.JPanel();
+        lblTitle = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
         btnAddSupplier = new javax.swing.JLabel();
         btnAddProducts = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -46,6 +46,13 @@ public class AdminSuppliers extends javax.swing.JPanel {
         pnlContent.setPreferredSize(new java.awt.Dimension(840, 500));
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
+
+        lblTitle.setBackground(new java.awt.Color(46, 52, 64));
+        lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier.png"))); // NOI18N
+        lblTitle.setText("SUPPLIERS");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 20, 130, 30));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -79,13 +86,6 @@ public class AdminSuppliers extends javax.swing.JPanel {
             }
         });
         add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 22, 85, 26));
-
-        jLabel4.setBackground(new java.awt.Color(46, 52, 64));
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier.png"))); // NOI18N
-        jLabel4.setText("SUPPLIERS");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 20, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
@@ -114,7 +114,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
     private static javax.swing.JLabel btnAddProducts;
     private static javax.swing.JLabel btnAddSupplier;
     private static javax.swing.JLabel btnBack;
-    private static javax.swing.JLabel jLabel4;
+    private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

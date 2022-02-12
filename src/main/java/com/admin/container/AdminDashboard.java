@@ -32,7 +32,7 @@ public class AdminDashboard extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlContent = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -43,17 +43,17 @@ public class AdminDashboard extends javax.swing.JPanel {
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard.png"))); // NOI18N
-        jLabel4.setText("DASHBOARD");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 30));
+        lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard.png"))); // NOI18N
+        lblTitle.setText("DASHBOARD");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel jLabel4;
+    private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

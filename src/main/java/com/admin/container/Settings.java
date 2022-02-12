@@ -31,7 +31,7 @@ public class Settings extends javax.swing.JPanel {
     private void initComponents() {
 
         btnLogout = new javax.swing.JButton();
-        Title = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -50,25 +50,25 @@ public class Settings extends javax.swing.JPanel {
         });
         add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 120, 40));
 
-        Title.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        Title.setForeground(new java.awt.Color(46, 52, 64));
-        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
-        Title.setText("CONFIGURACION");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 200, 30));
+        lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
+        lblTitle.setText("CONFIGURACION");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 200, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         Login login = new Login();
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         login.setVisible(true);
-        SwingUtilities.getWindowAncestor(Title).dispose();
+        SwingUtilities.getWindowAncestor(lblTitle).dispose();
 
     }//GEN-LAST:event_btnLogoutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel Title;
     private static javax.swing.JButton btnLogout;
+    private static javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }

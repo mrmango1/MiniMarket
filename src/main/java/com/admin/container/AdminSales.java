@@ -34,7 +34,7 @@ public class AdminSales extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         btnDetails = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
@@ -59,12 +59,12 @@ public class AdminSales extends javax.swing.JPanel {
         });
         add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 15, 120, 40));
 
-        jLabel4.setBackground(new java.awt.Color(46, 52, 64));
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
-        jLabel4.setText("SALES");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 20, 90, 30));
+        lblTitle.setBackground(new java.awt.Color(46, 52, 64));
+        lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
+        lblTitle.setText("SALES");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 20, 90, 30));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -92,7 +92,7 @@ public class AdminSales extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JLabel btnBack;
     private static javax.swing.JButton btnDetails;
-    private static javax.swing.JLabel jLabel4;
+    private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

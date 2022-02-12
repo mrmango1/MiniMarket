@@ -30,7 +30,7 @@ public class AdminCustomers extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlContent = new javax.swing.JPanel();
-        Title = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         btnAddEmployee = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
 
@@ -43,11 +43,11 @@ public class AdminCustomers extends javax.swing.JPanel {
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
-        Title.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        Title.setForeground(new java.awt.Color(46, 52, 64));
-        Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
-        Title.setText("CLIENTES");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
+        lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
+        lblTitle.setText("CLIENTES");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
 
         btnAddEmployee.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnAddEmployee.setForeground(new java.awt.Color(46, 52, 64));
@@ -85,9 +85,9 @@ public class AdminCustomers extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel Title;
     private static javax.swing.JLabel btnAddEmployee;
     private static javax.swing.JLabel btnBack;
+    private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }
