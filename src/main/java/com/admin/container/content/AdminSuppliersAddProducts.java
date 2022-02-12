@@ -4,6 +4,9 @@
  */
 package com.admin.container.content;
 
+import java.awt.Dimension;
+import javax.swing.BorderFactory;
+
 /**
  *
  * @author mrmango
@@ -45,80 +48,83 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(229, 233, 240));
+        jPanel2.setBackground(new java.awt.Color(236, 239, 244));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         name.setBackground(new java.awt.Color(76, 86, 106));
         name.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         name.setForeground(new java.awt.Color(76, 86, 106));
         name.setText("Nombre:");
-        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, 35));
 
-        nameTextField1.setBackground(new java.awt.Color(236, 239, 244));
+        nameTextField1.setBackground(new java.awt.Color(229, 233, 240));
         nameTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         nameTextField1.setBorder(null);
-        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 190, 22));
+        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 190, 35));
 
         pvp.setBackground(new java.awt.Color(76, 86, 106));
         pvp.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         pvp.setForeground(new java.awt.Color(76, 86, 106));
         pvp.setText("PVP:");
-        jPanel2.add(pvp, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, -1));
+        jPanel2.add(pvp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, 35));
 
-        priceTextField.setBackground(new java.awt.Color(236, 239, 244));
+        priceTextField.setBackground(new java.awt.Color(229, 233, 240));
         priceTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         priceTextField.setBorder(null);
-        jPanel2.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 190, 22));
+        jPanel2.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, 35));
 
         Discount.setBackground(new java.awt.Color(76, 86, 106));
         Discount.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         Discount.setForeground(new java.awt.Color(76, 86, 106));
         Discount.setText("Descripción:");
-        jPanel2.add(Discount, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, -1));
+        jPanel2.add(Discount, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, 35));
 
-        discountTextField2.setBackground(new java.awt.Color(236, 239, 244));
+        discountTextField2.setBackground(new java.awt.Color(229, 233, 240));
         discountTextField2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         discountTextField2.setBorder(null);
-        jPanel2.add(discountTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 190, 22));
+        jPanel2.add(discountTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 190, 35));
 
         price1.setBackground(new java.awt.Color(76, 86, 106));
         price1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         price1.setForeground(new java.awt.Color(76, 86, 106));
         price1.setText("Precio:");
-        jPanel2.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jPanel2.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, 35));
 
-        quantityTextField3.setBackground(new java.awt.Color(236, 239, 244));
+        quantityTextField3.setBackground(new java.awt.Color(229, 233, 240));
         quantityTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         quantityTextField3.setBorder(null);
-        jPanel2.add(quantityTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 190, 22));
+        jPanel2.add(quantityTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, 35));
 
         quantity2.setBackground(new java.awt.Color(76, 86, 106));
         quantity2.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         quantity2.setForeground(new java.awt.Color(76, 86, 106));
         quantity2.setText("Cantidad:");
-        jPanel2.add(quantity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel2.add(quantity2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, 35));
 
-        pvpTextField3.setBackground(new java.awt.Color(236, 239, 244));
+        pvpTextField3.setBackground(new java.awt.Color(229, 233, 240));
         pvpTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         pvpTextField3.setBorder(null);
-        jPanel2.add(pvpTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 190, 22));
+        jPanel2.add(pvpTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 190, 35));
 
         Discount1.setBackground(new java.awt.Color(76, 86, 106));
         Discount1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         Discount1.setForeground(new java.awt.Color(76, 86, 106));
         Discount1.setText("Descuento:");
-        jPanel2.add(Discount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
+        jPanel2.add(Discount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, 35));
 
-        descriptionTextArea1.setBackground(new java.awt.Color(236, 239, 244));
+        descriptionTextArea1.setBackground(new java.awt.Color(229, 233, 240));
         descriptionTextArea1.setColumns(20);
         descriptionTextArea1.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         descriptionTextArea1.setRows(5);
         descriptionTextArea1.setBorder(null);
         jScrollPane1.setViewportView(descriptionTextArea1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 240, 190));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 290, 130));
+        jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
+        jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
+        jScrollPane1.getHorizontalScrollBar().setPreferredSize( new Dimension(0,0) );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 480, 430));
 
         AddButton.setBackground(new java.awt.Color(163, 190, 140));
         AddButton.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N

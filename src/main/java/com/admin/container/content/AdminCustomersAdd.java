@@ -17,7 +17,6 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
 
     public AdminCustomersAdd() {
         initComponents();
-        
     }
 
     /**
@@ -30,12 +29,12 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlContent = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
+        lblNui = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         txtNui = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtLastName = new javax.swing.JTextField();
@@ -48,77 +47,83 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(840, 500));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlContent.setBackground(new java.awt.Color(229, 233, 240));
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
         pnlContent.setForeground(new java.awt.Color(76, 86, 106));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel4.setText("Apellido:");
-        pnlContent.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, 30));
+        lblName.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblName.setForeground(new java.awt.Color(76, 86, 106));
+        lblName.setText("Nombre:");
+        pnlContent.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, 35));
 
-        jLabel5.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel5.setText("Nombre:");
-        pnlContent.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, 30));
+        lblLastName.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(76, 86, 106));
+        lblLastName.setText("Apellido:");
+        pnlContent.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, 35));
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel6.setText("Direccion:");
-        pnlContent.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, 30));
+        lblNui.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblNui.setForeground(new java.awt.Color(76, 86, 106));
+        lblNui.setText("NUI:");
+        pnlContent.add(lblNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, 35));
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel7.setText("Telefono:");
-        pnlContent.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, 30));
+        lblAddress.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblAddress.setForeground(new java.awt.Color(76, 86, 106));
+        lblAddress.setText("Direccion:");
+        pnlContent.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 35));
 
-        jLabel8.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel8.setText("Email:");
-        pnlContent.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
+        lblPhone.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblPhone.setForeground(new java.awt.Color(76, 86, 106));
+        lblPhone.setText("Telefono:");
+        pnlContent.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, 35));
 
-        jLabel9.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel9.setText("NUI:");
-        pnlContent.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 30));
+        lblEmail.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(76, 86, 106));
+        lblEmail.setText("Email:");
+        pnlContent.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, 35));
 
-        txtNui.setBackground(new java.awt.Color(216, 222, 233));
-        txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtNui.setBackground(new java.awt.Color(229, 233, 240));
+        txtNui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtNui.setForeground(new java.awt.Color(130, 147, 181));
         txtNui.setBorder(null);
-        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 190, 30));
-        txtNui.setBorder(BorderFactory.createCompoundBorder(txtNui.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, 35));
+        txtNui.setBorder(BorderFactory.createCompoundBorder(txtNui.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        txtName.setBackground(new java.awt.Color(216, 222, 233));
-        txtName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtName.setBackground(new java.awt.Color(229, 233, 240));
+        txtName.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtName.setForeground(new java.awt.Color(130, 147, 181));
         txtName.setBorder(null);
-        pnlContent.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 190, 30));
-        txtName.setBorder(BorderFactory.createCompoundBorder(txtName.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+        pnlContent.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 190, 35));
+        txtName.setBorder(BorderFactory.createCompoundBorder(txtName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        txtLastName.setBackground(new java.awt.Color(216, 222, 233));
-        txtLastName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtLastName.setBackground(new java.awt.Color(229, 233, 240));
+        txtLastName.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtLastName.setForeground(new java.awt.Color(130, 147, 181));
         txtLastName.setBorder(null);
-        pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 190, 30));
-        txtLastName.setBorder(BorderFactory.createCompoundBorder(txtLastName.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+        pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 190, 35));
+        txtLastName.setBorder(BorderFactory.createCompoundBorder(txtLastName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        txtAddress.setBackground(new java.awt.Color(216, 222, 233));
-        txtAddress.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtAddress.setBackground(new java.awt.Color(229, 233, 240));
+        txtAddress.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtAddress.setForeground(new java.awt.Color(130, 147, 181));
         txtAddress.setBorder(null);
-        pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 190, 30));
-        txtAddress.setBorder(BorderFactory.createCompoundBorder(txtAddress.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+        pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 190, 35));
+        txtAddress.setBorder(BorderFactory.createCompoundBorder(txtAddress.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        txtPhone.setBackground(new java.awt.Color(216, 222, 233));
-        txtPhone.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtPhone.setBackground(new java.awt.Color(229, 233, 240));
+        txtPhone.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtPhone.setForeground(new java.awt.Color(130, 147, 181));
         txtPhone.setBorder(null);
-        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 190, 30));
-        txtPhone.setBorder(BorderFactory.createCompoundBorder(txtPhone.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 190, 35));
+        txtPhone.setBorder(BorderFactory.createCompoundBorder(txtPhone.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        txtEmail.setBackground(new java.awt.Color(216, 222, 233));
-        txtEmail.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtEmail.setBackground(new java.awt.Color(229, 233, 240));
+        txtEmail.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(130, 147, 181));
         txtEmail.setBorder(null);
-        pnlContent.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 190, 30));
-        txtEmail.setBorder(BorderFactory.createCompoundBorder(txtEmail.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+        pnlContent.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 190, 35));
+        txtEmail.setBorder(BorderFactory.createCompoundBorder(txtEmail.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 460, 380));
 
         btnAddEmployee.setBackground(new java.awt.Color(163, 190, 140));
         btnAddEmployee.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -153,12 +158,12 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAddEmployee;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNui;
+    private javax.swing.JLabel lblPhone;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtEmail;

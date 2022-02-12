@@ -4,6 +4,8 @@
  */
 package com.admin.container.content;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mrmango
@@ -164,6 +166,11 @@ public class AdminSalesBill extends javax.swing.JPanel {
         AddButton.setText("IMPRIMIR");
         AddButton.setBorder(null);
         AddButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AddButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddButtonMouseClicked(evt);
+            }
+        });
         add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -178,6 +185,10 @@ public class AdminSalesBill extends javax.swing.JPanel {
     private void total_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_total_ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_total_ActionPerformed
+
+    private void AddButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddButtonMouseClicked
+        JOptionPane.showMessageDialog(null, "Funcion en desarrollo");
+    }//GEN-LAST:event_AddButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
