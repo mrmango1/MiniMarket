@@ -52,15 +52,15 @@ public class Design {
         }
     }
     public static void userAnimation(JPanel pnlMenu) {
-        if (pnlMenu.getHeight() == 210) {
-            pnlMenu.setSize(200, 210);
+        if (pnlMenu.getHeight() == 162) {
+            pnlMenu.setSize(150, 162);
             Thread th = new Thread() {
                 @Override
                 public void run() {
                     try {
-                        for (int i = 210; i >= 0; i--) {
+                        for (int i = 162; i >= 0; i--) {
                             Thread.sleep(1);
-                            pnlMenu.setSize(200, i);
+                            pnlMenu.setSize(150, i);
                         }
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null, e);
@@ -69,14 +69,14 @@ public class Design {
             };
             th.start();
         } else if (pnlMenu.getHeight() == 0) {
-            pnlMenu.setSize(200, 0);
+            pnlMenu.setSize(150, 0);
             Thread th = new Thread() {
                 @Override
                 public void run() {
                     try {
-                        for (int i = 0; i <= 210; i++) {
+                        for (int i = 0; i <= 162; i++) {
                             Thread.sleep(1);
-                            pnlMenu.setSize(200, i);
+                            pnlMenu.setSize(150, i);
                         }
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null, e);

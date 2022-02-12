@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author mrmango
  */
-public class AdminSalesBill extends javax.swing.JPanel {
+public class SalesBill extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminSuppliersAddProducts
      */
-    public AdminSalesBill() {
+    public SalesBill() {
         initComponents();
     }
 
@@ -162,7 +162,7 @@ public class AdminSalesBill extends javax.swing.JPanel {
 
         AddButton.setBackground(new java.awt.Color(180, 142, 173));
         AddButton.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        AddButton.setForeground(new java.awt.Color(76, 86, 106));
+        AddButton.setForeground(new java.awt.Color(67, 76, 94));
         AddButton.setText("IMPRIMIR");
         AddButton.setBorder(null);
         AddButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
