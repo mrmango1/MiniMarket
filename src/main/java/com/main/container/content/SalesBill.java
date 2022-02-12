@@ -151,6 +151,7 @@ public class SalesBill extends javax.swing.JPanel {
         txtPhone.setBorder(null);
         pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 190, 22));
 
+        txtTotalPrice.setEditable(false);
         txtTotalPrice.setBackground(new java.awt.Color(236, 239, 244));
         txtTotalPrice.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtTotalPrice.setBorder(null);

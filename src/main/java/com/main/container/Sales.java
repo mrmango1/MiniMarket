@@ -63,7 +63,7 @@ public class Sales extends javax.swing.JPanel {
         lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(46, 52, 64));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car_filled.png"))); // NOI18N
         lblTitle.setText("VENTAS");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 20, 110, 30));
 

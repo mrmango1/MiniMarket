@@ -33,24 +33,25 @@ public class SellMain extends javax.swing.JPanel {
         pnlContent = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBill = new javax.swing.JTable();
-        lblCustomer = new javax.swing.JLabel();
-        lblPhone = new javax.swing.JLabel();
         lblTotalPrice = new javax.swing.JLabel();
         txtNui = new javax.swing.JTextField();
-        txtPhone = new javax.swing.JTextField();
-        txtPhone1 = new javax.swing.JTextField();
+        btnCF = new javax.swing.JButton();
+        btnBill = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
         pnlSearch4 = new javax.swing.JPanel();
         txtFldSearch4 = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
-        btnCF = new javax.swing.JButton();
-        btnBill = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        lblAmount = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
+        txtAmount = new javax.swing.JTextField();
+        btnShop = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
+        pnlContent.setBackground(new java.awt.Color(229, 233, 240));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblBill.setBackground(new java.awt.Color(229, 233, 240));
@@ -64,7 +65,7 @@ public class SellMain extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, false, false, false
+                true, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -75,7 +76,8 @@ public class SellMain extends javax.swing.JPanel {
         tblBill.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblBill);
         tblBill.getTableHeader().setOpaque(false);
-        tblBill.getTableHeader().setBackground(new java.awt.Color(94,129,172));
+        tblBill.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblBill.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblBill.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
         if (tblBill.getColumnModel().getColumnCount() > 0) {
             tblBill.getColumnModel().getColumn(0).setPreferredWidth(40);
@@ -94,41 +96,61 @@ public class SellMain extends javax.swing.JPanel {
             tblBill.getColumnModel().getColumn(7).setMaxWidth(150);
         }
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 840, 360));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 320));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
-
-        lblCustomer.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        lblCustomer.setForeground(new java.awt.Color(59, 66, 82));
-        lblCustomer.setText("ID");
-        pnlContent.add(lblCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
-
-        lblPhone.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        lblPhone.setForeground(new java.awt.Color(59, 66, 82));
-        lblPhone.setText("Cantidad");
-        pnlContent.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, -1));
 
         lblTotalPrice.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         lblTotalPrice.setForeground(new java.awt.Color(59, 66, 82));
         lblTotalPrice.setText("TOTAL:");
-        pnlContent.add(lblTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 425, -1, 22));
+        pnlContent.add(lblTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, -1, 22));
 
-        txtNui.setBackground(new java.awt.Color(236, 239, 244));
+        txtNui.setEditable(false);
+        txtNui.setBackground(new java.awt.Color(229, 233, 240));
         txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtNui.setBorder(null);
-        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 425, 110, 22));
+        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 350, 110, 22));
 
-        txtPhone.setEditable(false);
-        txtPhone.setBackground(new java.awt.Color(136, 192, 208));
-        txtPhone.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        txtPhone.setBorder(null);
-        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 50, 22));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 840, 380));
 
-        txtPhone1.setEditable(false);
-        txtPhone1.setBackground(new java.awt.Color(136, 192, 208));
-        txtPhone1.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        txtPhone1.setBorder(null);
-        pnlContent.add(txtPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 22));
+        btnCF.setBackground(new java.awt.Color(208, 135, 112));
+        btnCF.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnCF.setForeground(new java.awt.Color(67, 76, 94));
+        btnCF.setText("CONSUMIDOR F.");
+        btnCF.setBorder(null);
+        btnCF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCFMouseClicked(evt);
+            }
+        });
+        add(btnCF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 120, 40));
+
+        btnBill.setBackground(new java.awt.Color(143, 188, 187));
+        btnBill.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnBill.setForeground(new java.awt.Color(67, 76, 94));
+        btnBill.setText("FACTURA");
+        btnBill.setBorder(null);
+        btnBill.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBill.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBillMouseClicked(evt);
+            }
+        });
+        add(btnBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 120, 40));
+
+        btnCancel.setBackground(new java.awt.Color(191, 97, 106));
+        btnCancel.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(67, 76, 94));
+        btnCancel.setText("CANCELAR");
+        btnCancel.setBorder(null);
+        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelMouseClicked(evt);
+            }
+        });
+        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, 120, 40));
 
         pnlSearch4.setBackground(new java.awt.Color(136, 192, 208));
         pnlSearch4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -143,7 +165,7 @@ public class SellMain extends javax.swing.JPanel {
         });
         pnlSearch4.add(txtFldSearch4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 8, 120, 20));
 
-        searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
+        searchID.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         searchID.setForeground(new java.awt.Color(59, 66, 82));
         searchID.setText("Nombre");
         pnlSearch4.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 8, -1, 20));
@@ -152,48 +174,35 @@ public class SellMain extends javax.swing.JPanel {
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         pnlSearch4.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 8, 30, 20));
 
-        pnlContent.add(pnlSearch4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 230, 35));
+        add(pnlSearch4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 230, 35));
 
-        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 450));
+        lblAmount.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        lblAmount.setForeground(new java.awt.Color(59, 66, 82));
+        lblAmount.setText("Cantidad");
+        add(lblAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
 
-        btnCF.setBackground(new java.awt.Color(208, 135, 112));
-        btnCF.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnCF.setForeground(new java.awt.Color(67, 76, 94));
-        btnCF.setText("CONSUMIDOR F.");
-        btnCF.setBorder(null);
-        btnCF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCF.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCFMouseClicked(evt);
-            }
-        });
-        add(btnCF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 120, 40));
+        lblID.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        lblID.setForeground(new java.awt.Color(59, 66, 82));
+        lblID.setText("ID");
+        add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
-        btnBill.setBackground(new java.awt.Color(143, 188, 187));
-        btnBill.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnBill.setForeground(new java.awt.Color(67, 76, 94));
-        btnBill.setText("IMPRIMIR");
-        btnBill.setBorder(null);
-        btnBill.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBill.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBillMouseClicked(evt);
-            }
-        });
-        add(btnBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
+        txtID.setBackground(new java.awt.Color(136, 192, 208));
+        txtID.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtID.setForeground(new java.awt.Color(67, 76, 94));
+        txtID.setBorder(null);
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 75, 35));
+        txtID.setBorder(BorderFactory.createCompoundBorder(txtID.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        btnCancel.setBackground(new java.awt.Color(191, 97, 106));
-        btnCancel.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnCancel.setForeground(new java.awt.Color(67, 76, 94));
-        btnCancel.setText("CANCELAR");
-        btnCancel.setBorder(null);
-        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCancelMouseClicked(evt);
-            }
-        });
-        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 120, 40));
+        txtAmount.setBackground(new java.awt.Color(136, 192, 208));
+        txtAmount.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtAmount.setForeground(new java.awt.Color(67, 76, 94));
+        txtAmount.setBorder(null);
+        add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 10, 75, 35));
+        txtAmount.setBorder(BorderFactory.createCompoundBorder(txtAmount.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
+
+        btnShop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
+        btnShop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(btnShop, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCFMouseClicked
@@ -217,9 +226,10 @@ public class SellMain extends javax.swing.JPanel {
     private javax.swing.JButton btnBill;
     private javax.swing.JButton btnCF;
     private javax.swing.JButton btnCancel;
+    private javax.swing.JLabel btnShop;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblCustomer;
-    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblAmount;
+    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblTotalPrice;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel pnlSearch;
@@ -229,12 +239,12 @@ public class SellMain extends javax.swing.JPanel {
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
     private javax.swing.JTable tblBill;
+    private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtFldSearch;
     private javax.swing.JTextField txtFldSearch1;
     private javax.swing.JTextField txtFldSearch2;
     private javax.swing.JTextField txtFldSearch4;
+    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNui;
-    private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtPhone1;
     // End of variables declaration//GEN-END:variables
 }
