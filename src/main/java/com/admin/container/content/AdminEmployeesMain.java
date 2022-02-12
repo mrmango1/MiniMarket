@@ -88,8 +88,8 @@ public class AdminEmployeesMain extends javax.swing.JPanel {
         tblEmployee.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblEmployee);
         if (tblEmployee.getColumnModel().getColumnCount() > 0) {
-            tblEmployee.getColumnModel().getColumn(0).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(0).setPreferredWidth(1);
+            tblEmployee.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tblEmployee.getColumnModel().getColumn(0).setMaxWidth(60);
         }
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));

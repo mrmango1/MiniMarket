@@ -10,8 +10,10 @@ import com.admin.container.AdminSuppliers;
 import com.admin.container.Settings;
 import com.admin.container.AdminSales;
 import com.admin.container.AdminEmployee;
+import com.admin.container.AdminProducts;
 import com.functions.Design;
 import com.functions.DBConnection;
+import com.mainPanel.Login;
 
 import javax.swing.*;
 import com.formdev.flatlaf.FlatLightLaf;
@@ -45,12 +47,15 @@ public class AdminMain extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
+        pnlUserMenu = new javax.swing.JPanel();
+        btnLogout = new javax.swing.JButton();
+        btnSettings = new javax.swing.JButton();
         pnlStatus = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         btnMenu = new javax.swing.JButton();
         btnMinimize = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
-        userName = new javax.swing.JLabel();
+        userMenu = new javax.swing.JButton();
         pnlMenu = new javax.swing.JPanel();
         btnDashboard = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -67,9 +72,9 @@ public class AdminMain extends javax.swing.JFrame {
         btnSupplier = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        btnSettings = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        btnProducts = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         pnlMain = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,6 +85,37 @@ public class AdminMain extends javax.swing.JFrame {
         background.setMaximumSize(new java.awt.Dimension(1000, 625));
         background.setMinimumSize(new java.awt.Dimension(1000, 625));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlUserMenu.setBackground(new java.awt.Color(129, 161, 193));
+        pnlUserMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnLogout.setBackground(new java.awt.Color(191, 97, 106));
+        btnLogout.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(76, 86, 106));
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout.png"))); // NOI18N
+        btnLogout.setText("LOGOUT");
+        btnLogout.setBorder(null);
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+        pnlUserMenu.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 90, 30));
+
+        btnSettings.setBackground(new java.awt.Color(143, 188, 187));
+        btnSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
+        btnSettings.setBorder(null);
+        btnSettings.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSettings.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSettings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSettingsMouseClicked(evt);
+            }
+        });
+        pnlUserMenu.add(btnSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 30, 30));
+
+        background.add(pnlUserMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 150, 0));
 
         pnlStatus.setBackground(new java.awt.Color(94, 129, 172));
         pnlStatus.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -134,10 +170,18 @@ public class AdminMain extends javax.swing.JFrame {
         });
         pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
 
-        userName.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        userName.setForeground(new java.awt.Color(46, 52, 64));
-        userName.setText("ADMIN");
-        pnlStatus.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, 40));
+        userMenu.setBackground(new java.awt.Color(94, 129, 172));
+        userMenu.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        userMenu.setForeground(new java.awt.Color(67, 76, 94));
+        userMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
+        userMenu.setText("ADMIN");
+        userMenu.setBorder(null);
+        userMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userMenuMouseClicked(evt);
+            }
+        });
+        pnlStatus.add(userMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 40));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
@@ -172,7 +216,7 @@ public class AdminMain extends javax.swing.JFrame {
         jLabel7.setText("Dashboard");
         btnDashboard.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 135, 210, 45));
+        pnlMenu.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 137, 210, 45));
 
         btnEmployee.setBackground(new java.awt.Color(216, 222, 233));
         btnEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -195,10 +239,10 @@ public class AdminMain extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel5.setText("Employee");
+        jLabel5.setText("Empleados");
         btnEmployee.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 210, 45));
+        pnlMenu.add(btnEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 182, 210, 45));
 
         btnSales.setBackground(new java.awt.Color(216, 222, 233));
         btnSales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -216,15 +260,15 @@ public class AdminMain extends javax.swing.JFrame {
         btnSales.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car_filled.png"))); // NOI18N
         btnSales.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel9.setText("Sales");
+        jLabel9.setText("Ventas");
         btnSales.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnSales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 225, 210, 45));
+        pnlMenu.add(btnSales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 227, 210, 45));
 
         btnCustomers.setBackground(new java.awt.Color(216, 222, 233));
         btnCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -247,10 +291,10 @@ public class AdminMain extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel13.setText("Customers");
+        jLabel13.setText("Clientes");
         btnCustomers.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 210, 45));
+        pnlMenu.add(btnCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 272, 210, 45));
 
         btnSupplier.setBackground(new java.awt.Color(216, 222, 233));
         btnSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -273,36 +317,36 @@ public class AdminMain extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel11.setText("Suppliers");
+        jLabel11.setText("Proveedores");
         btnSupplier.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 315, 210, 45));
+        pnlMenu.add(btnSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 210, 45));
 
-        btnSettings.setBackground(new java.awt.Color(216, 222, 233));
-        btnSettings.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSettings.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnProducts.setBackground(new java.awt.Color(216, 222, 233));
+        btnProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProducts.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSettingsMouseClicked(evt);
+                btnProductsMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSettingsMouseEntered(evt);
+                btnProductsMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnSettingsMouseExited(evt);
+                btnProductsMouseExited(evt);
             }
         });
-        btnSettings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnProducts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
-        btnSettings.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 45));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/products.png"))); // NOI18N
+        btnProducts.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
 
-        jLabel17.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel17.setText("Settings");
-        btnSettings.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
+        jLabel15.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(76, 86, 106));
+        jLabel15.setText("Productos");
+        btnProducts.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 210, 45));
+        pnlMenu.add(btnProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 362, 210, 45));
 
         background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 590));
 
@@ -364,20 +408,15 @@ public class AdminMain extends javax.swing.JFrame {
         Design.resetColor(btnSupplier);
     }//GEN-LAST:event_btnSupplierMouseExited
 
-    private void btnSettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseEntered
-        Design.optionsColor(btnSettings);
-    }//GEN-LAST:event_btnSettingsMouseEntered
-
-    private void btnSettingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseExited
-        Design.resetColor(btnSettings);
-    }//GEN-LAST:event_btnSettingsMouseExited
-
     private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
         if (!(btnActive == btnDashboard)) {
             Design.clickOptions(btnDashboard, btnActive, pnlMain, new AdminDashboard());
         }
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
+        }
+        if (pnlUserMenu.getHeight() == 162) {
+            Design.userAnimation(pnlUserMenu);
         }
         btnActive = btnDashboard;
     }//GEN-LAST:event_btnDashboardMouseClicked
@@ -389,12 +428,21 @@ public class AdminMain extends javax.swing.JFrame {
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
+        if (pnlUserMenu.getHeight() == 162) {
+            Design.userAnimation(pnlUserMenu);
+        }
         btnActive = btnEmployee;
     }//GEN-LAST:event_btnEmployeeMouseClicked
 
     private void btnSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseClicked
         if (!(btnActive == btnSales)) {
             Design.clickOptions(btnSales, btnActive, pnlMain, new AdminSales());
+        }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
+        }
+        if (pnlUserMenu.getHeight() == 162) {
+            Design.userAnimation(pnlUserMenu);
         }
         btnActive = btnSales;
     }//GEN-LAST:event_btnSalesMouseClicked
@@ -406,6 +454,9 @@ public class AdminMain extends javax.swing.JFrame {
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
+        if (pnlUserMenu.getHeight() == 162) {
+            Design.userAnimation(pnlUserMenu);
+        }
         btnActive = btnCustomers;
     }//GEN-LAST:event_btnCustomersMouseClicked
 
@@ -416,21 +467,17 @@ public class AdminMain extends javax.swing.JFrame {
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
+        if (pnlUserMenu.getHeight() == 162) {
+            Design.userAnimation(pnlUserMenu);
+        }
         btnActive = btnSupplier;
     }//GEN-LAST:event_btnSupplierMouseClicked
 
-    private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
-        if (!(btnActive == btnSettings)) {
-            Design.clickOptions(btnSettings, btnActive, pnlMain, new Settings());
-        }
-        if (pnlMenu.getWidth() == 210) {
-            Design.menuAnimation(pnlMenu);
-        }
-        btnActive = btnSettings;
-    }//GEN-LAST:event_btnSettingsMouseClicked
-
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         Design.menuAnimation(pnlMenu);
+        if (pnlUserMenu.getHeight() == 162) {
+            Design.userAnimation(pnlUserMenu);
+        }
     }//GEN-LAST:event_btnMenuActionPerformed
 
     private void btnMinimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizeActionPerformed
@@ -451,9 +498,42 @@ public class AdminMain extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - yy);
     }//GEN-LAST:event_pnlStatusMouseDragged
-    public void setUserName(String user) {
-        userName.setText(user);
-    }
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        Login login = new Login();
+        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        login.setVisible(true);
+        SwingUtilities.getWindowAncestor(pnlStatus).dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void userMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMenuMouseClicked
+        Design.userAnimation(pnlUserMenu);
+    }//GEN-LAST:event_userMenuMouseClicked
+
+    private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
+        Design.panelChange(pnlMain, new Settings());
+    }//GEN-LAST:event_btnSettingsMouseClicked
+
+    private void btnProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseClicked
+        if (!(btnActive == btnProducts)) {
+            Design.clickOptions(btnProducts, btnActive, pnlMain, new AdminProducts());
+        }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
+        }
+        if (pnlUserMenu.getHeight() == 162) {
+            Design.userAnimation(pnlUserMenu);
+        }
+        btnActive = btnProducts;
+    }//GEN-LAST:event_btnProductsMouseClicked
+
+    private void btnProductsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseEntered
+        Design.optionsColor(btnProducts);
+    }//GEN-LAST:event_btnProductsMouseEntered
+
+    private void btnProductsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseExited
+        Design.resetColor(btnProducts);
+    }//GEN-LAST:event_btnProductsMouseExited
     public void lookAndFeel() {
         try {
             UIManager.setLookAndFeel(new FlatLightLaf());
@@ -462,23 +542,32 @@ public class AdminMain extends javax.swing.JFrame {
         }
     }
 
+    public void setUserName(String user) {
+        userMenu.setText(user);
+    }
+    /**
+     * @param args the command line arguments
+     */
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JButton btnClose;
     private javax.swing.JPanel btnCustomers;
     private javax.swing.JPanel btnDashboard;
     private javax.swing.JPanel btnEmployee;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnMinimize;
+    private javax.swing.JPanel btnProducts;
     private javax.swing.JPanel btnSales;
-    private javax.swing.JPanel btnSettings;
+    private javax.swing.JButton btnSettings;
     private javax.swing.JPanel btnSupplier;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -488,7 +577,8 @@ public class AdminMain extends javax.swing.JFrame {
     private javax.swing.JPanel pnlMain;
     private javax.swing.JPanel pnlMenu;
     private javax.swing.JPanel pnlStatus;
+    private javax.swing.JPanel pnlUserMenu;
     private javax.swing.JLabel title;
-    private javax.swing.JLabel userName;
+    private javax.swing.JButton userMenu;
     // End of variables declaration//GEN-END:variables
 }

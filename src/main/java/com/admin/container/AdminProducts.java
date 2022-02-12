@@ -3,24 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.admin.container;
-
-import com.admin.container.content.SalesBill;
-import com.admin.container.content.AdminSalesMain;
+import com.admin.container.content.AdminProductsMain;
+import com.admin.container.content.AdminProductsAdd;
 import com.functions.Design;
 
 /**
  *
  * @author mrmango
  */
-public class AdminSales extends javax.swing.JPanel {
+public class AdminProducts extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminEmployeeMain
      */
-    public AdminSales() {
+    public AdminProducts() {
         initComponents();
+        Design.panelChange(pnlContent, new AdminProductsMain());
         btnBack.setVisible(false);
-        Design.panelChange(pnlContent, new AdminSalesMain());
     }
 
     /**
@@ -33,9 +32,9 @@ public class AdminSales extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlContent = new javax.swing.JPanel();
-        btnDetails = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
+        btnAddProducts = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -46,26 +45,13 @@ public class AdminSales extends javax.swing.JPanel {
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
-        btnDetails.setBackground(new java.awt.Color(163, 190, 140));
-        btnDetails.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnDetails.setForeground(new java.awt.Color(67, 76, 94));
-        btnDetails.setText("Detalle");
-        btnDetails.setBorder(null);
-        btnDetails.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDetailsActionPerformed(evt);
-            }
-        });
-        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 15, 120, 40));
-
         lblTitle.setBackground(new java.awt.Color(46, 52, 64));
         lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(46, 52, 64));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
-        lblTitle.setText("VENTAS");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 20, 110, 30));
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier.png"))); // NOI18N
+        lblTitle.setText("PRODUCTOS");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 30));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -75,24 +61,36 @@ public class AdminSales extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 20, -1));
+
+        btnAddProducts.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnAddProducts.setForeground(new java.awt.Color(46, 52, 64));
+        btnAddProducts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add.png"))); // NOI18N
+        btnAddProducts.setText("Producto");
+        btnAddProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddProductsMouseClicked(evt);
+            }
+        });
+        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 22, 85, 26));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
-        btnDetails.setVisible(false);
-        btnBack.setVisible(true);
-        Design.panelChange(pnlContent, new SalesBill());
-    }//GEN-LAST:event_btnDetailsActionPerformed
-
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(pnlContent, new AdminSalesMain());
-        btnDetails.setVisible(true);
         btnBack.setVisible(false);
+        btnAddProducts.setVisible(true);
+        Design.panelChange(pnlContent, new AdminProductsMain());
     }//GEN-LAST:event_btnBackMouseClicked
+
+    private void btnAddProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddProductsMouseClicked
+        btnBack.setVisible(true);
+        btnAddProducts.setVisible(false);
+        Design.panelChange(pnlContent, new AdminProductsAdd());
+    }//GEN-LAST:event_btnAddProductsMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static javax.swing.JLabel btnAddProducts;
     private static javax.swing.JLabel btnBack;
-    private static javax.swing.JButton btnDetails;
     private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables

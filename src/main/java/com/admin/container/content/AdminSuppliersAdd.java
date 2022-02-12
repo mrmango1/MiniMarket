@@ -10,12 +10,12 @@ import javax.swing.BorderFactory;
  *
  * @author JoaoJV
  */
-public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
+public class AdminSuppliersAdd extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminSuppliersAddSuppliers
      */
-    public AdminSuppliersAddSuppliers() {
+    public AdminSuppliersAdd() {
         initComponents();
     }
 

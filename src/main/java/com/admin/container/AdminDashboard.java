@@ -19,7 +19,6 @@ public class AdminDashboard extends javax.swing.JPanel {
     public AdminDashboard() {
         initComponents();
         Design.panelChange(pnlContent, new AdminDashboardMain());
-
     }
 
     /**
