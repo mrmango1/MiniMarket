@@ -37,7 +37,6 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         ruc = new javax.swing.JLabel();
         phoneTextField3 = new javax.swing.JTextField();
         mail = new javax.swing.JLabel();
-        addSuppliers = new javax.swing.JLabel();
         AddButtonSupplier = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 239, 244));
@@ -51,64 +50,58 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         name.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         name.setForeground(new java.awt.Color(76, 86, 106));
         name.setText("Nombre:");
-        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         nameTextField1.setBackground(new java.awt.Color(236, 239, 244));
         nameTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         nameTextField1.setBorder(null);
-        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 190, 22));
+        jPanel2.add(nameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 190, 22));
 
         phone.setBackground(new java.awt.Color(76, 86, 106));
         phone.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         phone.setForeground(new java.awt.Color(76, 86, 106));
         phone.setText("Teléfono:");
-        jPanel2.add(phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
+        jPanel2.add(phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, -1, -1));
 
         addressTextField.setBackground(new java.awt.Color(236, 239, 244));
         addressTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         addressTextField.setBorder(null);
-        jPanel2.add(addressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 190, 22));
+        jPanel2.add(addressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 190, 22));
 
         mailTextField2.setBackground(new java.awt.Color(236, 239, 244));
         mailTextField2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         mailTextField2.setBorder(null);
-        jPanel2.add(mailTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 190, 22));
+        jPanel2.add(mailTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 190, 22));
 
         address.setBackground(new java.awt.Color(76, 86, 106));
         address.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         address.setForeground(new java.awt.Color(76, 86, 106));
         address.setText("Dirección:");
-        jPanel2.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jPanel2.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         rucTextField3.setBackground(new java.awt.Color(236, 239, 244));
         rucTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         rucTextField3.setBorder(null);
-        jPanel2.add(rucTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 190, 22));
+        jPanel2.add(rucTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 190, 22));
 
         ruc.setBackground(new java.awt.Color(76, 86, 106));
         ruc.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         ruc.setForeground(new java.awt.Color(76, 86, 106));
         ruc.setText("RUC:");
-        jPanel2.add(ruc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
+        jPanel2.add(ruc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         phoneTextField3.setBackground(new java.awt.Color(236, 239, 244));
         phoneTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         phoneTextField3.setBorder(null);
-        jPanel2.add(phoneTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 190, 22));
+        jPanel2.add(phoneTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 190, 22));
 
         mail.setBackground(new java.awt.Color(76, 86, 106));
         mail.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         mail.setForeground(new java.awt.Color(76, 86, 106));
-        mail.setText("mail:");
-        jPanel2.add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, -1));
+        mail.setText("E-mail");
+        jPanel2.add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, -1, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 780, 400));
-
-        addSuppliers.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        addSuppliers.setForeground(new java.awt.Color(76, 86, 106));
-        addSuppliers.setText("Agregar Proveedor");
-        addSuppliers.setToolTipText("");
-        add(addSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, -1));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
         AddButtonSupplier.setBackground(new java.awt.Color(143, 188, 187));
         AddButtonSupplier.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -116,13 +109,12 @@ public class AdminSuppliersAddSuppliers extends javax.swing.JPanel {
         AddButtonSupplier.setText("Agregar");
         AddButtonSupplier.setBorder(null);
         AddButtonSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(AddButtonSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
+        add(AddButtonSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButtonSupplier;
-    private javax.swing.JLabel addSuppliers;
     private javax.swing.JLabel address;
     private javax.swing.JTextField addressTextField;
     private javax.swing.JPanel jPanel2;

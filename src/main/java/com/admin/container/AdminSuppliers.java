@@ -54,7 +54,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
                 btnBackMouseClicked(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 40, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 20, -1));
 
         btnAddSupplier.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnAddSupplier.setForeground(new java.awt.Color(46, 52, 64));
@@ -66,7 +66,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
                 btnAddSupplierMouseClicked(evt);
             }
         });
-        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(735, 10, 155, 30));
+        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 155, 20));
 
         btnAddProducts.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnAddProducts.setForeground(new java.awt.Color(46, 52, 64));
@@ -78,7 +78,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
                 btnAddProductsMouseClicked(evt);
             }
         });
-        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, 140, 30));
+        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 17, 140, 26));
 
         jLabel4.setBackground(new java.awt.Color(46, 52, 64));
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N

@@ -81,9 +81,9 @@ public class AdminDashboardMain extends javax.swing.JPanel {
             tblSalesResume.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 380));
+        pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
 
-        add(pnlSalesResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 420));
+        add(pnlSalesResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 400, 430));
 
         pnlCustomersResume.setBackground(new java.awt.Color(229, 233, 240));
         pnlCustomersResume.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,23 +112,23 @@ public class AdminDashboardMain extends javax.swing.JPanel {
             tblCustomerResume.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, 380));
+        pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
 
-        add(pnlCustomersResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 400, 420));
+        add(pnlCustomersResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 400, 430));
 
         title1.setBackground(new java.awt.Color(76, 86, 106));
         title1.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
         title1.setForeground(new java.awt.Color(76, 86, 106));
         title1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         title1.setText("Ventas de Hoy");
-        add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 150, 20));
+        add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 150, 20));
 
         title2.setBackground(new java.awt.Color(76, 86, 106));
         title2.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
         title2.setForeground(new java.awt.Color(76, 86, 106));
         title2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         title2.setText("Clientes Habituales");
-        add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 150, -1));
+        add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

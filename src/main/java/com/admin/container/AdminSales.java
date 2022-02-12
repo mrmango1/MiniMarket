@@ -19,7 +19,7 @@ public class AdminSales extends javax.swing.JPanel {
      */
     public AdminSales() {
         initComponents();
-        pnlBack.setVisible(false);
+        btnBack.setVisible(false);
         Design.panelChange(pnlContent, new AdminSalesMain());
     }
 
@@ -34,9 +34,8 @@ public class AdminSales extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         btnDetails = new javax.swing.JButton();
-        pnlBack = new javax.swing.JPanel();
-        btnBack = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -58,11 +57,14 @@ public class AdminSales extends javax.swing.JPanel {
                 btnDetailsActionPerformed(evt);
             }
         });
-        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 120, 40));
+        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 15, 120, 40));
 
-        pnlBack.setBackground(new java.awt.Color(236, 239, 244));
-        pnlBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel4.setBackground(new java.awt.Color(46, 52, 64));
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
+        jLabel4.setText("SALES");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 20, 90, 30));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -71,28 +73,19 @@ public class AdminSales extends javax.swing.JPanel {
                 btnBackMouseClicked(evt);
             }
         });
-        pnlBack.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
-
-        add(pnlBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 40, 40));
-
-        jLabel4.setBackground(new java.awt.Color(46, 52, 64));
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(46, 52, 64));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
-        jLabel4.setText("SALES");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 20, 90, 30));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 20, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
         btnDetails.setVisible(false);
-        pnlBack.setVisible(true);
+        btnBack.setVisible(true);
         Design.panelChange(pnlContent, new AdminSalesSearch());
     }//GEN-LAST:event_btnDetailsActionPerformed
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
         Design.panelChange(pnlContent, new AdminSalesMain());
         btnDetails.setVisible(true);
-        pnlBack.setVisible(false);
+        btnBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
 
 
@@ -100,7 +93,6 @@ public class AdminSales extends javax.swing.JPanel {
     private static javax.swing.JLabel btnBack;
     private static javax.swing.JButton btnDetails;
     private static javax.swing.JLabel jLabel4;
-    private static javax.swing.JPanel pnlBack;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

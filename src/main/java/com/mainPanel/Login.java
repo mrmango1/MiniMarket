@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
         lblTitleIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store.png"))); // NOI18N
         pnlTittle.add(lblTitleIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, 130));
 
-        pnlBg.add(pnlTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 180, 240));
+        pnlBg.add(pnlTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 180, 240));
 
         jButton1.setBackground(new java.awt.Color(76, 86, 106));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -93,11 +93,12 @@ public class Login extends javax.swing.JFrame {
         inptContent.setBackground(new java.awt.Color(236, 239, 244));
         inptContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        icnLock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icnLock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lock.png"))); // NOI18N
-        inptContent.add(icnLock, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        inptContent.add(icnLock, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 83, 25, 25));
 
         icnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account.png"))); // NOI18N
-        inptContent.add(icnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        inptContent.add(icnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 7, 25, 25));
 
         pnlUser.setBackground(new java.awt.Color(229, 233, 240));
         pnlUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,7 +124,7 @@ public class Login extends javax.swing.JFrame {
         });
         pnlUser.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 170, 20));
 
-        inptContent.add(pnlUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 190, 35));
+        inptContent.add(pnlUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 190, 35));
 
         pnlPassword.setBackground(new java.awt.Color(229, 233, 240));
         pnlPassword.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -143,9 +144,9 @@ public class Login extends javax.swing.JFrame {
         });
         pnlPassword.add(pwdUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 170, 20));
 
-        inptContent.add(pnlPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 190, 35));
+        inptContent.add(pnlPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 190, 35));
 
-        pnlBg.add(inptContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 260, 180));
+        pnlBg.add(inptContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 260, 120));
 
         pnlLogo.setBackground(new java.awt.Color(236, 239, 244));
 
