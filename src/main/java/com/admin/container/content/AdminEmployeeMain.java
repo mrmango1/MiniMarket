@@ -41,7 +41,7 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnlContent = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmployee = new javax.swing.JTable();
         btnModify = new javax.swing.JButton();
@@ -54,8 +54,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(229, 233, 240));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlContent.setBackground(new java.awt.Color(229, 233, 240));
+        pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setBorder(null);
 
@@ -96,11 +96,11 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         tblEmployee.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
         btnModify.setBackground(new java.awt.Color(163, 190, 140));
         btnModify.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -251,8 +251,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnModify;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel search;
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;

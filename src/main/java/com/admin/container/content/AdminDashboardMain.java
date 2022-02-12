@@ -5,7 +5,6 @@
 package com.admin.container.content;
 
 import java.awt.Dimension;
-import java.awt.Font;
 import javax.swing.BorderFactory;
 
 /**

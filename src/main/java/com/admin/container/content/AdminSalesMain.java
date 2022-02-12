@@ -89,7 +89,7 @@ public class AdminSalesMain extends javax.swing.JPanel {
         search.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
 
         searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
-        searchID.setForeground(new java.awt.Color(60, 63, 65));
+        searchID.setForeground(new java.awt.Color(59, 66, 82));
         searchID.setText("ID");
         search.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 20, 20));
 
