@@ -51,13 +51,12 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         pnlSalesResume.setBackground(new java.awt.Color(229, 233, 240));
         pnlSalesResume.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblSalesResume.setAutoCreateRowSorter(true);
         tblSalesResume.setBackground(new java.awt.Color(229, 233, 240));
+        tblSalesResume.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
         tblSalesResume.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Producto", "Cantidad"
@@ -72,14 +71,12 @@ public class AdminDashboardMain extends javax.swing.JPanel {
             }
         });
         tblSalesResume.setGridColor(new java.awt.Color(229, 233, 240));
-        tblSalesResume.setSelectionBackground(new java.awt.Color(129, 161, 193));
+        tblSalesResume.setRowHeight(35);
+        tblSalesResume.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblSalesResume.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblSalesResume);
         tblSalesResume.getTableHeader().setOpaque(false);
         tblSalesResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
-        if (tblSalesResume.getColumnModel().getColumnCount() > 0) {
-            tblSalesResume.getColumnModel().getColumn(0).setResizable(false);
-            tblSalesResume.getColumnModel().getColumn(1).setResizable(false);
-        }
 
         pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
 
@@ -89,28 +86,23 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         pnlCustomersResume.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblCustomerResume.setBackground(new java.awt.Color(229, 233, 240));
+        tblCustomerResume.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
         tblCustomerResume.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nombre", "Cantidad"
             }
         ));
         tblCustomerResume.setFocusable(false);
-        tblCustomerResume.setRowHeight(40);
-        tblCustomerResume.setSelectionBackground(new java.awt.Color(129, 161, 193));
+        tblCustomerResume.setRowHeight(35);
+        tblCustomerResume.setSelectionBackground(new java.awt.Color(235, 203, 139));
         tblCustomerResume.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblCustomerResume.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tblCustomerResume);
         tblCustomerResume.getTableHeader().setOpaque(false);
         tblCustomerResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
-        if (tblCustomerResume.getColumnModel().getColumnCount() > 0) {
-            tblCustomerResume.getColumnModel().getColumn(0).setResizable(false);
-            tblCustomerResume.getColumnModel().getColumn(1).setResizable(false);
-        }
 
         pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
 

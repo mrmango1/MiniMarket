@@ -120,7 +120,7 @@ public class AdminSuppliersAddProducts extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
-        AddButton.setBackground(new java.awt.Color(143, 188, 187));
+        AddButton.setBackground(new java.awt.Color(163, 190, 140));
         AddButton.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         AddButton.setForeground(new java.awt.Color(76, 86, 106));
         AddButton.setText("Agregar");

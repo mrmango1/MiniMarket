@@ -57,83 +57,83 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(76, 86, 106));
         jLabel3.setText("Contraseña:");
-        pnlContent.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, -1, 30));
+        pnlContent.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(76, 86, 106));
         jLabel4.setText("Apellido:");
-        pnlContent.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, 30));
+        pnlContent.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(76, 86, 106));
         jLabel5.setText("Nombre:");
-        pnlContent.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 30));
+        pnlContent.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(76, 86, 106));
         jLabel6.setText("Direccion:");
-        pnlContent.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, 30));
+        pnlContent.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(76, 86, 106));
         jLabel7.setText("Telefono:");
-        pnlContent.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, -1, 30));
+        pnlContent.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, 30));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(76, 86, 106));
         jLabel8.setText("Email:");
-        pnlContent.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, 30));
+        pnlContent.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(76, 86, 106));
         jLabel9.setText("NUI:");
-        pnlContent.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, 30));
+        pnlContent.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 30));
 
         txtNui.setBackground(new java.awt.Color(216, 222, 233));
         txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtNui.setBorder(null);
-        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 190, 30));
+        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 190, 30));
         txtNui.setBorder(BorderFactory.createCompoundBorder(txtNui.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         txtName.setBackground(new java.awt.Color(216, 222, 233));
         txtName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtName.setBorder(null);
-        pnlContent.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 190, 30));
+        pnlContent.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 190, 30));
         txtName.setBorder(BorderFactory.createCompoundBorder(txtName.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         txtLastName.setBackground(new java.awt.Color(216, 222, 233));
         txtLastName.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtLastName.setBorder(null);
-        pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 190, 30));
+        pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 190, 30));
         txtLastName.setBorder(BorderFactory.createCompoundBorder(txtLastName.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         txtAddress.setBackground(new java.awt.Color(216, 222, 233));
         txtAddress.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtAddress.setBorder(null);
-        pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 190, 30));
+        pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 190, 30));
         txtAddress.setBorder(BorderFactory.createCompoundBorder(txtAddress.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         txtPhone.setBackground(new java.awt.Color(216, 222, 233));
         txtPhone.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtPhone.setBorder(null);
-        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 190, 30));
+        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 190, 30));
         txtPhone.setBorder(BorderFactory.createCompoundBorder(txtPhone.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         txtEmail.setBackground(new java.awt.Color(216, 222, 233));
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtEmail.setBorder(null);
-        pnlContent.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 190, 30));
+        pnlContent.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 190, 30));
         txtEmail.setBorder(BorderFactory.createCompoundBorder(txtEmail.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         txtPassword.setBackground(new java.awt.Color(216, 222, 233));
         txtPassword.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         txtPassword.setBorder(null);
-        pnlContent.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 190, 30));
+        pnlContent.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 190, 30));
         txtPassword.setBorder(BorderFactory.createCompoundBorder(txtPassword.getBorder(),BorderFactory.createEmptyBorder(5, 10, 5, 5)));
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
-        btnAddEmployee.setBackground(new java.awt.Color(143, 188, 187));
+        btnAddEmployee.setBackground(new java.awt.Color(163, 190, 140));
         btnAddEmployee.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnAddEmployee.setForeground(new java.awt.Color(76, 86, 106));
         btnAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

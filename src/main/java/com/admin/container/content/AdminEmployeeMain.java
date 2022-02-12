@@ -31,7 +31,6 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         initComponents();
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
-        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
         DBManagement.listEmployee(tblEmployee);
     }
 
@@ -62,8 +61,9 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
 
         jScrollPane1.setBorder(null);
 
+        tblEmployee.setAutoCreateRowSorter(true);
         tblEmployee.setBackground(new java.awt.Color(229, 233, 240));
-        tblEmployee.setFont(new java.awt.Font("Roboto Condensed", 0, 13)); // NOI18N
+        tblEmployee.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
         tblEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -82,8 +82,8 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         });
         tblEmployee.setFocusable(false);
         tblEmployee.setGridColor(new java.awt.Color(216, 222, 233));
-        tblEmployee.setRowHeight(40);
-        tblEmployee.setSelectionBackground(new java.awt.Color(129, 161, 193));
+        tblEmployee.setRowHeight(35);
+        tblEmployee.setSelectionBackground(new java.awt.Color(235, 203, 139));
         tblEmployee.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblEmployee.setShowGrid(false);
         tblEmployee.getTableHeader().setReorderingAllowed(false);
@@ -94,12 +94,13 @@ public class AdminEmployeeMain extends javax.swing.JPanel {
         }
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
-        btnModify.setBackground(new java.awt.Color(143, 188, 187));
+        btnModify.setBackground(new java.awt.Color(163, 190, 140));
         btnModify.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnModify.setForeground(new java.awt.Color(76, 86, 106));
         btnModify.setText("Modificar");

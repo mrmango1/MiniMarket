@@ -46,7 +46,7 @@
     <Component class="javax.swing.JButton" name="btnDetails">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="bb" green="bc" red="8f" type="rgb"/>
+          <Color blue="8c" green="be" red="a3" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Roboto" size="13" style="1"/>

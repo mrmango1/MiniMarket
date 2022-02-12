@@ -37,7 +37,7 @@ public class Settings extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(940, 590));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnLogout.setBackground(new java.awt.Color(208, 135, 112));
+        btnLogout.setBackground(new java.awt.Color(191, 97, 106));
         btnLogout.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(76, 86, 106));
         btnLogout.setText("LOGOUT");

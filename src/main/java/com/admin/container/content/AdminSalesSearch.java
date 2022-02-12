@@ -75,17 +75,17 @@ public class AdminSalesSearch extends javax.swing.JPanel {
         ruc_nui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         ruc_nui.setForeground(new java.awt.Color(59, 66, 82));
         ruc_nui.setText("RUC/NUI: ");
-        pnlContent.add(ruc_nui, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
+        pnlContent.add(ruc_nui, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
 
         telefono.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         telefono.setForeground(new java.awt.Color(59, 66, 82));
         telefono.setText("Teléfono: ");
-        pnlContent.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, -1, -1));
+        pnlContent.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, -1, -1));
 
         total.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         total.setForeground(new java.awt.Color(59, 66, 82));
         total.setText("TOTAL:");
-        pnlContent.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, -1, -1));
+        pnlContent.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, -1, -1));
 
         jTable1.setBackground(new java.awt.Color(229, 233, 240));
         jTable1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
@@ -132,12 +132,12 @@ public class AdminSalesSearch extends javax.swing.JPanel {
         ruc_nui_.setBackground(new java.awt.Color(229, 233, 240));
         ruc_nui_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         ruc_nui_.setBorder(null);
-        pnlContent.add(ruc_nui_, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 190, 22));
+        pnlContent.add(ruc_nui_, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 190, 22));
 
         telefono_.setBackground(new java.awt.Color(229, 233, 240));
         telefono_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         telefono_.setBorder(null);
-        pnlContent.add(telefono_, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 50, 190, 22));
+        pnlContent.add(telefono_, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 190, 22));
 
         total_.setBackground(new java.awt.Color(236, 239, 244));
         total_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
@@ -147,7 +147,7 @@ public class AdminSalesSearch extends javax.swing.JPanel {
                 total_ActionPerformed(evt);
             }
         });
-        pnlContent.add(total_, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 130, 22));
+        pnlContent.add(total_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 120, 22));
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 450));
 

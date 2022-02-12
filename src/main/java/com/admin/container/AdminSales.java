@@ -46,7 +46,7 @@ public class AdminSales extends javax.swing.JPanel {
         pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
 
-        btnDetails.setBackground(new java.awt.Color(143, 188, 187));
+        btnDetails.setBackground(new java.awt.Color(163, 190, 140));
         btnDetails.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnDetails.setForeground(new java.awt.Color(76, 86, 106));
         btnDetails.setText("Detalle");

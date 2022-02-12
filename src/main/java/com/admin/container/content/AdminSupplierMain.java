@@ -55,10 +55,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         jTable1.setForeground(new java.awt.Color(76, 86, 106));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Nombre Proveedor", "RUC", "Dirección", "Teléfono", "Correo"
@@ -66,7 +63,8 @@ public class AdminSupplierMain extends javax.swing.JPanel {
         ));
         jTable1.setFocusable(false);
         jTable1.setGridColor(new java.awt.Color(236, 239, 244));
-        jTable1.setSelectionBackground(new java.awt.Color(236, 239, 244));
+        jTable1.setRowHeight(35);
+        jTable1.setSelectionBackground(new java.awt.Color(235, 203, 139));
         jTable1.setSelectionForeground(new java.awt.Color(236, 239, 244));
         jScrollPane1.setViewportView(jTable1);
         jTable1.getTableHeader().setOpaque(false);
@@ -76,7 +74,7 @@ public class AdminSupplierMain extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
-        jButton1.setBackground(new java.awt.Color(143, 188, 187));
+        jButton1.setBackground(new java.awt.Color(163, 190, 140));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(76, 86, 106));
         jButton1.setText("Modificar");

@@ -65,12 +65,12 @@ public class Design {
 
     public static void optionsColor(JPanel panel) {
         bgColorReset = panel.getBackground();
-        panel.setBackground(new java.awt.Color(136, 192, 208));
+        panel.setBackground(new java.awt.Color(129,161,193));
     }
 
     public static void clickOptions(JPanel btnMenu, JPanel btnActive, JPanel mainPanel, JPanel changePanel) {
         btnActive.setBackground(new java.awt.Color(216, 222, 233));
-        btnMenu.setBackground(new java.awt.Color(94, 129, 172));
+        btnMenu.setBackground(new java.awt.Color(143,188,187));
         bgColorReset = btnMenu.getBackground();
         panelChange(mainPanel, changePanel);
     }

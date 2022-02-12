@@ -52,7 +52,7 @@ public class AdminSalesMain extends javax.swing.JPanel {
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setBackground(new java.awt.Color(229, 233, 240));
-        jTable1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Roboto Light", 0, 13)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -61,6 +61,9 @@ public class AdminSalesMain extends javax.swing.JPanel {
                 "ID", "ID.Empleado", "ID.Cliente", "Fecha", "Total Productos", "Subtotal", "Venta Total"
             }
         ));
+        jTable1.setFocusable(false);
+        jTable1.setRowHeight(35);
+        jTable1.setSelectionBackground(new java.awt.Color(235, 203, 139));
         jScrollPane1.setViewportView(jTable1);
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
