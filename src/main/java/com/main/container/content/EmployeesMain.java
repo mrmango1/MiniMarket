@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container.content;
+package com.main.container.content;
 import com.functions.DBConnection;
 import com.functions.DBManagement;
 
@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author mrmango
  */
-public class AdminEmployeesMain extends javax.swing.JPanel {
+public class EmployeesMain extends javax.swing.JPanel {
 
     DBConnection cnt = new DBConnection();
     Connection cn;
@@ -26,8 +26,8 @@ public class AdminEmployeesMain extends javax.swing.JPanel {
     DefaultTableModel model;
     
     final DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-    AdminEmployeesAdd add = new AdminEmployeesAdd();
-    public AdminEmployeesMain() {
+    EmployeesAdd add = new EmployeesAdd();
+    public EmployeesMain() {
         initComponents();
         DBManagement.listEmployee(tblEmployee);
     }

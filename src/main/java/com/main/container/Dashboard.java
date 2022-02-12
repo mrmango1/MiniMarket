@@ -2,23 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container;
+package com.main.container;
 
-import com.admin.container.content.AdminDashboardMain;
+import com.main.container.content.DashboardMain;
 import com.functions.Design;
 
 /**
  *
  * @author mrmango
  */
-public class AdminDashboard extends javax.swing.JPanel {
+public class Dashboard extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminEmployeeMain
      */
-    public AdminDashboard() {
+    public Dashboard() {
         initComponents();
-        Design.panelChange(pnlContent, new AdminDashboardMain());
+        Design.panelChange(pnlContent, new DashboardMain());
     }
 
     /**

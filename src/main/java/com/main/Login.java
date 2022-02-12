@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mainPanel;
+package com.main;
 
-import com.admin.AdminMain;
-import com.employee.EmployeeMain;
+import com.main.AdminMain;
+import com.main.EmployeeMain;
 import com.functions.DBManagement;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Image;

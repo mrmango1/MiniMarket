@@ -2,23 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container;
-import com.admin.container.content.AdminProductsMain;
-import com.admin.container.content.AdminProductsAdd;
+package com.main.container;
+import com.main.container.content.SuppliersMain;
+import com.main.container.content.ProductsAdd;
+import com.main.container.content.SuppliersAdd;
 import com.functions.Design;
 
 /**
  *
  * @author mrmango
  */
-public class AdminProducts extends javax.swing.JPanel {
+public class Suppliers extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminEmployeeMain
      */
-    public AdminProducts() {
+    public Suppliers() {
         initComponents();
-        Design.panelChange(pnlContent, new AdminProductsMain());
+        Design.panelChange(pnlContent, new SuppliersMain());
         btnBack.setVisible(false);
     }
 
@@ -34,7 +35,7 @@ public class AdminProducts extends javax.swing.JPanel {
         pnlContent = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
-        btnAddProducts = new javax.swing.JLabel();
+        btnAddSupplier = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -48,9 +49,8 @@ public class AdminProducts extends javax.swing.JPanel {
         lblTitle.setBackground(new java.awt.Color(46, 52, 64));
         lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(46, 52, 64));
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier.png"))); // NOI18N
-        lblTitle.setText("PRODUCTOS");
+        lblTitle.setText("PROVEEDORES");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 30));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
@@ -62,34 +62,34 @@ public class AdminProducts extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 20, -1));
 
-        btnAddProducts.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnAddProducts.setForeground(new java.awt.Color(46, 52, 64));
-        btnAddProducts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add.png"))); // NOI18N
-        btnAddProducts.setText("Producto");
-        btnAddProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAddSupplier.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnAddSupplier.setForeground(new java.awt.Color(46, 52, 64));
+        btnAddSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
+        btnAddSupplier.setText("Proveedor");
+        btnAddSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddProductsMouseClicked(evt);
+                btnAddSupplierMouseClicked(evt);
             }
         });
-        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 22, 85, 26));
+        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(797, 22, 100, 26));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        btnAddSupplier.setVisible(true);
         btnBack.setVisible(false);
-        btnAddProducts.setVisible(true);
-        Design.panelChange(pnlContent, new AdminProductsMain());
+        Design.panelChange(pnlContent, new SuppliersMain());
     }//GEN-LAST:event_btnBackMouseClicked
 
-    private void btnAddProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddProductsMouseClicked
+    private void btnAddSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSupplierMouseClicked
+        btnAddSupplier.setVisible(false);
         btnBack.setVisible(true);
-        btnAddProducts.setVisible(false);
-        Design.panelChange(pnlContent, new AdminProductsAdd());
-    }//GEN-LAST:event_btnAddProductsMouseClicked
+        Design.panelChange(pnlContent, new SuppliersAdd());
+    }//GEN-LAST:event_btnAddSupplierMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel btnAddProducts;
+    private static javax.swing.JLabel btnAddSupplier;
     private static javax.swing.JLabel btnBack;
     private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;

@@ -2,25 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container;
-import com.admin.container.content.AdminEmployeesMain;
-import com.admin.container.content.AdminEmployeesAdd;
+package com.main.container;
+import com.main.container.content.EmployeesMain;
+import com.main.container.content.EmployeesAdd;
 import com.functions.Design;
 
 /**
  *
  * @author mrmango
  */
-public class AdminEmployee extends javax.swing.JPanel {
+public class Employee extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminEmployeeMain
      */
     
-    public AdminEmployee() {
+    public Employee() {
         initComponents();
         btnBack.setVisible(false);
-        Design.panelChange(pnlContent, new AdminEmployeesMain());
+        Design.panelChange(pnlContent, new EmployeesMain());
     }
 
     /**
@@ -78,13 +78,13 @@ public class AdminEmployee extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(pnlContent, new AdminEmployeesMain());
+        Design.panelChange(pnlContent, new EmployeesMain());
         btnAddEmployee.setVisible(true);
         btnBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
-        Design.panelChange(pnlContent, new AdminEmployeesAdd());
+        Design.panelChange(pnlContent, new EmployeesAdd());
         btnAddEmployee.setVisible(false);
         btnBack.setVisible(true);
     }//GEN-LAST:event_btnAddEmployeeMouseClicked

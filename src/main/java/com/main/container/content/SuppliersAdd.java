@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container.content;
+package com.main.container.content;
 
 import javax.swing.BorderFactory;
 
@@ -10,12 +10,12 @@ import javax.swing.BorderFactory;
  *
  * @author JoaoJV
  */
-public class AdminSuppliersAdd extends javax.swing.JPanel {
+public class SuppliersAdd extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminSuppliersAddSuppliers
      */
-    public AdminSuppliersAdd() {
+    public SuppliersAdd() {
         initComponents();
     }
 

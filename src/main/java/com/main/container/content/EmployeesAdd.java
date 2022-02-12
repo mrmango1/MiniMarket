@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container.content;
+package com.main.container.content;
 
 import com.functions.DBManagement;
 import javax.swing.BorderFactory;
@@ -13,10 +13,11 @@ import javax.swing.JOptionPane;
  *
  * @author mrmango
  */
-public class AdminCustomersAdd extends javax.swing.JPanel {
+public class EmployeesAdd extends javax.swing.JPanel {
 
-    public AdminCustomersAdd() {
+    public EmployeesAdd() {
         initComponents();
+        
     }
 
     /**
@@ -35,13 +36,15 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
         lblAddress = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
         txtNui = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtLastName = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         txtPhone = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        btnAddCustomer = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        btnAddEmployee = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(840, 500));
@@ -54,96 +57,108 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
         lblName.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         lblName.setForeground(new java.awt.Color(76, 86, 106));
         lblName.setText("Nombre:");
-        pnlContent.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, 35));
+        pnlContent.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 30));
 
         lblLastName.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         lblLastName.setForeground(new java.awt.Color(76, 86, 106));
         lblLastName.setText("Apellido:");
-        pnlContent.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, 35));
+        pnlContent.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, 30));
 
         lblNui.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         lblNui.setForeground(new java.awt.Color(76, 86, 106));
         lblNui.setText("NUI:");
-        pnlContent.add(lblNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, 35));
+        pnlContent.add(lblNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, 30));
 
         lblAddress.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         lblAddress.setForeground(new java.awt.Color(76, 86, 106));
         lblAddress.setText("Direccion:");
-        pnlContent.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 35));
+        pnlContent.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 30));
 
         lblPhone.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         lblPhone.setForeground(new java.awt.Color(76, 86, 106));
         lblPhone.setText("Telefono:");
-        pnlContent.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, 35));
+        pnlContent.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, 30));
 
         lblEmail.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(76, 86, 106));
-        lblEmail.setText("Email:");
-        pnlContent.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, 35));
+        lblEmail.setText("E-mail:");
+        pnlContent.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, 30));
+
+        lblPassword.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(76, 86, 106));
+        lblPassword.setText("Contraseña:");
+        pnlContent.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, 30));
 
         txtNui.setBackground(new java.awt.Color(229, 233, 240));
         txtNui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtNui.setForeground(new java.awt.Color(130, 147, 181));
         txtNui.setBorder(null);
-        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, 35));
+        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 190, 30));
         txtNui.setBorder(BorderFactory.createCompoundBorder(txtNui.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtName.setBackground(new java.awt.Color(229, 233, 240));
         txtName.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtName.setForeground(new java.awt.Color(130, 147, 181));
         txtName.setBorder(null);
-        pnlContent.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 190, 35));
+        pnlContent.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 190, 30));
         txtName.setBorder(BorderFactory.createCompoundBorder(txtName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtLastName.setBackground(new java.awt.Color(229, 233, 240));
         txtLastName.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtLastName.setForeground(new java.awt.Color(130, 147, 181));
         txtLastName.setBorder(null);
-        pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 190, 35));
+        pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 190, 30));
         txtLastName.setBorder(BorderFactory.createCompoundBorder(txtLastName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtAddress.setBackground(new java.awt.Color(229, 233, 240));
         txtAddress.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtAddress.setForeground(new java.awt.Color(130, 147, 181));
         txtAddress.setBorder(null);
-        pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 190, 35));
+        pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 190, 30));
         txtAddress.setBorder(BorderFactory.createCompoundBorder(txtAddress.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtPhone.setBackground(new java.awt.Color(229, 233, 240));
         txtPhone.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtPhone.setForeground(new java.awt.Color(130, 147, 181));
         txtPhone.setBorder(null);
-        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 190, 35));
+        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 190, 30));
         txtPhone.setBorder(BorderFactory.createCompoundBorder(txtPhone.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtEmail.setBackground(new java.awt.Color(229, 233, 240));
         txtEmail.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(130, 147, 181));
         txtEmail.setBorder(null);
-        pnlContent.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 190, 35));
+        pnlContent.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 190, 30));
         txtEmail.setBorder(BorderFactory.createCompoundBorder(txtEmail.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 460, 380));
+        txtPassword.setBackground(new java.awt.Color(229, 233, 240));
+        txtPassword.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(130, 147, 181));
+        txtPassword.setBorder(null);
+        pnlContent.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 190, 30));
+        txtPassword.setBorder(BorderFactory.createCompoundBorder(txtPassword.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
-        btnAddCustomer.setBackground(new java.awt.Color(163, 190, 140));
-        btnAddCustomer.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnAddCustomer.setForeground(new java.awt.Color(76, 86, 106));
-        btnAddCustomer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnAddCustomer.setText("Agregar");
-        btnAddCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddCustomer.setOpaque(true);
-        btnAddCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 470, 440));
+
+        btnAddEmployee.setBackground(new java.awt.Color(163, 190, 140));
+        btnAddEmployee.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnAddEmployee.setForeground(new java.awt.Color(76, 86, 106));
+        btnAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAddEmployee.setText("Agregar");
+        btnAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddEmployee.setOpaque(true);
+        btnAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddCustomerMouseClicked(evt);
+                btnAddEmployeeMouseClicked(evt);
             }
         });
-        add(btnAddCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 40));
+        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCustomerMouseClicked
+    private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
         DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
         addEmployee();
-    }//GEN-LAST:event_btnAddCustomerMouseClicked
+    }//GEN-LAST:event_btnAddEmployeeMouseClicked
 
     public void addEmployee() {
         String sqlInsert = "insert into employee (nui,firstname,lastname,address,phone,mail,password,idAdmin)";
@@ -157,12 +172,13 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
         DBManagement.clearTxtFields(pnlContent.getComponents());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnAddCustomer;
+    private javax.swing.JLabel btnAddEmployee;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNui;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JTextField txtAddress;
@@ -170,6 +186,7 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtNui;
+    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhone;
     // End of variables declaration//GEN-END:variables
 }

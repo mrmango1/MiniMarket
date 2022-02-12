@@ -2,21 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container.content;
+package com.main.container.content;
 
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
 /**
  *
- * @author mrmango
+ * @author hp
  */
-public class AdminProductsMain extends javax.swing.JPanel {
+public class CustomersMain extends javax.swing.JPanel {
 
     /**
-     * Creates new form AdminSupplierMain
+     * Creates new form AdminCustomersMain
      */
-    public AdminProductsMain() {
+    public CustomersMain() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class AdminProductsMain extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblProducts = new javax.swing.JTable();
+        tblCustomers = new javax.swing.JTable();
         btnModify = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         pnlSearch = new javax.swing.JPanel();
@@ -43,47 +43,32 @@ public class AdminProductsMain extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlContent.setBackground(new java.awt.Color(229, 233, 240));
-        pnlContent.setPreferredSize(new java.awt.Dimension(740, 370));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblProducts.setAutoCreateRowSorter(true);
-        tblProducts.setBackground(new java.awt.Color(229, 233, 240));
-        tblProducts.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        tblProducts.setForeground(new java.awt.Color(67, 76, 94));
-        tblProducts.setModel(new javax.swing.table.DefaultTableModel(
+        tblCustomers.setBackground(new java.awt.Color(229, 233, 240));
+        tblCustomers.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblCustomers.setForeground(new java.awt.Color(67, 76, 94));
+        tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Stock", "Precio", "PvP", "Descuento", "Descripction", "Categoria"
+                "ID", "Nombre", "NUI", "Direccion", "Telefono", "Email"
             }
         ));
-        tblProducts.setFocusable(false);
-        tblProducts.setGridColor(new java.awt.Color(236, 239, 244));
-        tblProducts.setRowHeight(35);
-        tblProducts.setSelectionBackground(new java.awt.Color(235, 203, 139));
-        tblProducts.setSelectionForeground(new java.awt.Color(236, 239, 244));
-        tblProducts.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblProducts);
-        if (tblProducts.getColumnModel().getColumnCount() > 0) {
-            tblProducts.getColumnModel().getColumn(0).setMinWidth(30);
-            tblProducts.getColumnModel().getColumn(0).setPreferredWidth(35);
-            tblProducts.getColumnModel().getColumn(0).setMaxWidth(50);
-            tblProducts.getColumnModel().getColumn(1).setMinWidth(100);
-            tblProducts.getColumnModel().getColumn(1).setPreferredWidth(150);
-            tblProducts.getColumnModel().getColumn(1).setMaxWidth(200);
-            tblProducts.getColumnModel().getColumn(2).setMaxWidth(60);
-            tblProducts.getColumnModel().getColumn(3).setMaxWidth(55);
-            tblProducts.getColumnModel().getColumn(4).setMaxWidth(60);
-            tblProducts.getColumnModel().getColumn(5).setMaxWidth(50);
-            tblProducts.getColumnModel().getColumn(7).setMinWidth(60);
-            tblProducts.getColumnModel().getColumn(7).setPreferredWidth(80);
-            tblProducts.getColumnModel().getColumn(7).setMaxWidth(100);
+        tblCustomers.setFocusable(false);
+        tblCustomers.setRowHeight(35);
+        tblCustomers.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblCustomers.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblCustomers);
+        if (tblCustomers.getColumnModel().getColumnCount() > 0) {
+            tblCustomers.getColumnModel().getColumn(0).setPreferredWidth(10);
+            tblCustomers.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
-        tblProducts.getTableHeader().setOpaque(false);
-        tblProducts.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
-        tblProducts.getTableHeader().setForeground(new java.awt.Color(46,52,64));
-        tblProducts.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
+        tblCustomers.getTableHeader().setOpaque(false);
+        tblCustomers.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblCustomers.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblCustomers.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
@@ -154,7 +139,7 @@ public class AdminProductsMain extends javax.swing.JPanel {
     private javax.swing.JPanel pnlSearch;
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
-    private javax.swing.JTable tblProducts;
+    private javax.swing.JTable tblCustomers;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,22 +1,23 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package com.admin.container.content;
+package com.main.container.content;
 
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
 /**
  *
- * @author mrmango
+ * @author USER
  */
-public class AdminSuppliersMain extends javax.swing.JPanel {
+public class SalesMain extends javax.swing.JPanel {
 
     /**
-     * Creates new form AdminSupplierMain
+     * Creates new form AdminSalesMain
      */
-    public AdminSuppliersMain() {
+    public SalesMain() {
         initComponents();
     }
 
@@ -31,71 +32,48 @@ public class AdminSuppliersMain extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblSupplier = new javax.swing.JTable();
-        btnModify = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        tblSales = new javax.swing.JTable();
         pnlSearch = new javax.swing.JPanel();
         txtFldSearch = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
+        setMinimumSize(new java.awt.Dimension(810, 490));
+        setPreferredSize(new java.awt.Dimension(810, 490));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlContent.setBackground(new java.awt.Color(229, 233, 240));
-        pnlContent.setPreferredSize(new java.awt.Dimension(740, 370));
+        pnlContent.setMinimumSize(new java.awt.Dimension(454, 239));
+        pnlContent.setPreferredSize(new java.awt.Dimension(454, 239));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblSupplier.setAutoCreateRowSorter(true);
-        tblSupplier.setBackground(new java.awt.Color(229, 233, 240));
-        tblSupplier.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        tblSupplier.setForeground(new java.awt.Color(67, 76, 94));
-        tblSupplier.setModel(new javax.swing.table.DefaultTableModel(
+        tblSales.setBackground(new java.awt.Color(229, 233, 240));
+        tblSales.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblSales.setForeground(new java.awt.Color(67, 76, 94));
+        tblSales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre Proveedor", "RUC", "Dirección", "Teléfono", "Correo"
+                "ID", "ID.Empleado", "ID.Cliente", "Fecha", "Total Productos", "Subtotal", "Venta Total"
             }
         ));
-        tblSupplier.setFocusable(false);
-        tblSupplier.setGridColor(new java.awt.Color(236, 239, 244));
-        tblSupplier.setRowHeight(35);
-        tblSupplier.setSelectionBackground(new java.awt.Color(235, 203, 139));
-        tblSupplier.setSelectionForeground(new java.awt.Color(236, 239, 244));
-        tblSupplier.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblSupplier);
-        tblSupplier.getTableHeader().setOpaque(false);
-        tblSupplier.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
-        tblSupplier.getTableHeader().setForeground(new java.awt.Color(46,52,64));
-        tblSupplier.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
+        tblSales.setFocusable(false);
+        tblSales.setRowHeight(35);
+        tblSales.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblSales.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblSales);
+        tblSales.getTableHeader().setOpaque(false);
+        tblSales.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblSales.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblSales.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
-
-        btnModify.setBackground(new java.awt.Color(163, 190, 140));
-        btnModify.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnModify.setForeground(new java.awt.Color(67, 76, 94));
-        btnModify.setText("Modificar");
-        btnModify.setBorder(null);
-        btnModify.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 120, 40));
-
-        btnDelete.setBackground(new java.awt.Color(208, 135, 112));
-        btnDelete.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(67, 76, 94));
-        btnDelete.setText("Eliminar");
-        btnDelete.setBorder(null);
-        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 120, 40));
 
         pnlSearch.setBackground(new java.awt.Color(136, 192, 208));
         pnlSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -122,24 +100,18 @@ public class AdminSuppliersMain extends javax.swing.JPanel {
         add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
     private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFldSearchActionPerformed
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnModify;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel pnlSearch;
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
-    private javax.swing.JTable tblSupplier;
+    private javax.swing.JTable tblSales;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }

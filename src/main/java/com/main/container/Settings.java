@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container;
+package com.main.container;
 
-import com.mainPanel.Login;
+import com.main.Login;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 

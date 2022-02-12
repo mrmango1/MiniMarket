@@ -2,21 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.admin.container.content;
+package com.main.container.content;
 
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
 /**
  *
- * @author hp
+ * @author mrmango
  */
-public class AdminCustomersMain extends javax.swing.JPanel {
+public class SuppliersMain extends javax.swing.JPanel {
 
     /**
-     * Creates new form AdminCustomersMain
+     * Creates new form AdminSupplierMain
      */
-    public AdminCustomersMain() {
+    public SuppliersMain() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class AdminCustomersMain extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCustomers = new javax.swing.JTable();
+        tblSupplier = new javax.swing.JTable();
         btnModify = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         pnlSearch = new javax.swing.JPanel();
@@ -43,32 +43,32 @@ public class AdminCustomersMain extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlContent.setBackground(new java.awt.Color(229, 233, 240));
+        pnlContent.setPreferredSize(new java.awt.Dimension(740, 370));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblCustomers.setBackground(new java.awt.Color(229, 233, 240));
-        tblCustomers.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        tblCustomers.setForeground(new java.awt.Color(67, 76, 94));
-        tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
+        tblSupplier.setAutoCreateRowSorter(true);
+        tblSupplier.setBackground(new java.awt.Color(229, 233, 240));
+        tblSupplier.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        tblSupplier.setForeground(new java.awt.Color(67, 76, 94));
+        tblSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "NUI", "Direccion", "Telefono", "Email"
+                "ID", "Nombre Proveedor", "RUC", "Dirección", "Teléfono", "Correo"
             }
         ));
-        tblCustomers.setFocusable(false);
-        tblCustomers.setRowHeight(35);
-        tblCustomers.setSelectionBackground(new java.awt.Color(235, 203, 139));
-        tblCustomers.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblCustomers);
-        if (tblCustomers.getColumnModel().getColumnCount() > 0) {
-            tblCustomers.getColumnModel().getColumn(0).setPreferredWidth(10);
-            tblCustomers.getColumnModel().getColumn(4).setPreferredWidth(50);
-        }
-        tblCustomers.getTableHeader().setOpaque(false);
-        tblCustomers.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
-        tblCustomers.getTableHeader().setForeground(new java.awt.Color(46,52,64));
-        tblCustomers.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
+        tblSupplier.setFocusable(false);
+        tblSupplier.setGridColor(new java.awt.Color(236, 239, 244));
+        tblSupplier.setRowHeight(35);
+        tblSupplier.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblSupplier.setSelectionForeground(new java.awt.Color(236, 239, 244));
+        tblSupplier.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblSupplier);
+        tblSupplier.getTableHeader().setOpaque(false);
+        tblSupplier.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
+        tblSupplier.getTableHeader().setForeground(new java.awt.Color(46,52,64));
+        tblSupplier.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
         pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
@@ -139,7 +139,7 @@ public class AdminCustomersMain extends javax.swing.JPanel {
     private javax.swing.JPanel pnlSearch;
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
-    private javax.swing.JTable tblCustomers;
+    private javax.swing.JTable tblSupplier;
     private javax.swing.JTextField txtFldSearch;
     // End of variables declaration//GEN-END:variables
 }
