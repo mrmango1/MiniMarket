@@ -112,15 +112,15 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         add(pnlCustomersResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 400, 430));
 
         title1.setBackground(new java.awt.Color(76, 86, 106));
-        title1.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
-        title1.setForeground(new java.awt.Color(76, 86, 106));
+        title1.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        title1.setForeground(new java.awt.Color(46, 52, 64));
         title1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         title1.setText("Ventas de Hoy");
         add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 150, 20));
 
         title2.setBackground(new java.awt.Color(76, 86, 106));
-        title2.setFont(new java.awt.Font("Roboto Medium", 1, 16)); // NOI18N
-        title2.setForeground(new java.awt.Color(76, 86, 106));
+        title2.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        title2.setForeground(new java.awt.Color(46, 52, 64));
         title2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         title2.setText("Clientes Habituales");
         add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 150, -1));

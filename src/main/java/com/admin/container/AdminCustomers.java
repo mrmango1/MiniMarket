@@ -59,7 +59,7 @@ public class AdminCustomers extends javax.swing.JPanel {
                 btnAddEmployeeMouseClicked(evt);
             }
         });
-        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 25, -1, 20));
+        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 25, -1, 20));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
         btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

@@ -134,7 +134,7 @@ public class AdminMain extends javax.swing.JFrame {
         });
         pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
 
-        userName.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        userName.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         userName.setForeground(new java.awt.Color(46, 52, 64));
         userName.setText("ADMIN");
         pnlStatus.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, 40));

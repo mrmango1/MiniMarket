@@ -51,7 +51,41 @@ public class Design {
             th.start();
         }
     }
-
+    public static void userAnimation(JPanel pnlMenu) {
+        if (pnlMenu.getHeight() == 210) {
+            pnlMenu.setSize(200, 210);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 210; i >= 0; i--) {
+                            Thread.sleep(1);
+                            pnlMenu.setSize(200, i);
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+        } else if (pnlMenu.getHeight() == 0) {
+            pnlMenu.setSize(200, 0);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i <= 210; i++) {
+                            Thread.sleep(1);
+                            pnlMenu.setSize(200, i);
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+        }
+    }
     public static void panelChange(JPanel oldPanel, JPanel newPanel) {
         oldPanel.removeAll();
         oldPanel.add(newPanel);

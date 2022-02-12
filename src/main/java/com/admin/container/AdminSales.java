@@ -48,7 +48,7 @@ public class AdminSales extends javax.swing.JPanel {
 
         btnDetails.setBackground(new java.awt.Color(163, 190, 140));
         btnDetails.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnDetails.setForeground(new java.awt.Color(76, 86, 106));
+        btnDetails.setForeground(new java.awt.Color(67, 76, 94));
         btnDetails.setText("Detalle");
         btnDetails.setBorder(null);
         btnDetails.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

@@ -12,6 +12,7 @@ import com.admin.container.AdminSales;
 import com.admin.container.AdminEmployee;
 import com.functions.Design;
 import com.functions.DBConnection;
+import com.mainPanel.Login;
 
 import javax.swing.*;
 import com.formdev.flatlaf.FlatLightLaf;
@@ -45,12 +46,14 @@ public class EmployeeMain extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
+        pnlUserMenu = new javax.swing.JPanel();
+        btnLogout = new javax.swing.JButton();
         pnlStatus = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         btnMenu = new javax.swing.JButton();
         btnMinimize = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
-        userName = new javax.swing.JLabel();
+        userMenu = new javax.swing.JButton();
         pnlMenu = new javax.swing.JPanel();
         btnDashboard = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -80,6 +83,24 @@ public class EmployeeMain extends javax.swing.JFrame {
         background.setMaximumSize(new java.awt.Dimension(1000, 625));
         background.setMinimumSize(new java.awt.Dimension(1000, 625));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlUserMenu.setBackground(new java.awt.Color(129, 161, 193));
+        pnlUserMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnLogout.setBackground(new java.awt.Color(191, 97, 106));
+        btnLogout.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(76, 86, 106));
+        btnLogout.setText("LOGOUT");
+        btnLogout.setBorder(null);
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+        pnlUserMenu.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 120, 40));
+
+        background.add(pnlUserMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 200, 0));
 
         pnlStatus.setBackground(new java.awt.Color(94, 129, 172));
         pnlStatus.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -134,10 +155,18 @@ public class EmployeeMain extends javax.swing.JFrame {
         });
         pnlStatus.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 40, 40));
 
-        userName.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        userName.setForeground(new java.awt.Color(46, 52, 64));
-        userName.setText("EMPLEADO");
-        pnlStatus.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, 40));
+        userMenu.setBackground(new java.awt.Color(94, 129, 172));
+        userMenu.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        userMenu.setForeground(new java.awt.Color(67, 76, 94));
+        userMenu.setText("EMPLEADO");
+        userMenu.setBorder(null);
+        userMenu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        userMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userMenuMouseClicked(evt);
+            }
+        });
+        pnlStatus.add(userMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 200, 40));
 
         background.add(pnlStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
@@ -295,7 +324,7 @@ public class EmployeeMain extends javax.swing.JFrame {
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
-        btnSettings.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 45));
+        btnSettings.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
 
         jLabel17.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(76, 86, 106));
@@ -451,6 +480,17 @@ public class EmployeeMain extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - yy);
     }//GEN-LAST:event_pnlStatusMouseDragged
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        Login login = new Login();
+        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        login.setVisible(true);
+        SwingUtilities.getWindowAncestor(pnlStatus).dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void userMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMenuMouseClicked
+        Design.userAnimation(pnlUserMenu);
+    }//GEN-LAST:event_userMenuMouseClicked
     public void lookAndFeel() {
         try {
             UIManager.setLookAndFeel(new FlatLightLaf());
@@ -460,7 +500,7 @@ public class EmployeeMain extends javax.swing.JFrame {
     }
 
     public void setUserName(String user) {
-        userName.setText(user);
+        userMenu.setText(user);
     }
     /**
      * @param args the command line arguments
@@ -472,6 +512,7 @@ public class EmployeeMain extends javax.swing.JFrame {
     private javax.swing.JPanel btnCustomers;
     private javax.swing.JPanel btnDashboard;
     private javax.swing.JPanel btnEmployee;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnMinimize;
     private javax.swing.JPanel btnSales;
@@ -492,7 +533,8 @@ public class EmployeeMain extends javax.swing.JFrame {
     private javax.swing.JPanel pnlMain;
     private javax.swing.JPanel pnlMenu;
     private javax.swing.JPanel pnlStatus;
+    private javax.swing.JPanel pnlUserMenu;
     private javax.swing.JLabel title;
-    private javax.swing.JLabel userName;
+    private javax.swing.JButton userMenu;
     // End of variables declaration//GEN-END:variables
 }
