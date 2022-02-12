@@ -30,13 +30,13 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlContent = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
+        lblNui = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
         txtNui = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtLastName = new javax.swing.JTextField();
@@ -54,40 +54,40 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
         pnlContent.setForeground(new java.awt.Color(76, 86, 106));
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel3.setText("Contraseña:");
-        pnlContent.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, 30));
+        lblName.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblName.setForeground(new java.awt.Color(76, 86, 106));
+        lblName.setText("Nombre:");
+        pnlContent.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 30));
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel4.setText("Apellido:");
-        pnlContent.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, 30));
+        lblLastName.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(76, 86, 106));
+        lblLastName.setText("Apellido:");
+        pnlContent.add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, 30));
 
-        jLabel5.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel5.setText("Nombre:");
-        pnlContent.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 30));
+        lblNui.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblNui.setForeground(new java.awt.Color(76, 86, 106));
+        lblNui.setText("NUI:");
+        pnlContent.add(lblNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, 30));
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel6.setText("Direccion:");
-        pnlContent.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 30));
+        lblAddress.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblAddress.setForeground(new java.awt.Color(76, 86, 106));
+        lblAddress.setText("Direccion:");
+        pnlContent.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 30));
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel7.setText("Telefono:");
-        pnlContent.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, 30));
+        lblPhone.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblPhone.setForeground(new java.awt.Color(76, 86, 106));
+        lblPhone.setText("Telefono:");
+        pnlContent.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, 30));
 
-        jLabel8.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel8.setText("Email:");
-        pnlContent.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, 30));
+        lblEmail.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(76, 86, 106));
+        lblEmail.setText("E-mail:");
+        pnlContent.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, 30));
 
-        jLabel9.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel9.setText("NUI:");
-        pnlContent.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, 30));
+        lblPassword.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(76, 86, 106));
+        lblPassword.setText("Contraseña:");
+        pnlContent.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, 30));
 
         txtNui.setBackground(new java.awt.Color(229, 233, 240));
         txtNui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
@@ -173,13 +173,13 @@ public class AdminEmployeeAdd extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAddEmployee;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNui;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblPhone;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtEmail;

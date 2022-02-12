@@ -41,7 +41,7 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
         txtAddress = new javax.swing.JTextField();
         txtPhone = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        btnAddEmployee = new javax.swing.JLabel();
+        btnAddCustomer = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(840, 500));
@@ -125,25 +125,25 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 460, 380));
 
-        btnAddEmployee.setBackground(new java.awt.Color(163, 190, 140));
-        btnAddEmployee.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnAddEmployee.setForeground(new java.awt.Color(76, 86, 106));
-        btnAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnAddEmployee.setText("Agregar");
-        btnAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddEmployee.setOpaque(true);
-        btnAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAddCustomer.setBackground(new java.awt.Color(163, 190, 140));
+        btnAddCustomer.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnAddCustomer.setForeground(new java.awt.Color(76, 86, 106));
+        btnAddCustomer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAddCustomer.setText("Agregar");
+        btnAddCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddCustomer.setOpaque(true);
+        btnAddCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddEmployeeMouseClicked(evt);
+                btnAddCustomerMouseClicked(evt);
             }
         });
-        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 40));
+        add(btnAddCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
+    private void btnAddCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCustomerMouseClicked
         DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
         addEmployee();
-    }//GEN-LAST:event_btnAddEmployeeMouseClicked
+    }//GEN-LAST:event_btnAddCustomerMouseClicked
 
     public void addEmployee() {
         String sqlInsert = "insert into employee (nui,firstname,lastname,address,phone,mail,password,idAdmin)";
@@ -157,7 +157,7 @@ public class AdminCustomersAdd extends javax.swing.JPanel {
         DBManagement.clearTxtFields(pnlContent.getComponents());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnAddEmployee;
+    private javax.swing.JLabel btnAddCustomer;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblLastName;

@@ -142,7 +142,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="search">
+    <Container class="javax.swing.JPanel" name="pnlSearch">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="d0" green="c0" red="88" type="rgb"/>

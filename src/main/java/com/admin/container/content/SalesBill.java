@@ -28,32 +28,32 @@ public class SalesBill extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        pnlContent = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        direccion_ = new javax.swing.JTextField();
-        cliente_ = new javax.swing.JTextField();
-        direccion = new javax.swing.JLabel();
-        cliente = new javax.swing.JLabel();
-        fecha = new javax.swing.JLabel();
-        fecha_ = new javax.swing.JTextField();
-        ruc_nui_ = new javax.swing.JTextField();
-        ruc_nui = new javax.swing.JLabel();
-        telefono = new javax.swing.JLabel();
-        telefono_ = new javax.swing.JTextField();
-        total = new javax.swing.JLabel();
-        total_ = new javax.swing.JTextField();
-        AddButton = new javax.swing.JButton();
+        tblBill = new javax.swing.JTable();
+        lblDate = new javax.swing.JLabel();
+        lblCustomer = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        lblNui = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        lblTotalPrice = new javax.swing.JLabel();
+        txtDate = new javax.swing.JTextField();
+        txtCustomer = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
+        txtNui = new javax.swing.JTextField();
+        txtPhone = new javax.swing.JTextField();
+        txtTotalPrice = new javax.swing.JTextField();
+        btnPrint = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(236, 239, 244));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
+        pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(229, 233, 240));
-        jTable1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblBill.setBackground(new java.awt.Color(229, 233, 240));
+        tblBill.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        tblBill.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -69,144 +69,144 @@ public class SalesBill extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setShowGrid(true);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new java.awt.Color(94,129,172));
-        jTable1.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
+        tblBill.setShowGrid(true);
+        tblBill.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblBill);
+        tblBill.getTableHeader().setOpaque(false);
+        tblBill.getTableHeader().setBackground(new java.awt.Color(94,129,172));
+        tblBill.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 840, 310));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 840, 310));
 
-        direccion_.setEditable(false);
-        direccion_.setBackground(new java.awt.Color(236, 239, 244));
-        direccion_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        direccion_.setBorder(null);
-        jPanel2.add(direccion_, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 190, 22));
+        lblDate.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(59, 66, 82));
+        lblDate.setText("Fecha: ");
+        pnlContent.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        cliente_.setEditable(false);
-        cliente_.setBackground(new java.awt.Color(236, 239, 244));
-        cliente_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        cliente_.setBorder(null);
-        cliente_.addActionListener(new java.awt.event.ActionListener() {
+        lblCustomer.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lblCustomer.setForeground(new java.awt.Color(59, 66, 82));
+        lblCustomer.setText("Cliente: ");
+        pnlContent.add(lblCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
+
+        lblAddress.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lblAddress.setForeground(new java.awt.Color(59, 66, 82));
+        lblAddress.setText("Dirección: ");
+        pnlContent.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
+
+        lblNui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lblNui.setForeground(new java.awt.Color(59, 66, 82));
+        lblNui.setText("RUC/NUI: ");
+        pnlContent.add(lblNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
+
+        lblPhone.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lblPhone.setForeground(new java.awt.Color(59, 66, 82));
+        lblPhone.setText("Teléfono: ");
+        pnlContent.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, -1, -1));
+
+        lblTotalPrice.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lblTotalPrice.setForeground(new java.awt.Color(59, 66, 82));
+        lblTotalPrice.setText("TOTAL:");
+        pnlContent.add(lblTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, -1, -1));
+
+        txtDate.setEditable(false);
+        txtDate.setBackground(new java.awt.Color(236, 239, 244));
+        txtDate.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtDate.setBorder(null);
+        txtDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cliente_ActionPerformed(evt);
+                txtDateActionPerformed(evt);
             }
         });
-        jPanel2.add(cliente_, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 190, 22));
+        pnlContent.add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 190, 22));
 
-        direccion.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        direccion.setForeground(new java.awt.Color(59, 66, 82));
-        direccion.setText("Dirección: ");
-        jPanel2.add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
-
-        cliente.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        cliente.setForeground(new java.awt.Color(59, 66, 82));
-        cliente.setText("Cliente: ");
-        jPanel2.add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
-
-        fecha.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        fecha.setForeground(new java.awt.Color(59, 66, 82));
-        fecha.setText("Fecha: ");
-        jPanel2.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        fecha_.setEditable(false);
-        fecha_.setBackground(new java.awt.Color(236, 239, 244));
-        fecha_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        fecha_.setBorder(null);
-        fecha_.addActionListener(new java.awt.event.ActionListener() {
+        txtCustomer.setEditable(false);
+        txtCustomer.setBackground(new java.awt.Color(236, 239, 244));
+        txtCustomer.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtCustomer.setBorder(null);
+        txtCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fecha_ActionPerformed(evt);
+                txtCustomerActionPerformed(evt);
             }
         });
-        jPanel2.add(fecha_, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 190, 22));
+        pnlContent.add(txtCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 190, 22));
 
-        ruc_nui_.setEditable(false);
-        ruc_nui_.setBackground(new java.awt.Color(236, 239, 244));
-        ruc_nui_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        ruc_nui_.setBorder(null);
-        jPanel2.add(ruc_nui_, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 190, 22));
+        txtAddress.setEditable(false);
+        txtAddress.setBackground(new java.awt.Color(236, 239, 244));
+        txtAddress.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtAddress.setBorder(null);
+        pnlContent.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 190, 22));
 
-        ruc_nui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        ruc_nui.setForeground(new java.awt.Color(59, 66, 82));
-        ruc_nui.setText("RUC/NUI: ");
-        jPanel2.add(ruc_nui, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
+        txtNui.setEditable(false);
+        txtNui.setBackground(new java.awt.Color(236, 239, 244));
+        txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtNui.setBorder(null);
+        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 190, 22));
 
-        telefono.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        telefono.setForeground(new java.awt.Color(59, 66, 82));
-        telefono.setText("Teléfono: ");
-        jPanel2.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, -1, -1));
+        txtPhone.setEditable(false);
+        txtPhone.setBackground(new java.awt.Color(236, 239, 244));
+        txtPhone.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtPhone.setBorder(null);
+        pnlContent.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 190, 22));
 
-        telefono_.setEditable(false);
-        telefono_.setBackground(new java.awt.Color(236, 239, 244));
-        telefono_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        telefono_.setBorder(null);
-        jPanel2.add(telefono_, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 190, 22));
-
-        total.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        total.setForeground(new java.awt.Color(59, 66, 82));
-        total.setText("TOTAL:");
-        jPanel2.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, -1, -1));
-
-        total_.setBackground(new java.awt.Color(236, 239, 244));
-        total_.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        total_.setBorder(null);
-        total_.addActionListener(new java.awt.event.ActionListener() {
+        txtTotalPrice.setBackground(new java.awt.Color(236, 239, 244));
+        txtTotalPrice.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtTotalPrice.setBorder(null);
+        txtTotalPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                total_ActionPerformed(evt);
+                txtTotalPriceActionPerformed(evt);
             }
         });
-        jPanel2.add(total_, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 120, 22));
+        pnlContent.add(txtTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 120, 22));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 450));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 450));
 
-        AddButton.setBackground(new java.awt.Color(180, 142, 173));
-        AddButton.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        AddButton.setForeground(new java.awt.Color(67, 76, 94));
-        AddButton.setText("IMPRIMIR");
-        AddButton.setBorder(null);
-        AddButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        AddButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnPrint.setBackground(new java.awt.Color(180, 142, 173));
+        btnPrint.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        btnPrint.setForeground(new java.awt.Color(67, 76, 94));
+        btnPrint.setText("IMPRIMIR");
+        btnPrint.setBorder(null);
+        btnPrint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPrint.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AddButtonMouseClicked(evt);
+                btnPrintMouseClicked(evt);
             }
         });
-        add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
+        add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cliente_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cliente_ActionPerformed
+    private void txtCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cliente_ActionPerformed
+    }//GEN-LAST:event_txtCustomerActionPerformed
 
-    private void fecha_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecha_ActionPerformed
+    private void txtDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fecha_ActionPerformed
+    }//GEN-LAST:event_txtDateActionPerformed
 
-    private void total_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_total_ActionPerformed
+    private void txtTotalPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalPriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_total_ActionPerformed
+    }//GEN-LAST:event_txtTotalPriceActionPerformed
 
-    private void AddButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddButtonMouseClicked
+    private void btnPrintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrintMouseClicked
         JOptionPane.showMessageDialog(null, "Funcion en desarrollo");
-    }//GEN-LAST:event_AddButtonMouseClicked
+    }//GEN-LAST:event_btnPrintMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddButton;
-    private javax.swing.JLabel cliente;
-    private javax.swing.JTextField cliente_;
-    private javax.swing.JLabel direccion;
-    private javax.swing.JTextField direccion_;
-    private javax.swing.JLabel fecha;
-    private javax.swing.JTextField fecha_;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton btnPrint;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel ruc_nui;
-    private javax.swing.JTextField ruc_nui_;
-    private javax.swing.JLabel telefono;
-    private javax.swing.JTextField telefono_;
-    private javax.swing.JLabel total;
-    private javax.swing.JTextField total_;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblCustomer;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblNui;
+    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblTotalPrice;
+    private javax.swing.JPanel pnlContent;
+    private javax.swing.JTable tblBill;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtCustomer;
+    private javax.swing.JTextField txtDate;
+    private javax.swing.JTextField txtNui;
+    private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtTotalPrice;
     // End of variables declaration//GEN-END:variables
 }

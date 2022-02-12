@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.admin.container;
-import com.admin.container.content.AdminSupplierMain;
+import com.admin.container.content.AdminSuppliersMain;
 import com.admin.container.content.AdminSuppliersAddProducts;
 import com.admin.container.content.AdminSuppliersAddSuppliers;
 import com.functions.Design;
@@ -19,7 +19,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
      */
     public AdminSuppliers() {
         initComponents();
-        Design.panelChange(pnlContent, new AdminSupplierMain());
+        Design.panelChange(pnlContent, new AdminSuppliersMain());
         btnBack.setVisible(false);
     }
 
@@ -92,7 +92,7 @@ public class AdminSuppliers extends javax.swing.JPanel {
         btnAddSupplier.setVisible(true);
         btnBack.setVisible(false);
         btnAddProducts.setVisible(true);
-        Design.panelChange(pnlContent, new AdminSupplierMain());
+        Design.panelChange(pnlContent, new AdminSuppliersMain());
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void btnAddSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSupplierMouseClicked

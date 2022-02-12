@@ -35,8 +35,8 @@ public class AdminDashboardMain extends javax.swing.JPanel {
         pnlCustomersResume = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCustomerResume = new javax.swing.JTable();
-        title1 = new javax.swing.JLabel();
-        title2 = new javax.swing.JLabel();
+        lblTitle1 = new javax.swing.JLabel();
+        lblTitle2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,30 +111,30 @@ public class AdminDashboardMain extends javax.swing.JPanel {
 
         add(pnlCustomersResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 400, 430));
 
-        title1.setBackground(new java.awt.Color(76, 86, 106));
-        title1.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        title1.setForeground(new java.awt.Color(46, 52, 64));
-        title1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title1.setText("Ventas de Hoy");
-        add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 150, 20));
+        lblTitle1.setBackground(new java.awt.Color(76, 86, 106));
+        lblTitle1.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle1.setText("Ventas de Hoy");
+        add(lblTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 150, 20));
 
-        title2.setBackground(new java.awt.Color(76, 86, 106));
-        title2.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        title2.setForeground(new java.awt.Color(46, 52, 64));
-        title2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title2.setText("Clientes Habituales");
-        add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 150, -1));
+        lblTitle2.setBackground(new java.awt.Color(76, 86, 106));
+        lblTitle2.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        lblTitle2.setForeground(new java.awt.Color(46, 52, 64));
+        lblTitle2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle2.setText("Clientes Habituales");
+        add(lblTitle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblTitle1;
+    private javax.swing.JLabel lblTitle2;
     private javax.swing.JPanel pnlCustomersResume;
     private javax.swing.JPanel pnlSalesResume;
     private javax.swing.JTable tblCustomerResume;
     private javax.swing.JTable tblSalesResume;
-    private javax.swing.JLabel title1;
-    private javax.swing.JLabel title2;
     // End of variables declaration//GEN-END:variables
 }
