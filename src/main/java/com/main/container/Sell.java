@@ -4,8 +4,6 @@
  */
 package com.main.container;
 
-import com.main.container.content.SalesBill;
-import com.main.container.content.SalesMain;
 import com.functions.Design;
 import com.main.container.content.SellMain;
 
