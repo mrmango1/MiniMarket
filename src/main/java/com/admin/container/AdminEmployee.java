@@ -66,14 +66,14 @@ public class AdminEmployee extends javax.swing.JPanel {
         btnAddEmployee.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnAddEmployee.setForeground(new java.awt.Color(46, 52, 64));
         btnAddEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
-        btnAddEmployee.setText("Add Employee");
+        btnAddEmployee.setText("Empleado");
         btnAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddEmployeeMouseClicked(evt);
             }
         });
-        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 25, 120, 20));
+        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 25, 90, 20));
 
         getAccessibleContext().setAccessibleName("pnlMain");
     }// </editor-fold>//GEN-END:initComponents

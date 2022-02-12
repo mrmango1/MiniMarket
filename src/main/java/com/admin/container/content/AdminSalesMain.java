@@ -64,6 +64,7 @@ public class AdminSalesMain extends javax.swing.JPanel {
         jTable1.setFocusable(false);
         jTable1.setRowHeight(35);
         jTable1.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));

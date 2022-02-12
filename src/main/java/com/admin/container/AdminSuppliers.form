@@ -72,7 +72,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/add_person.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="A&#xf1;adir Proveedores"/>
+        <Property name="text" type="java.lang.String" value="Proveedor"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
@@ -82,7 +82,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="590" y="20" width="155" height="20"/>
+          <AbsoluteConstraints x="680" y="22" width="100" height="26"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -97,7 +97,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/add.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="A&#xf1;adir Productos"/>
+        <Property name="text" type="java.lang.String" value="Producto"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
@@ -107,7 +107,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="750" y="17" width="140" height="26"/>
+          <AbsoluteConstraints x="805" y="22" width="85" height="26"/>
         </Constraint>
       </Constraints>
     </Component>

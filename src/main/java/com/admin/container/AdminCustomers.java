@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.admin.container;
+import com.admin.container.content.AdminCustomersAdd;
 import com.admin.container.content.AdminCustomersMain;
 import com.functions.Design;
 /**
@@ -30,6 +31,8 @@ public class AdminCustomers extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
+        btnAddEmployee = new javax.swing.JLabel();
+        btnBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -45,11 +48,46 @@ public class AdminCustomers extends javax.swing.JPanel {
         Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
         Title.setText("CLIENTES");
         add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
+
+        btnAddEmployee.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnAddEmployee.setForeground(new java.awt.Color(46, 52, 64));
+        btnAddEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
+        btnAddEmployee.setText("Cliente");
+        btnAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddEmployeeMouseClicked(evt);
+            }
+        });
+        add(btnAddEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 25, -1, 20));
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, -1, 20));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
+        Design.panelChange(pnlContent, new AdminCustomersAdd());
+        btnAddEmployee.setVisible(false);
+        btnBack.setVisible(true);
+    }//GEN-LAST:event_btnAddEmployeeMouseClicked
+
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        Design.panelChange(pnlContent, new AdminCustomersMain());
+        btnAddEmployee.setVisible(true);
+        btnBack.setVisible(false);
+    }//GEN-LAST:event_btnBackMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JLabel Title;
+    private static javax.swing.JLabel btnAddEmployee;
+    private static javax.swing.JLabel btnBack;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

@@ -59,26 +59,26 @@ public class AdminSuppliers extends javax.swing.JPanel {
         btnAddSupplier.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnAddSupplier.setForeground(new java.awt.Color(46, 52, 64));
         btnAddSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
-        btnAddSupplier.setText("Añadir Proveedores");
+        btnAddSupplier.setText("Proveedor");
         btnAddSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAddSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddSupplierMouseClicked(evt);
             }
         });
-        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 155, 20));
+        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 22, 100, 26));
 
         btnAddProducts.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnAddProducts.setForeground(new java.awt.Color(46, 52, 64));
         btnAddProducts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add.png"))); // NOI18N
-        btnAddProducts.setText("Añadir Productos");
+        btnAddProducts.setText("Producto");
         btnAddProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAddProducts.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddProductsMouseClicked(evt);
             }
         });
-        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 17, 140, 26));
+        add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 22, 85, 26));
 
         jLabel4.setBackground(new java.awt.Color(46, 52, 64));
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N

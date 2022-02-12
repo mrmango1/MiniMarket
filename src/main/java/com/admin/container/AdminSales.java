@@ -4,8 +4,8 @@
  */
 package com.admin.container;
 
+import com.admin.container.content.AdminSalesBill;
 import com.admin.container.content.AdminSalesMain;
-import com.admin.container.content.AdminSalesSearch;
 import com.functions.Design;
 
 /**
@@ -79,7 +79,7 @@ public class AdminSales extends javax.swing.JPanel {
     private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
         btnDetails.setVisible(false);
         btnBack.setVisible(true);
-        Design.panelChange(pnlContent, new AdminSalesSearch());
+        Design.panelChange(pnlContent, new AdminSalesBill());
     }//GEN-LAST:event_btnDetailsActionPerformed
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
