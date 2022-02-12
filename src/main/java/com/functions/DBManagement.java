@@ -26,7 +26,8 @@ public class DBManagement {
     static int id;
     static String userName;
     static DefaultTableModel model;
-
+    
+//Login methods
     public static void setUserName(String name) {
         userName = name;
     }
@@ -60,7 +61,7 @@ public class DBManagement {
         }
         return 0;
     }
-
+//Consultar y Actulizar DB
     public static String getTxtFromTxtFields(Component[] pnlContent) {
         String sqlValue = "";
         int numOfTxtFields = 0, count = 0;
@@ -103,7 +104,7 @@ public class DBManagement {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-
+    
     public static void listEmployee(JTable tblEmployee) {
         String sql = "select * from employee";
         try {
@@ -157,6 +158,8 @@ public class DBManagement {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
+        model.setRowCount(0);
+        listEmployee(tblEmployee);
     }
 
     public static void deleteEmployee(JTable tblEmployee) {
@@ -175,6 +178,8 @@ public class DBManagement {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
+        model.setRowCount(0);
+        listEmployee(tblEmployee);
     }
 
     public static int getID(int row, JTable tblEmployee) {

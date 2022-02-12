@@ -3,30 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.main.container.content;
-import com.functions.DBConnection;
 import com.functions.DBManagement;
 
 import java.awt.Dimension;
-import java.sql.*;
 import javax.swing.BorderFactory;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author mrmango
  */
 public class EmployeesMain extends javax.swing.JPanel {
-
-    DBConnection cnt = new DBConnection();
-    Connection cn;
-    Statement st;
-    ResultSet rs;
-    int id;
-    DefaultTableModel model;
     
-    final DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-    EmployeesAdd add = new EmployeesAdd();
     public EmployeesMain() {
         initComponents();
         DBManagement.listEmployee(tblEmployee);
@@ -156,98 +143,16 @@ public class EmployeesMain extends javax.swing.JPanel {
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         DBManagement.modifyEmployee(tblEmployee);
-        DBManagement.clearTbl();
-        DBManagement.listEmployee(tblEmployee);
     }//GEN-LAST:event_btnModifyActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         DBManagement.deleteEmployee(tblEmployee);
-        DBManagement.clearTbl();
-        DBManagement.listEmployee(tblEmployee);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFldSearchActionPerformed
 
-    public void listEmployee(){
-        String sql="select * from employee";
-        try{
-            cn=cnt.getConnection();
-            st=cn.createStatement();
-            rs=st.executeQuery(sql);
-            Object[] employee = new Object[6];
-            model = (DefaultTableModel)tblEmployee.getModel();
-            while(rs.next()){
-                employee[0]=rs.getString("idEmployee");
-                employee[1]=rs.getString("firstName")+" "+rs.getString("lastName");
-                employee[2]=rs.getString("nui");
-                employee[3]=rs.getString("address");
-                employee[4]=rs.getString("phone");
-                employee[5]=rs.getString("mail");
-                model.addRow(employee);
-            }
-            tblEmployee.setModel(model);
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
-    public void modifyEmployee(){
-        String[] fullNameArray;
-        String fullName="",name="",lastName="", nui="", address="", phone="", email="";
-        int row = tblEmployee.getSelectedRow();
-        if(row==-1){
-            JOptionPane.showMessageDialog(null, "Seleccione un Empleado");
-        }else{
-            id=Integer.parseInt((String)tblEmployee.getValueAt(row,0).toString());
-            fullName=(String)tblEmployee.getValueAt(row, 1);
-            nui=(String)tblEmployee.getValueAt(row, 2);
-            address=(String)tblEmployee.getValueAt(row, 3);
-            phone=(String)tblEmployee.getValueAt(row, 4);
-            email=(String)tblEmployee.getValueAt(row, 5);
-        }
-        fullNameArray=fullName.split(" ");
-        name=fullNameArray[0];
-        lastName=fullNameArray[1];
-        String sql = "update employee set nui='" + nui + "',firstName='" + name + "',lastName='" + lastName + "',address='" + address + "',phone='" + phone + "',mail='" + email + "' where idEmployee="+id;
-        if (name.equals("") || lastName.equals("") || nui.equals("") || address.equals("") || phone.equals("")) {
-            JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
-        } else {
-            try {
-                cn = cnt.getConnection();
-                st = cn.createStatement();
-                st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Empleado Actualizado");
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-        }
-    }
-    public void deleteEmployee(){
-        int row = tblEmployee.getSelectedRow();
-        id = getID(row);
-        if (row==-1) {
-            JOptionPane.showMessageDialog(null, "Debe seleccionar un Empleado");
-        } else {
-            String sql="delete from employee where idEmployee="+id;
-            try {
-                cn = cnt.getConnection();
-                st = cn.createStatement();
-                st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Empleado Eliminado");
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-        }
-    }
-    public int getID(int row){
-        id=Integer.parseInt((String)tblEmployee.getValueAt(row,0).toString());
-        return id;
-    }
-    public void clearTbl(){
-        model.setRowCount(0);
-        listEmployee();
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnModify;
