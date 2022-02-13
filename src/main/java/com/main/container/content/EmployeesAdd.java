@@ -16,8 +16,8 @@ public class EmployeesAdd extends javax.swing.JPanel {
 
     public EmployeesAdd() {
         initComponents();
-        
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,14 +160,14 @@ public class EmployeesAdd extends javax.swing.JPanel {
 
     public void addEmployee() {
         String sqlInsert = "insert into employee (nui,firstname,lastname,address,phone,mail,password,idAdmin)";
-        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents())+ ",'1');";
-        String sql=sqlInsert+sqlInto;
-        if (DBManagement.getTxtFromTxtFields(pnlContent.getComponents()).equals("")) {
+        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents()) + ",'1');";
+        String sql = sqlInsert + sqlInto;
+        if (sqlInto.equals(",'1');")) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
             DBManagement.pushData2DB(sql, "Usuario Agregado");
+            DBManagement.clearTxtFields(pnlContent.getComponents());
         }
-        DBManagement.clearTxtFields(pnlContent.getComponents());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAddEmployee;

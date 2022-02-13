@@ -7,6 +7,7 @@ package com.functions;
 import java.awt.Component;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -23,10 +24,13 @@ public class DBManagement {
     static Connection cn;
     static Statement st;
     static ResultSet rs;
-    static int id;
-    static String userName;
+    static ResultSetMetaData rsmd;
+    static String id, userName, tableNameDB, sqlQuery;
     static DefaultTableModel model;
-    
+    static Object[] table;
+    static String[] queryHeader;
+    static boolean completeName;
+
 //Login methods
     public static void setUserName(String name) {
         userName = name;
@@ -62,6 +66,7 @@ public class DBManagement {
         return 0;
     }
 //Consultar y Actulizar DB
+
     public static String getTxtFromTxtFields(Component[] pnlContent) {
         String sqlValue = "";
         int numOfTxtFields = 0, count = 0;
@@ -94,33 +99,50 @@ public class DBManagement {
         }
     }
 
-    public static void pushData2DB(String sql, String message) {
+    public static void pushData2DB(String sqlAdd, String message) {
         try {
             cn = cnt.getConnection();
             st = cn.createStatement();
-            st.executeUpdate(sql);
+            st.executeUpdate(sqlAdd);
             JOptionPane.showMessageDialog(null, message);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    
-    public static void listEmployee(JTable tblEmployee) {
-        String sql = "select * from employee";
+
+    public static void getModel(JTable tblEmployee) {
         try {
             cn = cnt.getConnection();
             st = cn.createStatement();
-            rs = st.executeQuery(sql);
-            Object[] employee = new Object[6];
+            rs = st.executeQuery(sqlQuery);
+            rsmd = rs.getMetaData();
+            tableNameDB = rsmd.getTableName(1);
+            queryHeader = new String[rsmd.getColumnCount()];
+            for (int i = 0; i < rsmd.getColumnCount(); i++) {
+                queryHeader[i] = rsmd.getColumnName(i + 1);
+            }
+            table = new Object[queryHeader.length - 1];
             model = (DefaultTableModel) tblEmployee.getModel();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    public static void showQueryInTable(JTable tblEmployee, String __sqlQuery, boolean __completeName) {
+        sqlQuery = __sqlQuery;
+        completeName = __completeName;
+        try {
+            getModel(tblEmployee);
             while (rs.next()) {
-                employee[0] = rs.getString("idEmployee");
-                employee[1] = rs.getString("firstName") + " " + rs.getString("lastName");
-                employee[2] = rs.getString("nui");
-                employee[3] = rs.getString("address");
-                employee[4] = rs.getString("phone");
-                employee[5] = rs.getString("mail");
-                model.addRow(employee);
+                for (int i = 0, a = 0; i < queryHeader.length - 1; i++) {
+                    if (i == 1 && completeName) {
+                        table[i] = rs.getString(queryHeader[a]) + " " + rs.getString(queryHeader[++a]);
+                    } else {
+                        table[i] = rs.getString(queryHeader[a]);
+                    }
+                    a++;
+                }
+                model.addRow(table);
             }
             tblEmployee.setModel(model);
         } catch (Exception e) {
@@ -128,19 +150,29 @@ public class DBManagement {
         }
     }
 
-    public static void modifyEmployee(JTable tblEmployee) {
+    public static void modifySimpleTable(JTable tblEmployee) {
         String[] fullNameArray;
         String fullName = "", name = "", lastName = "", nui = "", address = "", phone = "", email = "";
         int row = tblEmployee.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione un Empleado");
         } else {
-            id = Integer.parseInt((String) tblEmployee.getValueAt(row, 0).toString());
+            id = (String) tblEmployee.getValueAt(row, 0);
             fullName = (String) tblEmployee.getValueAt(row, 1);
             nui = (String) tblEmployee.getValueAt(row, 2);
             address = (String) tblEmployee.getValueAt(row, 3);
             phone = (String) tblEmployee.getValueAt(row, 4);
             email = (String) tblEmployee.getValueAt(row, 5);
+        }
+        String sqlQuery = "";
+        String[] abc = {"idEmployee", "nui", "firstname", "lastName", "address", "phone", "mail"};
+        for (int i = 0; i < tblEmployee.getRowCount(); i++) {
+            if (i < tblEmployee.getRowCount() - 1) {
+                sqlQuery += abc[i + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "',";
+            } else {
+                sqlQuery += abc[i + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "'";
+            }
+
         }
         fullNameArray = fullName.split(" ");
         name = fullNameArray[0];
@@ -159,35 +191,26 @@ public class DBManagement {
             }
         }
         model.setRowCount(0);
-        listEmployee(tblEmployee);
     }
 
-    public static void deleteEmployee(JTable tblEmployee) {
+    public static void deleteDataFromDB(JTable tblEmployee) {
         int row = tblEmployee.getSelectedRow();
-        id = getID(row, tblEmployee);
+        id = (String) tblEmployee.getValueAt(row, 0);
         if (row == -1) {
-            JOptionPane.showMessageDialog(null, "Debe seleccionar un Empleado");
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una fila");
         } else {
-            String sql = "delete from employee where idEmployee=" + id;
+            String sqlDelete = "delete from " + tableNameDB + " where " + queryHeader[0] + "=" + id;
+            System.out.println(sqlDelete);
             try {
                 cn = cnt.getConnection();
                 st = cn.createStatement();
-                st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Empleado Eliminado");
+                st.executeUpdate(sqlDelete);
+                JOptionPane.showMessageDialog(null, "Eliminado Correctamente");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
         model.setRowCount(0);
-        listEmployee(tblEmployee);
-    }
-
-    public static int getID(int row, JTable tblEmployee) {
-        id = Integer.parseInt((String) tblEmployee.getValueAt(row, 0).toString());
-        return id;
-    }
-
-    public static void clearTbl() {
-        model.setRowCount(0);
+        showQueryInTable(tblEmployee, sqlQuery, completeName);
     }
 }
