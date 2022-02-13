@@ -27,7 +27,7 @@ public class DBManagement {
     static ResultSetMetaData rsmd;
     static String id, userName, tableNameDB, sqlQuery;
     static DefaultTableModel model;
-    static Object[] table;
+    static Object[] object;
     static String[] queryHeader;
     static boolean completeName, correctDataToModify = true;
 
@@ -110,7 +110,7 @@ public class DBManagement {
         }
     }
 
-    public static void getModel(JTable tblEmployee) {
+    public static void getModel(JTable table) {
         try {
             cn = cnt.getConnection();
             st = cn.createStatement();
@@ -125,68 +125,67 @@ public class DBManagement {
                 }
                 queryHeader[i] = rsmd.getColumnName(i + 1);
             }
-            table = new Object[queryHeader.length - 1];
-            model = (DefaultTableModel) tblEmployee.getModel();
+            object = new Object[queryHeader.length - 1];
+            model = (DefaultTableModel) table.getModel();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
 
-    public static void showQueryInTable(JTable tblEmployee, String __sqlQuery) {
+    public static void showQueryInTable(JTable table, String __sqlQuery) {
         sqlQuery = __sqlQuery;
         try {
-            getModel(tblEmployee);
+            getModel(table);
             while (rs.next()) {
                 for (int i = 0, a = 0; i < queryHeader.length - 1; i++) {
                     if (i == 1 && completeName) {
-                        table[i] = rs.getString(queryHeader[a]) + " " + rs.getString(queryHeader[++a]);
+                        object[i] = rs.getString(queryHeader[a]) + " " + rs.getString(queryHeader[++a]);
                     } else {
-                        table[i] = rs.getString(queryHeader[a]);
+                        object[i] = rs.getString(queryHeader[a]);
                     }
                     a++;
                 }
-                model.addRow(table);
+                model.addRow(object);
             }
-            tblEmployee.setModel(model);
+            table.setModel(model);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
 
-    public static void modifySimpleTable(JTable tblEmployee) {
+    public static void modifySimpleTable(JTable table) {
         String[] fullNameArray;
         String sqlData = "";
-        int row = tblEmployee.getSelectedRow();
+        int row = table.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione un Fila");
         } else {
-            id = (String) tblEmployee.getValueAt(row, 0);
-            for (int i = 0, a = 0; i < tblEmployee.getRowCount(); i++) {
-                if(((String) tblEmployee.getValueAt(row, i + 1)).equals("")){
+            id = (String) table.getValueAt(row, 0);
+            for (int i = 1, a = 1; i < table.getColumnCount(); i++) {
+                if(((String) table.getValueAt(row, i)).equals("")){
                     correctDataToModify=false;
                     break;
                 }
-                if (i < tblEmployee.getRowCount() - 1) {
-                    if (completeName & queryHeader[i+1].equals("firstName")) {
-                        fullNameArray = ((String) tblEmployee.getValueAt(row, i + 1)).split(" ");
+                if (i < (table.getColumnCount()-1)) {
+                    if (completeName & queryHeader[i].equals("firstName")) {
+                        fullNameArray = ((String) table.getValueAt(row, i)).split(" ");
                         if(fullNameArray.length!=2){
                             correctDataToModify=false;
                             break;
                         }
-                        sqlData += queryHeader[a + 1] + "='" + fullNameArray[0] + "',";
+                        sqlData += queryHeader[a] + "='" + fullNameArray[0] + "',";
                         a++;
-                        sqlData += queryHeader[a + 1] + "='" + fullNameArray[1] + "',";
+                        sqlData += queryHeader[a] + "='" + fullNameArray[1] + "',";
                     } else {
-                        sqlData += queryHeader[a + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "',";
+                        sqlData += queryHeader[a] + "='" + (String) table.getValueAt(row, i) + "',";
                     }
                 } else {
-                    sqlData += queryHeader[a + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "'";
+                    sqlData += queryHeader[a] + "='" + (String) table.getValueAt(row, i) + "'";
                 }
                 a++;
             }
         }
         String sqlUpdate = "update employee set " + sqlData + " where "+ queryHeader[0] + "="+id;
-        System.out.println(sqlUpdate);
         if (!correctDataToModify) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
@@ -200,12 +199,12 @@ public class DBManagement {
             }
         }
         model.setRowCount(0);
-        showQueryInTable(tblEmployee, sqlQuery);
+        showQueryInTable(table, sqlQuery);
     }
 
-    public static void deleteDataFromDB(JTable tblEmployee) {
-        int row = tblEmployee.getSelectedRow();
-        id = (String) tblEmployee.getValueAt(row, 0);
+    public static void deleteDataFromDB(JTable table) {
+        int row = table.getSelectedRow();
+        id = (String) table.getValueAt(row, 0);
         if (row == -1) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una fila");
         } else {
@@ -221,6 +220,6 @@ public class DBManagement {
             }
         }
         model.setRowCount(0);
-        showQueryInTable(tblEmployee, sqlQuery);
+        showQueryInTable(table, sqlQuery);
     }
 }
