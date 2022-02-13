@@ -3,10 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.main;
-
-import com.main.AdminMain;
-import com.main.EmployeeMain;
 import com.functions.DBManagement;
+
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -24,12 +22,9 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-
     public Login() {
         initComponents();
-        logoQmet();
-        setResizable(false);
-        setLocationRelativeTo(null);
+        customInitComponents();
     }
 
     /**
@@ -54,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         pnlPassword = new javax.swing.JPanel();
         pwdUser = new javax.swing.JPasswordField();
         pnlLogo = new javax.swing.JPanel();
-        cbViewPwd = new javax.swing.JCheckBox();
+        viewPwd = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(236, 239, 244));
@@ -163,15 +158,15 @@ public class Login extends javax.swing.JFrame {
 
         pnlBg.add(pnlLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 300, 190));
 
-        cbViewPwd.setBackground(new java.awt.Color(229, 233, 240));
-        cbViewPwd.setBorder(null);
-        cbViewPwd.setOpaque(true);
-        cbViewPwd.addActionListener(new java.awt.event.ActionListener() {
+        viewPwd.setBackground(new java.awt.Color(229, 233, 240));
+        viewPwd.setBorder(null);
+        viewPwd.setOpaque(true);
+        viewPwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbViewPwdActionPerformed(evt);
+                viewPwdActionPerformed(evt);
             }
         });
-        pnlBg.add(cbViewPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, -1, -1));
+        pnlBg.add(viewPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -208,32 +203,28 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_pwdUserFocusLost
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        AdminMain adminMain = new AdminMain();
-        EmployeeMain employeeMain = new EmployeeMain();
-        if(DBManagement.login(txtUser.getText(), pwdUser.getText())==1){
-            adminMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Admin adminMain = new Admin();
+        Employee employeeMain = new Employee();
+        if (DBManagement.login(txtUser.getText(), pwdUser.getText()) == 1) {
             adminMain.setUserName(DBManagement.getUserName());
             adminMain.setVisible(true);
             dispose();
-        }
-        else if(DBManagement.login(txtUser.getText(), pwdUser.getText())==2){
-            employeeMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        } else if (DBManagement.login(txtUser.getText(), pwdUser.getText()) == 2) {
             employeeMain.setUserName(DBManagement.getUserName());
             employeeMain.setVisible(true);
             dispose();
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto");
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void cbViewPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbViewPwdActionPerformed
-        if(cbViewPwd.isSelected()){
-            pwdUser.setEchoChar((char)0);
-        }else{
+    private void viewPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPwdActionPerformed
+        if (viewPwd.isSelected()) {
+            pwdUser.setEchoChar((char) 0);
+        } else {
             pwdUser.setEchoChar('*');
         }
-    }//GEN-LAST:event_cbViewPwdActionPerformed
+    }//GEN-LAST:event_viewPwdActionPerformed
     public void logoQmet() {
         JLabel lgQmet = new JLabel();
         lgQmet.setBounds(0, 0, 280, 140);
@@ -241,6 +232,13 @@ public class Login extends javax.swing.JFrame {
         lgQmet.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(lgQmet.getWidth(), lgQmet.getHeight(), Image.SCALE_SMOOTH)));
         pnlLogo.add(lgQmet);
     }
+
+    public void customInitComponents() {
+        logoQmet();
+        setResizable(false);
+        setLocationRelativeTo(null);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -267,7 +265,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JCheckBox cbViewPwd;
     private static javax.swing.JLabel icnLock;
     private static javax.swing.JLabel icnUser;
     private static javax.swing.JPanel inptContent;
@@ -281,5 +278,6 @@ public class Login extends javax.swing.JFrame {
     private static javax.swing.JPanel pnlUser;
     private static javax.swing.JPasswordField pwdUser;
     private static javax.swing.JTextField txtUser;
+    private static javax.swing.JCheckBox viewPwd;
     // End of variables declaration//GEN-END:variables
 }

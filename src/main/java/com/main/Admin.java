@@ -3,36 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.main;
-
 import com.main.container.Dashboard;
 import com.main.container.Customers;
+import com.main.container.Suppliers;
 import com.main.container.Settings;
 import com.main.container.Sales;
+import com.main.container.Employee;
 import com.main.container.Products;
 import com.functions.Design;
-import com.functions.DBConnection;
 
 import javax.swing.*;
-import com.formdev.flatlaf.FlatLightLaf;
-import com.main.container.Sell;
 
 /**
  *
  * @author mrmango
  */
-public class EmployeeMain extends javax.swing.JFrame {
+public class Admin extends javax.swing.JFrame {
 
     JPanel btnActive;
     int xx, yy;
 
-    public EmployeeMain() {
+    public Admin() {
         initComponents();
-        lookAndFeel();
-        setResizable(false);
-        setLocationRelativeTo(null);
-        DBConnection ctn = new DBConnection();
-        btnActive = btnDashboard;
-        Design.clickOptions(btnDashboard, btnActive, pnlMain, new Dashboard());
+        customInitComponents();
     }
 
     /**
@@ -48,6 +41,7 @@ public class EmployeeMain extends javax.swing.JFrame {
         pnlUserMenu = new javax.swing.JPanel();
         btnLogout = new javax.swing.JButton();
         btnSettings = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         pnlStatus = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         btnMenu = new javax.swing.JButton();
@@ -58,18 +52,21 @@ public class EmployeeMain extends javax.swing.JFrame {
         btnDashboard = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        btnSell = new javax.swing.JPanel();
+        btnEmployee = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btnProducts = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        btnCustomers = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         btnSales = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        btnCustomers = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        btnSupplier = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        btnProducts = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         pnlMain = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,7 +93,7 @@ public class EmployeeMain extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        pnlUserMenu.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 90, 30));
+        pnlUserMenu.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 90, 30));
 
         btnSettings.setBackground(new java.awt.Color(143, 188, 187));
         btnSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
@@ -108,7 +105,13 @@ public class EmployeeMain extends javax.swing.JFrame {
                 btnSettingsMouseClicked(evt);
             }
         });
-        pnlUserMenu.add(btnSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 30, 30));
+        pnlUserMenu.add(btnSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 30, 30));
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(67, 76, 94));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ADMIN");
+        pnlUserMenu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, -1));
 
         background.add(pnlUserMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 150, 0));
 
@@ -169,7 +172,7 @@ public class EmployeeMain extends javax.swing.JFrame {
         userMenu.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         userMenu.setForeground(new java.awt.Color(67, 76, 94));
         userMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
-        userMenu.setText("EMPLEADO");
+        userMenu.setText("ADMIN");
         userMenu.setBorder(null);
         userMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -211,85 +214,33 @@ public class EmployeeMain extends javax.swing.JFrame {
         jLabel7.setText("Dashboard");
         btnDashboard.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 162, 210, 45));
+        pnlMenu.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 137, 210, 45));
 
-        btnSell.setBackground(new java.awt.Color(216, 222, 233));
-        btnSell.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSell.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnEmployee.setBackground(new java.awt.Color(216, 222, 233));
+        btnEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSellMouseClicked(evt);
+                btnEmployeeMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSellMouseEntered(evt);
+                btnEmployeeMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnSellMouseExited(evt);
+                btnEmployeeMouseExited(evt);
             }
         });
-        btnSell.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sell.png"))); // NOI18N
-        btnSell.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee.png"))); // NOI18N
+        btnEmployee.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel5.setText("Vender");
-        btnSell.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
+        jLabel5.setText("Empleados");
+        btnEmployee.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnSell, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 207, 210, 45));
-
-        btnProducts.setBackground(new java.awt.Color(216, 222, 233));
-        btnProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnProducts.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnProductsMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnProductsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnProductsMouseExited(evt);
-            }
-        });
-        btnProducts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/products.png"))); // NOI18N
-        btnProducts.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
-
-        jLabel11.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel11.setText("Productos");
-        btnProducts.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
-
-        pnlMenu.add(btnProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 252, 210, 45));
-
-        btnCustomers.setBackground(new java.awt.Color(216, 222, 233));
-        btnCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCustomersMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCustomersMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCustomersMouseExited(evt);
-            }
-        });
-        btnCustomers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
-        btnCustomers.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
-
-        jLabel13.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(76, 86, 106));
-        jLabel13.setText("Clientes");
-        btnCustomers.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
-
-        pnlMenu.add(btnCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 297, 210, 45));
+        pnlMenu.add(btnEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 182, 210, 45));
 
         btnSales.setBackground(new java.awt.Color(216, 222, 233));
         btnSales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -315,9 +266,87 @@ public class EmployeeMain extends javax.swing.JFrame {
         jLabel9.setText("Ventas");
         btnSales.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
 
-        pnlMenu.add(btnSales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 342, 210, 45));
+        pnlMenu.add(btnSales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 227, 210, 45));
 
-        background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 60, 590));
+        btnCustomers.setBackground(new java.awt.Color(216, 222, 233));
+        btnCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCustomersMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCustomersMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCustomersMouseExited(evt);
+            }
+        });
+        btnCustomers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
+        btnCustomers.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(76, 86, 106));
+        jLabel13.setText("Clientes");
+        btnCustomers.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
+
+        pnlMenu.add(btnCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 272, 210, 45));
+
+        btnSupplier.setBackground(new java.awt.Color(216, 222, 233));
+        btnSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSupplierMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSupplierMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSupplierMouseExited(evt);
+            }
+        });
+        btnSupplier.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier.png"))); // NOI18N
+        btnSupplier.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(76, 86, 106));
+        jLabel11.setText("Proveedores");
+        btnSupplier.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
+
+        pnlMenu.add(btnSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 210, 45));
+
+        btnProducts.setBackground(new java.awt.Color(216, 222, 233));
+        btnProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProductsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnProductsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnProductsMouseExited(evt);
+            }
+        });
+        btnProducts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/products.png"))); // NOI18N
+        btnProducts.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 45));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(76, 86, 106));
+        jLabel15.setText("Productos");
+        btnProducts.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 100, 45));
+
+        pnlMenu.add(btnProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 362, 210, 45));
+
+        background.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 590));
 
         pnlMain.setBackground(new java.awt.Color(236, 239, 244));
         pnlMain.setLayout(new javax.swing.BoxLayout(pnlMain, javax.swing.BoxLayout.LINE_AXIS));
@@ -345,13 +374,13 @@ public class EmployeeMain extends javax.swing.JFrame {
         Design.resetColor(btnDashboard);
     }//GEN-LAST:event_btnDashboardMouseExited
 
-    private void btnSellMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSellMouseEntered
-        Design.optionsColor(btnSell);
-    }//GEN-LAST:event_btnSellMouseEntered
+    private void btnEmployeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseEntered
+        Design.optionsColor(btnEmployee);
+    }//GEN-LAST:event_btnEmployeeMouseEntered
 
-    private void btnSellMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSellMouseExited
-        Design.resetColor(btnSell);
-    }//GEN-LAST:event_btnSellMouseExited
+    private void btnEmployeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseExited
+        Design.resetColor(btnEmployee);
+    }//GEN-LAST:event_btnEmployeeMouseExited
 
     private void btnSalesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseEntered
         Design.optionsColor(btnSales);
@@ -369,13 +398,13 @@ public class EmployeeMain extends javax.swing.JFrame {
         Design.resetColor(btnCustomers);
     }//GEN-LAST:event_btnCustomersMouseExited
 
-    private void btnProductsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseEntered
-        Design.optionsColor(btnProducts);
-    }//GEN-LAST:event_btnProductsMouseEntered
+    private void btnSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseEntered
+        Design.optionsColor(btnSupplier);
+    }//GEN-LAST:event_btnSupplierMouseEntered
 
-    private void btnProductsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseExited
-        Design.resetColor(btnProducts);
-    }//GEN-LAST:event_btnProductsMouseExited
+    private void btnSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseExited
+        Design.resetColor(btnSupplier);
+    }//GEN-LAST:event_btnSupplierMouseExited
 
     private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
         if (!(btnActive == btnDashboard)) {
@@ -384,24 +413,24 @@ public class EmployeeMain extends javax.swing.JFrame {
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
-        if (pnlUserMenu.getHeight() == 162) {
-            Design.userAnimation(pnlUserMenu);
+        if (pnlUserMenu.getHeight() == 137) {
+            Design.menuAnimation(pnlUserMenu);
         }
         btnActive = btnDashboard;
     }//GEN-LAST:event_btnDashboardMouseClicked
 
-    private void btnSellMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSellMouseClicked
-        if (!(btnActive == btnSell)) {
-            Design.clickOptions(btnSell, btnActive, pnlMain, new Sell());
+    private void btnEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseClicked
+        if (!(btnActive == btnEmployee)) {
+            Design.clickOptions(btnEmployee, btnActive, pnlMain, new Employee());
         }
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
-        if (pnlUserMenu.getHeight() == 162) {
-            Design.userAnimation(pnlUserMenu);
+        if (pnlUserMenu.getHeight() == 137) {
+            Design.menuAnimation(pnlUserMenu);
         }
-        btnActive = btnSell;
-    }//GEN-LAST:event_btnSellMouseClicked
+        btnActive = btnEmployee;
+    }//GEN-LAST:event_btnEmployeeMouseClicked
 
     private void btnSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseClicked
         if (!(btnActive == btnSales)) {
@@ -410,42 +439,42 @@ public class EmployeeMain extends javax.swing.JFrame {
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
-        if (pnlUserMenu.getHeight() == 162) {
-            Design.userAnimation(pnlUserMenu);
+        if (pnlUserMenu.getHeight() == 137) {
+            Design.menuAnimation(pnlUserMenu);
         }
         btnActive = btnSales;
     }//GEN-LAST:event_btnSalesMouseClicked
 
     private void btnCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomersMouseClicked
         if (!(btnActive == btnCustomers)) {
-            Design.clickOptions(btnCustomers, btnActive, pnlMain, new Customers(false));
+            Design.clickOptions(btnCustomers, btnActive, pnlMain, new Customers(true));
         }
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
-        if (pnlUserMenu.getHeight() == 162) {
-            Design.userAnimation(pnlUserMenu);
+        if (pnlUserMenu.getHeight() == 137) {
+            Design.menuAnimation(pnlUserMenu);
         }
         btnActive = btnCustomers;
     }//GEN-LAST:event_btnCustomersMouseClicked
 
-    private void btnProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseClicked
-        if (!(btnActive == btnProducts)) {
-            Design.clickOptions(btnProducts, btnActive, pnlMain, new Products(false));
+    private void btnSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseClicked
+        if (!(btnActive == btnSupplier)) {
+            Design.clickOptions(btnSupplier, btnActive, pnlMain, new Suppliers());
         }
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);
         }
-        if (pnlUserMenu.getHeight() == 162) {
-            Design.userAnimation(pnlUserMenu);
+        if (pnlUserMenu.getHeight() == 137) {
+            Design.menuAnimation(pnlUserMenu);
         }
-        btnActive = btnProducts;
-    }//GEN-LAST:event_btnProductsMouseClicked
+        btnActive = btnSupplier;
+    }//GEN-LAST:event_btnSupplierMouseClicked
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         Design.menuAnimation(pnlMenu);
-        if (pnlUserMenu.getHeight() == 162) {
-            Design.userAnimation(pnlUserMenu);
+        if (pnlUserMenu.getHeight() == 137) {
+            Design.menuAnimation(pnlUserMenu);
         }
     }//GEN-LAST:event_btnMenuActionPerformed
 
@@ -476,22 +505,44 @@ public class EmployeeMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void userMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMenuMouseClicked
-        Design.userAnimation(pnlUserMenu);
+        Design.menuAnimation(pnlUserMenu);
     }//GEN-LAST:event_userMenuMouseClicked
 
     private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
         Design.panelChange(pnlMain, new Settings());
     }//GEN-LAST:event_btnSettingsMouseClicked
-    public void lookAndFeel() {
-        try {
-            UIManager.setLookAndFeel(new FlatLightLaf());
-        } catch (Exception ex) {
-            System.err.println("Failed to initialize LaF");
+
+    private void btnProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseClicked
+        if (!(btnActive == btnProducts)) {
+            Design.clickOptions(btnProducts, btnActive, pnlMain, new Products(true));
         }
-    }
+        if (pnlMenu.getWidth() == 210) {
+            Design.menuAnimation(pnlMenu);
+        }
+        if (pnlUserMenu.getHeight() == 137) {
+            Design.menuAnimation(pnlUserMenu);
+        }
+        btnActive = btnProducts;
+    }//GEN-LAST:event_btnProductsMouseClicked
+
+    private void btnProductsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseEntered
+        Design.optionsColor(btnProducts);
+    }//GEN-LAST:event_btnProductsMouseEntered
+
+    private void btnProductsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseExited
+        Design.resetColor(btnProducts);
+    }//GEN-LAST:event_btnProductsMouseExited
+
 
     public void setUserName(String user) {
         userMenu.setText(user);
+    }
+
+    public void customInitComponents() {
+        setResizable(false);
+        setLocationRelativeTo(null);
+        btnActive = btnDashboard;
+        Design.clickOptions(btnDashboard, btnActive, pnlMain, new Dashboard());
     }
     /**
      * @param args the command line arguments
@@ -502,17 +553,21 @@ public class EmployeeMain extends javax.swing.JFrame {
     private javax.swing.JButton btnClose;
     private javax.swing.JPanel btnCustomers;
     private javax.swing.JPanel btnDashboard;
+    private javax.swing.JPanel btnEmployee;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnMinimize;
     private javax.swing.JPanel btnProducts;
     private javax.swing.JPanel btnSales;
-    private javax.swing.JPanel btnSell;
     private javax.swing.JButton btnSettings;
+    private javax.swing.JPanel btnSupplier;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
