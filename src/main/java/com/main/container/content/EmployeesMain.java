@@ -16,7 +16,7 @@ public class EmployeesMain extends javax.swing.JPanel {
     String sql = "select idEmployee,firstname, lastName,nui, address, phone, mail from employee";
     public EmployeesMain() {
         initComponents();
-        DBManagement.showQueryInTable(tblEmployee, sql, true);
+        DBManagement.showQueryInTable(tblEmployee, sql);
     }
 
     /**

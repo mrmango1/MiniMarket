@@ -29,7 +29,7 @@ public class DBManagement {
     static DefaultTableModel model;
     static Object[] table;
     static String[] queryHeader;
-    static boolean completeName;
+    static boolean completeName, correctDataToModify = true;
 
 //Login methods
     public static void setUserName(String name) {
@@ -118,7 +118,11 @@ public class DBManagement {
             rsmd = rs.getMetaData();
             tableNameDB = rsmd.getTableName(1);
             queryHeader = new String[rsmd.getColumnCount()];
-            for (int i = 0; i < rsmd.getColumnCount(); i++) {
+            for (int i = 0, name_lastName = 0; i < rsmd.getColumnCount(); i++) {
+                if (rsmd.getColumnName(i + 1).equals("firstName") || rsmd.getColumnName(i + 1).equals("lastName")) {
+                    name_lastName++;
+                    completeName = name_lastName == 2;
+                }
                 queryHeader[i] = rsmd.getColumnName(i + 1);
             }
             table = new Object[queryHeader.length - 1];
@@ -128,9 +132,8 @@ public class DBManagement {
         }
     }
 
-    public static void showQueryInTable(JTable tblEmployee, String __sqlQuery, boolean __completeName) {
+    public static void showQueryInTable(JTable tblEmployee, String __sqlQuery) {
         sqlQuery = __sqlQuery;
-        completeName = __completeName;
         try {
             getModel(tblEmployee);
             while (rs.next()) {
@@ -152,45 +155,52 @@ public class DBManagement {
 
     public static void modifySimpleTable(JTable tblEmployee) {
         String[] fullNameArray;
-        String fullName = "", name = "", lastName = "", nui = "", address = "", phone = "", email = "";
+        String sqlData = "";
         int row = tblEmployee.getSelectedRow();
         if (row == -1) {
-            JOptionPane.showMessageDialog(null, "Seleccione un Empleado");
+            JOptionPane.showMessageDialog(null, "Seleccione un Fila");
         } else {
             id = (String) tblEmployee.getValueAt(row, 0);
-            fullName = (String) tblEmployee.getValueAt(row, 1);
-            nui = (String) tblEmployee.getValueAt(row, 2);
-            address = (String) tblEmployee.getValueAt(row, 3);
-            phone = (String) tblEmployee.getValueAt(row, 4);
-            email = (String) tblEmployee.getValueAt(row, 5);
-        }
-        String sqlQuery = "";
-        String[] abc = {"idEmployee", "nui", "firstname", "lastName", "address", "phone", "mail"};
-        for (int i = 0; i < tblEmployee.getRowCount(); i++) {
-            if (i < tblEmployee.getRowCount() - 1) {
-                sqlQuery += abc[i + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "',";
-            } else {
-                sqlQuery += abc[i + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "'";
+            for (int i = 0, a = 0; i < tblEmployee.getRowCount(); i++) {
+                if(((String) tblEmployee.getValueAt(row, i + 1)).equals("")){
+                    correctDataToModify=false;
+                    break;
+                }
+                if (i < tblEmployee.getRowCount() - 1) {
+                    if (completeName & queryHeader[i+1].equals("firstName")) {
+                        fullNameArray = ((String) tblEmployee.getValueAt(row, i + 1)).split(" ");
+                        if(fullNameArray.length!=2){
+                            correctDataToModify=false;
+                            break;
+                        }
+                        sqlData += queryHeader[a + 1] + "='" + fullNameArray[0] + "',";
+                        a++;
+                        sqlData += queryHeader[a + 1] + "='" + fullNameArray[1] + "',";
+                    } else {
+                        sqlData += queryHeader[a + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "',";
+                    }
+                } else {
+                    sqlData += queryHeader[a + 1] + "='" + (String) tblEmployee.getValueAt(row, i + 1) + "'";
+                }
+                a++;
             }
-
         }
-        fullNameArray = fullName.split(" ");
-        name = fullNameArray[0];
-        lastName = fullNameArray[1];
-        String sql = "update employee set nui='" + nui + "',firstName='" + name + "',lastName='" + lastName + "',address='" + address + "',phone='" + phone + "',mail='" + email + "' where idEmployee=" + id;
-        if (name.equals("") || lastName.equals("") || nui.equals("") || address.equals("") || phone.equals("")) {
+        String sqlUpdate = "update employee set " + sqlData + " where "+ queryHeader[0] + "="+id;
+        System.out.println(sqlUpdate);
+        if (!correctDataToModify) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
             try {
                 cn = cnt.getConnection();
                 st = cn.createStatement();
-                st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Empleado Actualizado");
+                st.executeUpdate(sqlUpdate);
+                JOptionPane.showMessageDialog(null, "Registro Actualizado");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
         model.setRowCount(0);
+        showQueryInTable(tblEmployee, sqlQuery);
     }
 
     public static void deleteDataFromDB(JTable tblEmployee) {
@@ -211,6 +221,6 @@ public class DBManagement {
             }
         }
         model.setRowCount(0);
-        showQueryInTable(tblEmployee, sqlQuery, completeName);
+        showQueryInTable(tblEmployee, sqlQuery);
     }
 }
