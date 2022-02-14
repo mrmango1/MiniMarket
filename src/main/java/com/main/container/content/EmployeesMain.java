@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.main.container.content;
+
 import com.functions.DBManagement;
 
 import java.awt.Dimension;
@@ -13,7 +14,9 @@ import javax.swing.BorderFactory;
  * @author mrmango
  */
 public class EmployeesMain extends javax.swing.JPanel {
+
     String sql = "select idEmployee,firstname, lastName,nui, address, phone, mail from employee";
+
     public EmployeesMain() {
         initComponents();
         DBManagement.showQueryInTable(tblEmployee, sql);

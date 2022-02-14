@@ -3,9 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.main.container;
+
 import com.main.container.content.ProductsMain;
 import com.main.container.content.ProductsAdd;
 import com.functions.Design;
+import com.main.container.content.CategoriesAdd;
 
 /**
  *
@@ -17,14 +19,17 @@ public class Products extends javax.swing.JPanel {
      * Creates new form AdminEmployeeMain
      */
     boolean admin;
+    boolean pnlCategories = false;
+
     public Products(boolean admin) {
         initComponents();
         this.admin = admin;
-        if(!admin){
+        if (!admin) {
             btnAddProducts.setVisible(false);
         }
         Design.panelChange(pnlContent, new ProductsMain(admin));
         btnBack.setVisible(false);
+        btnAddCategories.setVisible(false);
     }
 
     /**
@@ -40,6 +45,7 @@ public class Products extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         btnBack = new javax.swing.JLabel();
         btnAddProducts = new javax.swing.JLabel();
+        btnAddCategories = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -78,22 +84,49 @@ public class Products extends javax.swing.JPanel {
             }
         });
         add(btnAddProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 22, 85, 26));
+
+        btnAddCategories.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnAddCategories.setForeground(new java.awt.Color(46, 52, 64));
+        btnAddCategories.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add.png"))); // NOI18N
+        btnAddCategories.setText("Categoria");
+        btnAddCategories.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddCategories.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddCategoriesMouseClicked(evt);
+            }
+        });
+        add(btnAddCategories, new org.netbeans.lib.awtextra.AbsoluteConstraints(798, 22, 95, 26));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        btnBack.setVisible(false);
-        btnAddProducts.setVisible(true);
-        Design.panelChange(pnlContent, new ProductsMain(this.admin));
+        if (pnlCategories) {
+            Design.panelChange(pnlContent, new ProductsAdd());
+            pnlCategories = false;
+            btnAddCategories.setVisible(true);
+        } else {
+            Design.panelChange(pnlContent, new ProductsMain(this.admin));
+            btnBack.setVisible(false);
+            btnAddProducts.setVisible(true);
+            btnAddCategories.setVisible(false);
+        }
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void btnAddProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddProductsMouseClicked
         btnBack.setVisible(true);
         btnAddProducts.setVisible(false);
+        btnAddCategories.setVisible(true);
         Design.panelChange(pnlContent, new ProductsAdd());
     }//GEN-LAST:event_btnAddProductsMouseClicked
 
+    private void btnAddCategoriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCategoriesMouseClicked
+        btnAddCategories.setVisible(false);
+        Design.panelChange(pnlContent, new CategoriesAdd());
+        pnlCategories = true;
+    }//GEN-LAST:event_btnAddCategoriesMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static javax.swing.JLabel btnAddCategories;
     private static javax.swing.JLabel btnAddProducts;
     private static javax.swing.JLabel btnBack;
     private static javax.swing.JLabel lblTitle;

@@ -4,6 +4,7 @@
  */
 package com.main.container.content;
 
+import com.functions.DBManagement;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -16,12 +17,15 @@ public class ProductsMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminSupplierMain
      */
+    String sql = "select idProduct, name, stock,price, pvp, discount from product";
+
     public ProductsMain(boolean admin) {
         initComponents();
-        if(!admin){
+        if (!admin) {
             btnModify.setVisible(false);
             btnDelete.setVisible(false);
         }
+        DBManagement.showQueryInTable(tblProducts, sql);
     }
 
     /**

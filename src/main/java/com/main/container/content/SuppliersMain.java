@@ -4,6 +4,7 @@
  */
 package com.main.container.content;
 
+import com.functions.DBManagement;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -16,8 +17,11 @@ public class SuppliersMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminSupplierMain
      */
+    String sql = "select idSuppliers,company, ruc, address, phone, mail from suppliers";
+
     public SuppliersMain() {
         initComponents();
+        DBManagement.showQueryInTable(tblSupplier, sql);
     }
 
     /**

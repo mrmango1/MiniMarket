@@ -4,7 +4,9 @@
  */
 package com.main.container.content;
 
+import com.functions.DBManagement;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -121,9 +123,28 @@ public class SuppliersAdd extends javax.swing.JPanel {
         btnAddSupplier.setText("Agregar");
         btnAddSupplier.setBorder(null);
         btnAddSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddSupplierActionPerformed(evt);
+            }
+        });
         add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
+        addSupplier();
+    }//GEN-LAST:event_btnAddSupplierActionPerformed
+    public void addSupplier() {
+        String sqlInsert = "insert into suppliers (company,ruc,address,phone,mail,idAdmin)";
+        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents()) + ",'1');";
+        String sql = sqlInsert + sqlInto;
+        if (sqlInto.equals(",'1');")) {
+            JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
+        } else {
+            DBManagement.pushData2DB(sql, "Proveedor Agregado");
+            DBManagement.clearTxtFields(pnlContent.getComponents());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddSupplier;

@@ -118,6 +118,7 @@ public class DBManagement {
             rsmd = rs.getMetaData();
             tableNameDB = rsmd.getTableName(1);
             queryHeader = new String[rsmd.getColumnCount()];
+            completeName = false;
             for (int i = 0, name_lastName = 0; i < rsmd.getColumnCount(); i++) {
                 if (rsmd.getColumnName(i + 1).equals("firstName") || rsmd.getColumnName(i + 1).equals("lastName")) {
                     name_lastName++;
@@ -125,7 +126,7 @@ public class DBManagement {
                 }
                 queryHeader[i] = rsmd.getColumnName(i + 1);
             }
-            object = new Object[queryHeader.length - 1];
+            object = new Object[table.getColumnCount()];
             model = (DefaultTableModel) table.getModel();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -137,7 +138,7 @@ public class DBManagement {
         try {
             getModel(table);
             while (rs.next()) {
-                for (int i = 0, a = 0; i < queryHeader.length - 1; i++) {
+                for (int i = 0, a = 0; i < table.getColumnCount(); i++) {
                     if (i == 1 && completeName) {
                         object[i] = rs.getString(queryHeader[a]) + " " + rs.getString(queryHeader[++a]);
                     } else {
