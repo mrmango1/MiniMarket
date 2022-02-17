@@ -5,7 +5,7 @@
 package com.main.container.content;
 
 import com.functions.DBManagement;
-import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 
@@ -20,6 +20,7 @@ public class ProductsAdd extends javax.swing.JPanel {
      */
     public ProductsAdd() {
         initComponents();
+        DBManagement.listOnComboBox(bxCategory,"select name from categories");
     }
 
     /**
@@ -37,13 +38,14 @@ public class ProductsAdd extends javax.swing.JPanel {
         lblPrice = new javax.swing.JLabel();
         lblPvp = new javax.swing.JLabel();
         lblDiscount = new javax.swing.JLabel();
+        lvlPercent = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtAmount = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
         txtPvp = new javax.swing.JTextField();
         txtDiscount = new javax.swing.JTextField();
         lblCategory = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        bxCategory = new javax.swing.JComboBox<>();
         btnAddProduct = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 239, 244));
@@ -81,6 +83,12 @@ public class ProductsAdd extends javax.swing.JPanel {
         lblDiscount.setForeground(new java.awt.Color(76, 86, 106));
         lblDiscount.setText("Descuento:");
         pnlContent.add(lblDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, 35));
+
+        lvlPercent.setBackground(new java.awt.Color(76, 86, 106));
+        lvlPercent.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        lvlPercent.setForeground(new java.awt.Color(76, 86, 106));
+        lvlPercent.setText("%");
+        pnlContent.add(lvlPercent, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, -1, 35));
 
         txtName.setBackground(new java.awt.Color(229, 233, 240));
         txtName.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -123,12 +131,11 @@ public class ProductsAdd extends javax.swing.JPanel {
         lblCategory.setText("Categoria:");
         pnlContent.add(lblCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, 35));
 
-        jComboBox1.setBackground(new java.awt.Color(229, 233, 240));
-        jComboBox1.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(130, 147, 181));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setBorder(null);
-        pnlContent.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 190, 35));
+        bxCategory.setBackground(new java.awt.Color(229, 233, 240));
+        bxCategory.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        bxCategory.setForeground(new java.awt.Color(130, 147, 181));
+        bxCategory.setBorder(null);
+        pnlContent.add(bxCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 190, 35));
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 480, 430));
 
@@ -147,31 +154,31 @@ public class ProductsAdd extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProductActionPerformed
-        DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
         addProducts();
     }//GEN-LAST:event_btnAddProductActionPerformed
 
     public void addProducts() {
-        String sqlInsert = "insert into product (name,stock,price,pvp,discount)";
-        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents())+");";
-        String sql = sqlInsert + sqlInto;
-        System.out.println(sql);
-        if (sqlInto.equals(");")) {
+        ;
+        String sqlInsert = "INSERT INTO products (name,stock,price,pvp,discount,idCategory) "
+                + "values (?,?,?,?,?,'"+(bxCategory.getSelectedIndex()+1)+"')";
+        ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
+        if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.pushData2DB(sql, "Producto Agregado");
+            DBManagement.insertDataProducts(dataFromTxtField,sqlInsert);
             DBManagement.clearTxtFields(pnlContent.getComponents());
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddProduct;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> bxCategory;
     private javax.swing.JLabel lblAmount;
     private javax.swing.JLabel lblCategory;
     private javax.swing.JLabel lblDiscount;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblPvp;
+    private javax.swing.JLabel lvlPercent;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtDiscount;

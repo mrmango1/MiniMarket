@@ -17,7 +17,8 @@ public class ProductsMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminSupplierMain
      */
-    String sql = "select idProduct, name, stock,price, pvp, discount from product";
+    String sql = "select P.idProduct, P.name, P.stock, P.price, P.pvp, P.discount, C.description, C.name "
+            + "from products P join categories C on P.idCategory=C.idCategory";
 
     public ProductsMain(boolean admin) {
         initComponents();
@@ -43,9 +44,9 @@ public class ProductsMain extends javax.swing.JPanel {
         btnModify = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         pnlSearch = new javax.swing.JPanel();
-        txtFldSearch = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
+        txtSearch = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,22 +73,12 @@ public class ProductsMain extends javax.swing.JPanel {
         tblProducts.setSelectionBackground(new java.awt.Color(235, 203, 139));
         tblProducts.setSelectionForeground(new java.awt.Color(236, 239, 244));
         tblProducts.getTableHeader().setReorderingAllowed(false);
+        tblProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProductsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblProducts);
-        if (tblProducts.getColumnModel().getColumnCount() > 0) {
-            tblProducts.getColumnModel().getColumn(0).setMinWidth(30);
-            tblProducts.getColumnModel().getColumn(0).setPreferredWidth(35);
-            tblProducts.getColumnModel().getColumn(0).setMaxWidth(50);
-            tblProducts.getColumnModel().getColumn(1).setMinWidth(100);
-            tblProducts.getColumnModel().getColumn(1).setPreferredWidth(150);
-            tblProducts.getColumnModel().getColumn(1).setMaxWidth(200);
-            tblProducts.getColumnModel().getColumn(2).setMaxWidth(60);
-            tblProducts.getColumnModel().getColumn(3).setMaxWidth(55);
-            tblProducts.getColumnModel().getColumn(4).setMaxWidth(60);
-            tblProducts.getColumnModel().getColumn(5).setMaxWidth(50);
-            tblProducts.getColumnModel().getColumn(7).setMinWidth(60);
-            tblProducts.getColumnModel().getColumn(7).setPreferredWidth(80);
-            tblProducts.getColumnModel().getColumn(7).setMaxWidth(100);
-        }
         tblProducts.getTableHeader().setOpaque(false);
         tblProducts.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
         tblProducts.getTableHeader().setForeground(new java.awt.Color(46,52,64));
@@ -105,6 +96,11 @@ public class ProductsMain extends javax.swing.JPanel {
         btnModify.setText("Modificar");
         btnModify.setBorder(null);
         btnModify.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyActionPerformed(evt);
+            }
+        });
         add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 120, 40));
 
         btnDelete.setBackground(new java.awt.Color(208, 135, 112));
@@ -123,16 +119,6 @@ public class ProductsMain extends javax.swing.JPanel {
         pnlSearch.setBackground(new java.awt.Color(136, 192, 208));
         pnlSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
-        txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        txtFldSearch.setBorder(null);
-        txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFldSearchActionPerformed(evt);
-            }
-        });
-        pnlSearch.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
-
         searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
         searchID.setForeground(new java.awt.Color(59, 66, 82));
         searchID.setText("ID");
@@ -142,16 +128,26 @@ public class ProductsMain extends javax.swing.JPanel {
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         pnlSearch.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 30, 20));
 
-        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
+        txtSearch.setBackground(new java.awt.Color(136, 192, 208));
+        txtSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtSearch.setForeground(new java.awt.Color(46, 52, 64));
+        txtSearch.setBorder(null);
+        pnlSearch.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
+
+        add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, -1, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFldSearchActionPerformed
+    private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
+
+    }//GEN-LAST:event_btnModifyActionPerformed
+
+    private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
+
+    }//GEN-LAST:event_tblProductsMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -163,6 +159,6 @@ public class ProductsMain extends javax.swing.JPanel {
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
     private javax.swing.JTable tblProducts;
-    private javax.swing.JTextField txtFldSearch;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

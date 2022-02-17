@@ -16,7 +16,7 @@ public class DBConnection {
 
     private static Connection con;
 
-    static {
+    static{
         String url = "jdbc:mysql://localhost:3306/qmet";
         String user = "root";
         String password = "1234";

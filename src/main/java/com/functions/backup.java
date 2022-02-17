@@ -5,15 +5,23 @@
 package com.functions;
 
 import java.awt.Component;
-import java.sql.*;
-import java.util.ArrayList;
-import javax.swing.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ *
  * @author mrmango
  */
-public class DBManagement {
+public class backup {
 
     static DBConnection cnt = new DBConnection();
     static Connection cn = cnt.getConnection();
@@ -27,7 +35,7 @@ public class DBManagement {
     static String[] queryHeader, productsToModify;
     static boolean completeName, correctDataToModify = true;
 
-    //Login methods
+//Login methods
     public static void setUserName(String name) {
         userName = name;
     }
@@ -40,7 +48,6 @@ public class DBManagement {
         String sqlAdmin = "select name, mail, password from admin";
         String sqlEmployee = "select firstName, mail, password from employees";
         try {
-            cn = cnt.getConnection();
             st = cn.createStatement();
             rs = st.executeQuery(sqlAdmin);
             while (rs.next()) {
@@ -62,71 +69,156 @@ public class DBManagement {
         return 0;
     }
 
-    //Obtener datos de un JTextField
-    public static ArrayList<String> getTxtFromTxtFields(Component[] pnlComponents) {
-        String valuesFromComponent;
-        ArrayList<String> valuesForStatement = new ArrayList<>();
-        for (Component pnlComponent : pnlComponents) {
-            if (pnlComponent instanceof JTextField) {
-                valuesFromComponent = ((JTextField) pnlComponent).getText();
-                if (valuesFromComponent.equals("")) {
-                    return null;
-                }
-                valuesForStatement.add(valuesFromComponent);
+    //Obtener y borrar datos de un JTextField
+    public static String getTxtFromTxtFields(Component[] pnlContent) {
+        String sqlValue = "";
+        int numOfTxtFields = 0, count = 0;
+        for (Component cp : pnlContent) {
+            if (cp instanceof JTextField) {
+                numOfTxtFields++;
             }
         }
-        return valuesForStatement;
-    }
-    //Insertar datos a la base de datos(metodo general para tablas string)
-    public static void insertDataDB(ArrayList<String> valuesForStatement, String sql) {
-        //insert into admin(a,s,f,s,d,) values (?,?,?,?,?)
-        int count = 0;
-        try {
-            cn = cnt.getConnection();
-            pst = cn.prepareStatement(sql);
-            for (String value : valuesForStatement) {
+        for (Component cp : pnlContent) {
+            if (cp instanceof JTextField) {
                 count++;
-                pst.setString(count, value);
-            }
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
-    //Insertar datos a la base de datos(Metodo para la tabla products)
-    public static void insertDataProducts(ArrayList<String> valuesForStatement, String sql) {
-        //insert into admin(a,s,f,s,d,) values (?,?,?,?,?)
-        try {
-            cn = cnt.getConnection();
-            pst = cn.prepareStatement(sql);
-            pst.setString(1, valuesForStatement.get(0));
-            pst.setInt(2, Integer.parseInt(valuesForStatement.get(1)));
-            pst.setDouble(3, Double.parseDouble(valuesForStatement.get(2)));
-            pst.setDouble(4, Double.parseDouble(valuesForStatement.get(2)));
-            pst.setDouble(5, Double.parseDouble(valuesForStatement.get(2)));
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
-    //Borrar datos de un JTextField
-    public static void clearTxtFields(Component[] pnlComponents) {
-        Component[] JScrollComponents = new Component[1];
-        for (Component pnlComponent : pnlComponents) {
-            if (pnlComponent instanceof JTextField) {
-                ((JTextField) pnlComponent).setText("");
-            }
-            if (pnlComponent instanceof JScrollPane) {
-                JScrollComponents = ((JScrollPane) pnlComponent).getComponents();
-                for (Component JScrollComponent : JScrollComponents) {
-                    if (JScrollComponent instanceof JTextArea) {
-                        ((JTextArea) JScrollComponent).setText("");
-                    }
+                if (((JTextField) cp).getText().equals("")) {
+                    return "";
+                }
+                if (numOfTxtFields > count) {
+                    sqlValue += "'" + ((JTextField) cp).getText() + "',";
+                } else {
+                    sqlValue += "'" + ((JTextField) cp).getText() + "'";
                 }
             }
         }
+        return " values (" + sqlValue;
+    }
+
+    public static void clearTxtFields(Component[] pnlContent) {
+        for (Component cp : pnlContent) {
+            if (cp instanceof JTextField) {
+                ((JTextField) cp).setText("");
+            }
+        }
+    }
+
+    // Metodos especificos para Category
+    public static String getTxtCategories(JTextField txtField, JTextArea txtArea) {
+        String sqlValue = "";
+        if (txtField.getText().equals("") || txtArea.getText().equals("")) {
+            return "";
+        }
+        sqlValue = " values ('" + txtField.getText() + "','" + txtArea.getText() + "'";
+        txtField.setText("");
+        txtArea.setText("");
+        return sqlValue;
+    }
+
+    //Metodo para modificar los productos usando textfields
+    public static String getTxtForUpdate(Component[] pnlContent) {
+        String sqlValue = "update products set ";
+        int idCat;
+        String[] valuesToChange = {"name", "stock", "price", "pvp", "discount", "idCategories"};
+        int numOfTxtFields = 0, count = 0;
+        for (Component cp : pnlContent) {
+            if (cp instanceof JTextField) {
+                numOfTxtFields++;
+            }
+        }
+        for (Component cp : pnlContent) {
+            if (cp instanceof JTextField) {
+                count++;
+                if (((JTextField) cp).getText().equals("")) {
+                    return "";
+                }
+                if (numOfTxtFields > count) {
+                    sqlValue += valuesToChange[count - 1] + "='" + ((JTextField) cp).getText() + "',";
+                } else {
+                    sqlValue += valuesToChange[count - 1] + "='" + ((JTextField) cp).getText() + "'";
+                }
+            }
+        }
+        for (Component cp : pnlContent) {
+            if (cp instanceof JComboBox) {
+                idCat = ((JComboBox) cp).getSelectedIndex() + 1;
+                sqlValue += ",idCategories='" + idCat + "'";
+            }
+        }
+        System.out.println(sqlValue + " where idProduct=" + idCategory);
+        return sqlValue + "where idProduct=" + (idCategory);
+    }
+
+    public static void getIDProduct(JTable table) {
+        idCategory = (String) table.getValueAt(table.getSelectedRow(), 0);
+
+    }
+
+    public static void showQueryInTextFields(Component[] pnlContent, String __sqlQuery) {
+        int count = 0;
+        sqlQuery = __sqlQuery;
+        sqlQuery += "" + idCategory;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery(sqlQuery);
+            productsToModify = new String[5];
+            while (rs.next()) {
+                for (int i = 0; i < productsToModify.length; i++) {
+                    productsToModify[i] = rs.getString(queryHeader[i + 1]);
+                }
+            }
+            for (Component cp : pnlContent) {
+                if (cp instanceof JTextField) {
+                    ((JTextField) cp).setText(productsToModify[count]);
+                    count++;
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    //Metodo para listar los nombres de las categories en el JComboBox para
+    //elegir las categorias
+    public static void categoryBox(JComboBox bxCategories) {
+        sqlQuery = "select name from categories";
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery(sqlQuery);
+            while (rs.next()) {
+                bxCategories.addItem(rs.getString("name"));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    //Metodo para obtener el categoyId usando el nombre escogido en el JComboBox
+    public static String getCategoryID(JComboBox bxCategories) {
+        bxCategories.getSelectedIndex();
+        sqlQuery = "select idCategories from categories where name='" + bxCategories.getSelectedItem().toString() + "'";
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery(sqlQuery);
+            while (rs.next()) {
+                return rs.getString("idCategories");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return "0";
+    }
+
+    //Metodo para realizar un ingreso de datos a la DB
+    public static void pushData2DB(String sqlAdd, String message) {
+        try {
+            st = cn.createStatement();
+            st.executeUpdate(sqlAdd);
+            JOptionPane.showMessageDialog(null, message);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        model.setRowCount(0);
     }
 
     // Metodo para obtener el modelo a ingresar en la tabla
@@ -169,19 +261,6 @@ public class DBManagement {
                 model.addRow(object);
             }
             table.setModel(model);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
-
-    //Metodo para listar los datos en un JComboBox
-    public static void listOnComboBox(JComboBox CBox, String sql) {
-        try {
-            pst = cn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            while (rs.next()) {
-                CBox.addItem(rs.getString("name"));
-            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
@@ -239,8 +318,7 @@ public class DBManagement {
             }
         }
         model.setRowCount(0);
-    }
-
+    }    
     //Metodo para realizar el update de dos tablas
     public static void pushUpdateJoinDB(String sqlData) {
         String sqlUpdate = "update product  set " + sqlData + " where " + queryHeader[0] + "=" + id;
@@ -268,6 +346,7 @@ public class DBManagement {
             String sqlDelete = "delete from " + tableNameDB + " where " + queryHeader[0] + "=" + id;
             System.out.println(sqlDelete);
             try {
+                cn = cnt.getConnection();
                 st = cn.createStatement();
                 st.executeUpdate(sqlDelete);
                 JOptionPane.showMessageDialog(null, "Eliminado Correctamente");
@@ -288,6 +367,7 @@ public class DBManagement {
             JOptionPane.showMessageDialog(null, "Ya esta inactivo");
         } else {
             try {
+                cn = cnt.getConnection();
                 st = cn.createStatement();
                 st.executeUpdate(sqlUpdate);
                 JOptionPane.showMessageDialog(null, "Registro Actualizado");

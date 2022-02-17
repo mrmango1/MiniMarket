@@ -5,6 +5,7 @@
 package com.main.container.content;
 
 import com.functions.DBManagement;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 
@@ -135,13 +136,13 @@ public class SuppliersAdd extends javax.swing.JPanel {
         addSupplier();
     }//GEN-LAST:event_btnAddSupplierActionPerformed
     public void addSupplier() {
-        String sqlInsert = "insert into suppliers (company,ruc,address,phone,mail,idAdmin)";
-        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents()) + ",'1');";
-        String sql = sqlInsert + sqlInto;
-        if (sqlInto.equals(",'1');")) {
+        String sqlInsert = "insert into suppliers (company,ruc,address,phone,mail) "
+                + "values(?,?,?,?,?)";
+        ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
+        if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.pushData2DB(sql, "Proveedor Agregado");
+            DBManagement.insertDataDB(dataFromTxtField,sqlInsert);
             DBManagement.clearTxtFields(pnlContent.getComponents());
         }
     }

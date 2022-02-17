@@ -6,6 +6,8 @@ package com.main.container.content;
 
 import com.functions.DBManagement;
 import java.awt.Dimension;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 
@@ -97,20 +99,19 @@ public class CategoriesAdd extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProductActionPerformed
-        DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
         addProducts();
     }//GEN-LAST:event_btnAddProductActionPerformed
 
     public void addProducts() {
-        String sqlInsert = "insert into product (name,stock,price,pvp,discount)";
-        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents())+");";
-        String sql = sqlInsert + sqlInto;
-        System.out.println(sql);
-        if (sqlInto.equals(");")) {
+        String sqlInsert = "INSERT INTO categories (name,description) VALUES(?,?)";
+        String name=txtName.getText();
+        String description=txtDescription.getText();
+        ArrayList<String> dataFromTxtField = new ArrayList(Arrays.asList(name,description));
+        if (name.equals("") || description.equals("")) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.pushData2DB(sql, "Producto Agregado");
-            DBManagement.clearTxtFields(pnlContent.getComponents());
+            DBManagement.insertDataDB(dataFromTxtField,sqlInsert);
+            txtName.setText("");txtDescription.setText("");
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

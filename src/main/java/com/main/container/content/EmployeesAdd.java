@@ -5,6 +5,7 @@
 package com.main.container.content;
 
 import com.functions.DBManagement;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 
@@ -154,18 +155,17 @@ public class EmployeesAdd extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployeeMouseClicked
-        DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
         addEmployee();
     }//GEN-LAST:event_btnAddEmployeeMouseClicked
 
     public void addEmployee() {
-        String sqlInsert = "insert into employee (nui,firstname,lastname,address,phone,mail,password,idAdmin)";
-        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents()) + ",'1');";
-        String sql = sqlInsert + sqlInto;
-        if (sqlInto.equals(",'1');")) {
+        //insert into admin(a,s,f,s,d,) values (?,?,?,?,?)
+        String sqlInsert = "INSERT INTO employees (nui,firstname,lastname,address,phone,mail,password) VALUES(?,?,?,?,?,?,?)";
+        ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
+        if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.pushData2DB(sql, "Usuario Agregado");
+            DBManagement.insertDataDB(dataFromTxtField,sqlInsert);
             DBManagement.clearTxtFields(pnlContent.getComponents());
         }
     }

@@ -17,7 +17,7 @@ public class SuppliersMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminSupplierMain
      */
-    String sql = "select idSuppliers,company, ruc, address, phone, mail from suppliers";
+    String sql = "select idSupplier,company, ruc, address, phone, mail, status from suppliers";
 
     public SuppliersMain() {
         initComponents();
@@ -39,9 +39,9 @@ public class SuppliersMain extends javax.swing.JPanel {
         btnModify = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         pnlSearch = new javax.swing.JPanel();
-        txtFldSearch = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
+        txtSearch = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,7 +59,7 @@ public class SuppliersMain extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Nombre Proveedor", "RUC", "Dirección", "Teléfono", "Correo"
+                "ID", "Nombre Proveedor", "RUC", "Dirección", "Teléfono", "Correo", "Status"
             }
         ));
         tblSupplier.setFocusable(false);
@@ -104,16 +104,6 @@ public class SuppliersMain extends javax.swing.JPanel {
         pnlSearch.setBackground(new java.awt.Color(136, 192, 208));
         pnlSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
-        txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        txtFldSearch.setBorder(null);
-        txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFldSearchActionPerformed(evt);
-            }
-        });
-        pnlSearch.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
-
         searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
         searchID.setForeground(new java.awt.Color(59, 66, 82));
         searchID.setText("ID");
@@ -123,16 +113,18 @@ public class SuppliersMain extends javax.swing.JPanel {
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         pnlSearch.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 30, 20));
 
+        txtSearch.setBackground(new java.awt.Color(136, 192, 208));
+        txtSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtSearch.setForeground(new java.awt.Color(46, 52, 64));
+        txtSearch.setBorder(null);
+        pnlSearch.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
+
         add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFldSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -144,6 +136,6 @@ public class SuppliersMain extends javax.swing.JPanel {
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
     private javax.swing.JTable tblSupplier;
-    private javax.swing.JTextField txtFldSearch;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

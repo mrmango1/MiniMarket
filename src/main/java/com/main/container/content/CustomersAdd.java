@@ -5,6 +5,7 @@
 package com.main.container.content;
 
 import com.functions.DBManagement;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 
@@ -146,15 +147,14 @@ public class CustomersAdd extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAddCustomerMouseClicked
 
     public void addEmployee() {
-        String sqlInsert = "insert into employee (nui,firstname,lastname,address,phone,mail,password,idAdmin)";
-        String sqlInto = DBManagement.getTxtFromTxtFields(pnlContent.getComponents())+ ",'1');";
-        String sql=sqlInsert+sqlInto;
-        if (DBManagement.getTxtFromTxtFields(pnlContent.getComponents()).equals("")) {
+        String sqlInsert = "INSERT INTO employees (nui,firstName,lastName,address,phone,mail) VALUES(?,?,?,?,?,?)";
+        ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
+        if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.pushData2DB(sql, "Usuario Agregado");
+            DBManagement.insertDataDB(dataFromTxtField,sqlInsert);
+            DBManagement.clearTxtFields(pnlContent.getComponents());
         }
-        DBManagement.clearTxtFields(pnlContent.getComponents());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAddCustomer;

@@ -15,7 +15,7 @@ import javax.swing.BorderFactory;
  */
 public class EmployeesMain extends javax.swing.JPanel {
 
-    String sql = "select idEmployee,firstname, lastName,nui, address, phone, mail from employee";
+    String sql = "select idEmployee,firstname, lastName,nui, address, phone, mail, status from employees";
 
     public EmployeesMain() {
         initComponents();
@@ -58,11 +58,11 @@ public class EmployeesMain extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Name", "NUI", "Dirección", "Telefono", "Email"
+                "ID", "Name", "NUI", "Dirección", "Telefono", "Email", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
+                false, true, true, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -141,10 +141,11 @@ public class EmployeesMain extends javax.swing.JPanel {
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         DBManagement.modifySimpleTable(tblEmployee);
+        
     }//GEN-LAST:event_btnModifyActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        DBManagement.deleteDataFromDB(tblEmployee);
+        DBManagement.inactiveDB(tblEmployee);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

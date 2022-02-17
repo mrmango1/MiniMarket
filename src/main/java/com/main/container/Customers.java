@@ -19,11 +19,7 @@ public class Customers extends javax.swing.JPanel {
     public Customers(boolean admin) {
         initComponents();
         this.admin = admin;
-        if(!admin){
-            btnAddCustomers.setVisible(false);
-        }
         Design.panelChange(pnlContent, new CustomersMain(admin));
-        btnBack.setVisible(false);
     }
 
     /**
@@ -37,8 +33,6 @@ public class Customers extends javax.swing.JPanel {
 
         pnlContent = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
-        btnAddCustomers = new javax.swing.JLabel();
-        btnBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
@@ -54,45 +48,10 @@ public class Customers extends javax.swing.JPanel {
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer.png"))); // NOI18N
         lblTitle.setText("CLIENTES");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
-
-        btnAddCustomers.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnAddCustomers.setForeground(new java.awt.Color(46, 52, 64));
-        btnAddCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add_person.png"))); // NOI18N
-        btnAddCustomers.setText("Cliente");
-        btnAddCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddCustomersMouseClicked(evt);
-            }
-        });
-        add(btnAddCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 25, -1, 20));
-
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back_arrow.png"))); // NOI18N
-        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBackMouseClicked(evt);
-            }
-        });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, -1, 20));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAddCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCustomersMouseClicked
-        Design.panelChange(pnlContent, new CustomersAdd());
-        btnAddCustomers.setVisible(false);
-        btnBack.setVisible(true);
-    }//GEN-LAST:event_btnAddCustomersMouseClicked
-
-    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(pnlContent, new CustomersMain(this.admin));
-        btnAddCustomers.setVisible(true);
-        btnBack.setVisible(false);
-    }//GEN-LAST:event_btnBackMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel btnAddCustomers;
-    private static javax.swing.JLabel btnBack;
     private static javax.swing.JLabel lblTitle;
     private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
