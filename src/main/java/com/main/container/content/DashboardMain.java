@@ -4,8 +4,11 @@
  */
 package com.main.container.content;
 
+import com.functions.DBManagement;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
@@ -16,8 +19,18 @@ public class DashboardMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminDashboardMain
      */
+    String sql = "select P.productName,sum(OD.quantity) from orderDetails OD \n" +
+"join products P on OD.idProduct=P.idProduct \n" +
+"join orders O on O.idOrder=OD.idOrder \n" +
+"where DATE(O.orderDate)=CURDATE() group by OD.idProduct order by sum(OD.quantity) desc";
+    String sql2 = "select concat(C.firstName,' ',C.lastName),sum(OD.quantity) from orderDetails OD \n" +
+"join orders O on O.idOrder=OD.idOrder \n" +
+"join customers C on C.idCustomer=O.idCustomer\n" +
+"where DATE(O.orderDate)=CURDATE() group by OD.idOrder order by sum(OD.quantity) desc";
     public DashboardMain() {
         initComponents();
+        DBManagement.showQueryInTable(tblSalesResume, sql);
+        DBManagement.showQueryInTable(tblCustomerResume, sql2);
     }
 
     /**
@@ -64,17 +77,22 @@ public class DashboardMain extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblSalesResume.setFocusable(false);
         tblSalesResume.setGridColor(new java.awt.Color(229, 233, 240));
         tblSalesResume.setRowHeight(35);
         tblSalesResume.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblSalesResume.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblSalesResume.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblSalesResume);
         tblSalesResume.getTableHeader().setOpaque(false);
         tblSalesResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
         tblSalesResume.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblSalesResume.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        tblSalesResume.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
 
-        pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
+        pnlSalesResume.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 360, 410));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 
@@ -83,6 +101,7 @@ public class DashboardMain extends javax.swing.JPanel {
         pnlCustomersResume.setBackground(new java.awt.Color(229, 233, 240));
         pnlCustomersResume.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblCustomerResume.setAutoCreateRowSorter(true);
         tblCustomerResume.setBackground(new java.awt.Color(229, 233, 240));
         tblCustomerResume.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         tblCustomerResume.setForeground(new java.awt.Color(67, 76, 94));
@@ -104,8 +123,9 @@ public class DashboardMain extends javax.swing.JPanel {
         tblCustomerResume.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
         tblCustomerResume.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblCustomerResume.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
+        tblCustomerResume.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
 
-        pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 390));
+        pnlCustomersResume.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 360, 410));
         jScrollPane2.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane2.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 

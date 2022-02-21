@@ -80,13 +80,14 @@ public class EmployeesMain extends javax.swing.JPanel {
         if (tblEmployee.getColumnModel().getColumnCount() > 0) {
             tblEmployee.getColumnModel().getColumn(0).setPreferredWidth(50);
             tblEmployee.getColumnModel().getColumn(0).setMaxWidth(60);
+            tblEmployee.getColumnModel().getColumn(6).setMaxWidth(60);
         }
         tblEmployee.getTableHeader().setOpaque(false);
         tblEmployee.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
         tblEmployee.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblEmployee.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 800, 420));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 

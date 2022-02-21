@@ -49,10 +49,13 @@ public class Login extends javax.swing.JFrame {
         pnlPassword = new javax.swing.JPanel();
         pwdUser = new javax.swing.JPasswordField();
         pnlLogo = new javax.swing.JPanel();
+        btnClose = new javax.swing.JButton();
+        btnMinimize = new javax.swing.JButton();
         viewPwd = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(236, 239, 244));
+        setUndecorated(true);
 
         pnlBg.setBackground(new java.awt.Color(236, 239, 244));
         pnlBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -145,15 +148,43 @@ public class Login extends javax.swing.JFrame {
 
         pnlLogo.setBackground(new java.awt.Color(236, 239, 244));
 
+        btnClose.setBackground(new java.awt.Color(236, 239, 244));
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close.png"))); // NOI18N
+        btnClose.setBorder(null);
+        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionPerformed(evt);
+            }
+        });
+
+        btnMinimize.setBackground(new java.awt.Color(236, 239, 244));
+        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minimize.png"))); // NOI18N
+        btnMinimize.setBorder(null);
+        btnMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMinimize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMinimizeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlLogoLayout = new javax.swing.GroupLayout(pnlLogo);
         pnlLogo.setLayout(pnlLogoLayout);
         pnlLogoLayout.setHorizontalGroup(
             pnlLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLogoLayout.createSequentialGroup()
+                .addGap(0, 220, Short.MAX_VALUE)
+                .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlLogoLayout.setVerticalGroup(
             pnlLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
+            .addGroup(pnlLogoLayout.createSequentialGroup()
+                .addGroup(pnlLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 150, Short.MAX_VALUE))
         );
 
         pnlBg.add(pnlLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 300, 190));
@@ -225,6 +256,14 @@ public class Login extends javax.swing.JFrame {
             pwdUser.setEchoChar('*');
         }
     }//GEN-LAST:event_viewPwdActionPerformed
+
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCloseActionPerformed
+
+    private void btnMinimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizeActionPerformed
+        setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_btnMinimizeActionPerformed
     public void logoQmet() {
         JLabel lgQmet = new JLabel();
         lgQmet.setBounds(0, 0, 280, 140);
@@ -265,6 +304,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static javax.swing.JButton btnClose;
+    private static javax.swing.JButton btnMinimize;
     private static javax.swing.JLabel icnLock;
     private static javax.swing.JLabel icnUser;
     private static javax.swing.JPanel inptContent;

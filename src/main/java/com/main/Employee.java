@@ -410,7 +410,7 @@ public class Employee extends javax.swing.JFrame {
 
     private void btnSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesMouseClicked
         if (!(btnActive == btnSales)) {
-            Design.clickOptions(btnSales, btnActive, pnlMain, new Sales());
+            Design.clickOptions(btnSales, btnActive, pnlMain, new Sales(false));
         }
         if (pnlMenu.getWidth() == 210) {
             Design.menuAnimation(pnlMenu);

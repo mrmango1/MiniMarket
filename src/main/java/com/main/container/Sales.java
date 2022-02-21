@@ -17,10 +17,15 @@ public class Sales extends javax.swing.JPanel {
     /**
      * Creates new form AdminEmployeeMain
      */
-    public Sales() {
+    public Sales(boolean admin) {
         initComponents();
+        if (admin) {
+            Design.panelChange(pnlContent, new SalesMain(true));
+        }else{
+            Design.panelChange(pnlContent, new SalesMain(false));
+        }
         btnBack.setVisible(false);
-        Design.panelChange(pnlContent, new SalesMain());
+        
     }
 
     /**
@@ -84,7 +89,7 @@ public class Sales extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDetailsActionPerformed
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Design.panelChange(pnlContent, new SalesMain());
+        Design.panelChange(pnlContent, new SalesMain(true));
         btnDetails.setVisible(true);
         btnBack.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked

@@ -4,9 +4,9 @@
  */
 package com.main.container.content;
 
+import com.functions.DBManagement;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,14 +34,11 @@ public class SellMain extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBill = new javax.swing.JTable();
         lblTotalPrice = new javax.swing.JLabel();
-        txtNui = new javax.swing.JTextField();
-        btnCF = new javax.swing.JButton();
-        btnBill = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        txtTotalPrice = new javax.swing.JTextField();
         pnlSearch4 = new javax.swing.JPanel();
-        txtFldSearch4 = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
+        txtSearch = new javax.swing.JTextField();
         lblAmount = new javax.swing.JLabel();
         lblID = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
@@ -55,30 +52,35 @@ public class SellMain extends javax.swing.JPanel {
         pnlContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblBill.setBackground(new java.awt.Color(229, 233, 240));
-        tblBill.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        tblBill.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         tblBill.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Descripcion", "Cant.", "Precio U.", "IVA", "Dsc", "Subtotal"
+                "ID", "Nombre", "Descripcion", "PvP", "Dsc%", "Cant", "Subtotal"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        tblBill.setShowGrid(true);
+        tblBill.setFocusable(false);
+        tblBill.setGridColor(new java.awt.Color(216, 222, 233));
+        tblBill.setRowHeight(30);
+        tblBill.setSelectionBackground(new java.awt.Color(235, 203, 139));
+        tblBill.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblBill.setShowGrid(false);
         tblBill.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblBill);
         tblBill.getTableHeader().setOpaque(false);
         tblBill.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
         tblBill.getTableHeader().setForeground(new java.awt.Color(46,52,64));
-        tblBill.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 0, 14));
+        tblBill.getTableHeader().setFont(new java.awt.Font("Roboto Medium", 1, 14));
         if (tblBill.getColumnModel().getColumnCount() > 0) {
             tblBill.getColumnModel().getColumn(0).setPreferredWidth(40);
             tblBill.getColumnModel().getColumn(0).setMaxWidth(60);
@@ -86,17 +88,15 @@ public class SellMain extends javax.swing.JPanel {
             tblBill.getColumnModel().getColumn(1).setMaxWidth(160);
             tblBill.getColumnModel().getColumn(3).setPreferredWidth(60);
             tblBill.getColumnModel().getColumn(3).setMaxWidth(100);
-            tblBill.getColumnModel().getColumn(4).setPreferredWidth(60);
-            tblBill.getColumnModel().getColumn(4).setMaxWidth(100);
+            tblBill.getColumnModel().getColumn(4).setPreferredWidth(40);
+            tblBill.getColumnModel().getColumn(4).setMaxWidth(60);
             tblBill.getColumnModel().getColumn(5).setPreferredWidth(40);
             tblBill.getColumnModel().getColumn(5).setMaxWidth(50);
-            tblBill.getColumnModel().getColumn(6).setPreferredWidth(40);
-            tblBill.getColumnModel().getColumn(6).setMaxWidth(60);
-            tblBill.getColumnModel().getColumn(7).setPreferredWidth(75);
-            tblBill.getColumnModel().getColumn(7).setMaxWidth(150);
+            tblBill.getColumnModel().getColumn(6).setPreferredWidth(75);
+            tblBill.getColumnModel().getColumn(6).setMaxWidth(150);
         }
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 320));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 800, 340));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
@@ -105,65 +105,16 @@ public class SellMain extends javax.swing.JPanel {
         lblTotalPrice.setText("TOTAL:");
         pnlContent.add(lblTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, -1, 22));
 
-        txtNui.setEditable(false);
-        txtNui.setBackground(new java.awt.Color(229, 233, 240));
-        txtNui.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        txtNui.setBorder(null);
-        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 350, 110, 22));
+        txtTotalPrice.setEditable(false);
+        txtTotalPrice.setBackground(new java.awt.Color(229, 233, 240));
+        txtTotalPrice.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtTotalPrice.setBorder(null);
+        pnlContent.add(txtTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 350, 110, 22));
 
         add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 840, 380));
 
-        btnCF.setBackground(new java.awt.Color(208, 135, 112));
-        btnCF.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnCF.setForeground(new java.awt.Color(67, 76, 94));
-        btnCF.setText("CONSUMIDOR F.");
-        btnCF.setBorder(null);
-        btnCF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCF.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCFMouseClicked(evt);
-            }
-        });
-        add(btnCF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 120, 40));
-
-        btnBill.setBackground(new java.awt.Color(143, 188, 187));
-        btnBill.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnBill.setForeground(new java.awt.Color(67, 76, 94));
-        btnBill.setText("FACTURA");
-        btnBill.setBorder(null);
-        btnBill.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBill.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBillMouseClicked(evt);
-            }
-        });
-        add(btnBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 120, 40));
-
-        btnCancel.setBackground(new java.awt.Color(191, 97, 106));
-        btnCancel.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnCancel.setForeground(new java.awt.Color(67, 76, 94));
-        btnCancel.setText("CANCELAR");
-        btnCancel.setBorder(null);
-        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCancelMouseClicked(evt);
-            }
-        });
-        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, 120, 40));
-
         pnlSearch4.setBackground(new java.awt.Color(136, 192, 208));
         pnlSearch4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtFldSearch4.setBackground(new java.awt.Color(136, 192, 208));
-        txtFldSearch4.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        txtFldSearch4.setBorder(null);
-        txtFldSearch4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFldSearch4ActionPerformed(evt);
-            }
-        });
-        pnlSearch4.add(txtFldSearch4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 8, 120, 20));
 
         searchID.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         searchID.setForeground(new java.awt.Color(59, 66, 82));
@@ -173,6 +124,12 @@ public class SellMain extends javax.swing.JPanel {
         search_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         pnlSearch4.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 8, 30, 20));
+
+        txtSearch.setBackground(new java.awt.Color(136, 192, 208));
+        txtSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtSearch.setForeground(new java.awt.Color(46, 52, 64));
+        txtSearch.setBorder(null);
+        pnlSearch4.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 8, 100, 20));
 
         add(pnlSearch4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 230, 35));
 
@@ -202,49 +159,42 @@ public class SellMain extends javax.swing.JPanel {
 
         btnShop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping_car.png"))); // NOI18N
         btnShop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnShop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnShopMouseClicked(evt);
+            }
+        });
         add(btnShop, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCFMouseClicked
-        JOptionPane.showMessageDialog(null, "Funcion en desarrollo");
-    }//GEN-LAST:event_btnCFMouseClicked
+    private void btnShopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnShopMouseClicked
+        addToCar();
+    }//GEN-LAST:event_btnShopMouseClicked
 
-    private void btnBillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBillMouseClicked
-        JOptionPane.showMessageDialog(null, "Funcion en desarrollo");
-    }//GEN-LAST:event_btnBillMouseClicked
-
-    private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelMouseClicked
-
-    private void txtFldSearch4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearch4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFldSearch4ActionPerformed
-
+    public void addToCar(){
+        int idProduct = Integer.parseInt(txtID.getText());
+        int amount = Integer.parseInt(txtAmount.getText());
+        DBManagement.getHashSellDetails(idProduct, amount);
+        String sql = "select P.idProduct, P.productName, C.description, P.pvp, P.discount "
+                + "from products P join categories C on P.idCategory=C.idCategory where idProduct="+idProduct;
+        DBManagement.showQuerySell(tblBill, sql, amount);
+        txtTotalPrice.setText(String.valueOf(DBManagement.getTotalPrice()));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBill;
-    private javax.swing.JButton btnCF;
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JLabel btnShop;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblAmount;
-    private javax.swing.JLabel lblID;
-    private javax.swing.JLabel lblTotalPrice;
-    private javax.swing.JPanel pnlContent;
-    private javax.swing.JPanel pnlSearch;
-    private javax.swing.JPanel pnlSearch1;
-    private javax.swing.JPanel pnlSearch2;
-    private javax.swing.JPanel pnlSearch4;
-    private javax.swing.JLabel searchID;
-    private javax.swing.JLabel search_icon;
-    private javax.swing.JTable tblBill;
-    private javax.swing.JTextField txtAmount;
-    private javax.swing.JTextField txtFldSearch;
-    private javax.swing.JTextField txtFldSearch1;
-    private javax.swing.JTextField txtFldSearch2;
-    private javax.swing.JTextField txtFldSearch4;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtNui;
+    private static javax.swing.JLabel btnShop;
+    private static javax.swing.JScrollPane jScrollPane1;
+    private static javax.swing.JLabel lblAmount;
+    private static javax.swing.JLabel lblID;
+    private static javax.swing.JLabel lblTotalPrice;
+    private static javax.swing.JPanel pnlContent;
+    private static javax.swing.JPanel pnlSearch4;
+    private static javax.swing.JLabel searchID;
+    private static javax.swing.JLabel search_icon;
+    private static javax.swing.JTable tblBill;
+    private static javax.swing.JTextField txtAmount;
+    private static javax.swing.JTextField txtID;
+    private static javax.swing.JTextField txtSearch;
+    private static javax.swing.JTextField txtTotalPrice;
     // End of variables declaration//GEN-END:variables
 }

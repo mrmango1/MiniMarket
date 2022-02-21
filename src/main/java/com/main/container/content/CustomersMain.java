@@ -4,6 +4,7 @@
  */
 package com.main.container.content;
 
+import com.functions.DBManagement;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -16,8 +17,10 @@ public class CustomersMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminCustomersMain
      */
+    String sql = "select idCustomer,firstname,lastName,nui, address, phone, mail from customers";
     public CustomersMain(boolean admin) {
         initComponents();
+        DBManagement.showQueryInTable(tblCustomers, sql);
         if(!admin){
             btnDelete.setVisible(false);
             btnModify.setVisible(false);
@@ -39,9 +42,9 @@ public class CustomersMain extends javax.swing.JPanel {
         btnModify = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         pnlSearch = new javax.swing.JPanel();
-        txtFldSearch = new javax.swing.JTextField();
         searchID = new javax.swing.JLabel();
         search_icon = new javax.swing.JLabel();
+        txtSearch = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,14 +62,23 @@ public class CustomersMain extends javax.swing.JPanel {
             new String [] {
                 "ID", "Nombre", "NUI", "Direccion", "Telefono", "Email"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblCustomers.setFocusable(false);
         tblCustomers.setRowHeight(35);
         tblCustomers.setSelectionBackground(new java.awt.Color(235, 203, 139));
         tblCustomers.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblCustomers);
         if (tblCustomers.getColumnModel().getColumnCount() > 0) {
-            tblCustomers.getColumnModel().getColumn(0).setPreferredWidth(10);
+            tblCustomers.getColumnModel().getColumn(0).setPreferredWidth(35);
+            tblCustomers.getColumnModel().getColumn(0).setMaxWidth(50);
             tblCustomers.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
         tblCustomers.getTableHeader().setOpaque(false);
@@ -74,7 +86,7 @@ public class CustomersMain extends javax.swing.JPanel {
         tblCustomers.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblCustomers.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 800, 420));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
@@ -104,16 +116,6 @@ public class CustomersMain extends javax.swing.JPanel {
         pnlSearch.setBackground(new java.awt.Color(136, 192, 208));
         pnlSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtFldSearch.setBackground(new java.awt.Color(136, 192, 208));
-        txtFldSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        txtFldSearch.setBorder(null);
-        txtFldSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFldSearchActionPerformed(evt);
-            }
-        });
-        pnlSearch.add(txtFldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
-
         searchID.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
         searchID.setForeground(new java.awt.Color(59, 66, 82));
         searchID.setText("ID");
@@ -123,16 +125,18 @@ public class CustomersMain extends javax.swing.JPanel {
         search_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         pnlSearch.add(search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 8, 30, 20));
 
+        txtSearch.setBackground(new java.awt.Color(136, 192, 208));
+        txtSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtSearch.setForeground(new java.awt.Color(46, 52, 64));
+        txtSearch.setBorder(null);
+        pnlSearch.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
+
         add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void txtFldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFldSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFldSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -144,6 +148,6 @@ public class CustomersMain extends javax.swing.JPanel {
     private javax.swing.JLabel searchID;
     private javax.swing.JLabel search_icon;
     private javax.swing.JTable tblCustomers;
-    private javax.swing.JTextField txtFldSearch;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

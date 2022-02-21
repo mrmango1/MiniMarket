@@ -66,15 +66,18 @@ public class SuppliersMain extends javax.swing.JPanel {
         tblSupplier.setGridColor(new java.awt.Color(236, 239, 244));
         tblSupplier.setRowHeight(35);
         tblSupplier.setSelectionBackground(new java.awt.Color(235, 203, 139));
-        tblSupplier.setSelectionForeground(new java.awt.Color(236, 239, 244));
         tblSupplier.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblSupplier);
+        if (tblSupplier.getColumnModel().getColumnCount() > 0) {
+            tblSupplier.getColumnModel().getColumn(0).setMaxWidth(50);
+            tblSupplier.getColumnModel().getColumn(6).setMaxWidth(60);
+        }
         tblSupplier.getTableHeader().setOpaque(false);
         tblSupplier.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
         tblSupplier.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblSupplier.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 800, 420));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
@@ -86,6 +89,11 @@ public class SuppliersMain extends javax.swing.JPanel {
         btnModify.setText("Modificar");
         btnModify.setBorder(null);
         btnModify.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyActionPerformed(evt);
+            }
+        });
         add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 120, 40));
 
         btnDelete.setBackground(new java.awt.Color(208, 135, 112));
@@ -123,8 +131,12 @@ public class SuppliersMain extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+        DBManagement.inactiveDB(tblSupplier);
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
+        DBManagement.modifySimpleTable(tblSupplier);
+    }//GEN-LAST:event_btnModifyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

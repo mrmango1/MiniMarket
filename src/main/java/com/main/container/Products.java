@@ -23,7 +23,6 @@ public class Products extends javax.swing.JPanel {
 
     public Products(boolean admin) {
         initComponents();
-        this.admin = admin;
         if (!admin) {
             btnAddProducts.setVisible(false);
         }

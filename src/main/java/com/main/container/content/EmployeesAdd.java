@@ -160,7 +160,7 @@ public class EmployeesAdd extends javax.swing.JPanel {
 
     public void addEmployee() {
         //insert into admin(a,s,f,s,d,) values (?,?,?,?,?)
-        String sqlInsert = "INSERT INTO employees (nui,firstname,lastname,address,phone,mail,password) VALUES(?,?,?,?,?,?,?)";
+        String sqlInsert = "INSERT INTO employees (nui,firstname,lastname,address,phone,mail,password) VALUES(?,?,?,?,?,?,md5(?))";
         ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
         if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");

@@ -5,6 +5,7 @@
  */
 package com.main.container.content;
 
+import com.functions.DBManagement;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -17,8 +18,23 @@ public class SalesMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminSalesMain
      */
-    public SalesMain() {
+    String idEmployee = DBManagement.getID();
+    String sqlEmployee = "select O.idOrder, concat(E.firstName,' ',E.lastName),concat(C.firstName,' ',C.lastName), "
+            + "DATE(O.orderDate), TIME(O.orderDate), sum(OD.quantity),sum(P.pvp * OD.quantity) "
+            + "from orders O join orderDetails OD on O.idOrder=OD.idOrder join employees E on O.idEmployee=E.idEmployee "
+            + "join customers C on O.idCustomer=C.idCustomer join products P on OD.idProduct=P.idProduct where O.idEmployee=" + idEmployee + " group by OD.idOrder";
+    String sqlAdmin = "select O.idOrder, concat(E.firstName,' ',E.lastName),concat(C.firstName,' ',C.lastName), "
+            + "DATE(O.orderDate), TIME(O.orderDate), sum(OD.quantity),sum(P.pvp * OD.quantity) "
+            + "from orders O join orderDetails OD on O.idOrder=OD.idOrder join employees E on O.idEmployee=E.idEmployee "
+            + "join customers C on O.idCustomer=C.idCustomer join products P on OD.idProduct=P.idProduct group by OD.idOrder";
+
+    public SalesMain(boolean admin) {
         initComponents();
+        if (admin) {
+            DBManagement.showQueryInTable(tblSales, sqlAdmin);
+        }else{
+            DBManagement.showQueryInTable(tblSales, sqlEmployee);
+        }
     }
 
     /**
@@ -56,20 +72,47 @@ public class SalesMain extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "ID.Empleado", "ID.Cliente", "Fecha", "Total Productos", "Subtotal", "Venta Total"
+                "ID", "Empleado", "Cliente", "Fecha", "Hora", "Total Productos", "Venta Total"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblSales.setFocusable(false);
         tblSales.setRowHeight(35);
         tblSales.setSelectionBackground(new java.awt.Color(235, 203, 139));
         tblSales.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblSales);
+        if (tblSales.getColumnModel().getColumnCount() > 0) {
+            tblSales.getColumnModel().getColumn(0).setMaxWidth(35);
+            tblSales.getColumnModel().getColumn(1).setMinWidth(80);
+            tblSales.getColumnModel().getColumn(1).setPreferredWidth(110);
+            tblSales.getColumnModel().getColumn(1).setMaxWidth(200);
+            tblSales.getColumnModel().getColumn(2).setMinWidth(80);
+            tblSales.getColumnModel().getColumn(2).setPreferredWidth(110);
+            tblSales.getColumnModel().getColumn(2).setMaxWidth(200);
+            tblSales.getColumnModel().getColumn(3).setMinWidth(80);
+            tblSales.getColumnModel().getColumn(3).setPreferredWidth(100);
+            tblSales.getColumnModel().getColumn(3).setMaxWidth(120);
+            tblSales.getColumnModel().getColumn(4).setMinWidth(70);
+            tblSales.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tblSales.getColumnModel().getColumn(4).setMaxWidth(120);
+            tblSales.getColumnModel().getColumn(5).setMinWidth(50);
+            tblSales.getColumnModel().getColumn(5).setPreferredWidth(70);
+            tblSales.getColumnModel().getColumn(5).setMaxWidth(90);
+            tblSales.getColumnModel().getColumn(6).setMaxWidth(100);
+        }
         tblSales.getTableHeader().setOpaque(false);
         tblSales.getTableHeader().setBackground(new java.awt.Color(229, 233, 240));
         tblSales.getTableHeader().setForeground(new java.awt.Color(46,52,64));
         tblSales.getTableHeader().setFont(new java.awt.Font("Roboto", 1, 14));
 
-        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 400));
+        pnlContent.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 800, 420));
         jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
         jScrollPane1.getVerticalScrollBar().setPreferredSize( new Dimension(0,0) );
 
@@ -95,7 +138,7 @@ public class SalesMain extends javax.swing.JPanel {
 
         add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
     }// </editor-fold>//GEN-END:initComponents
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
