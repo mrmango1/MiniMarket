@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -20,8 +20,8 @@ public class ProductsAdd extends javax.swing.JPanel {
      */
     public ProductsAdd() {
         initComponents();
-        DBManagement.listOnComboBox(bxCategory,"categories","name");
-        DBManagement.listOnComboBox(bxSupplier,"suppliers","company");
+        DB.listOnComboBox(bxCategory,"categories","name");
+        DB.listOnComboBox(bxSupplier,"suppliers","company");
     }
 
     /**
@@ -176,12 +176,12 @@ public class ProductsAdd extends javax.swing.JPanel {
         ;
         String sqlInsert = "INSERT INTO products (productName,stock,price,pvp,discount,idCategory,idSupplier) "
                 + "values (?,?,?,?,?,'"+(bxCategory.getSelectedIndex()+1)+"',"+(bxSupplier.getSelectedIndex()+1)+")";
-        ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
+        ArrayList<String> dataFromTxtField = DB.getTxtFromTxtFields(pnlContent.getComponents());
         if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.insertDataProducts(dataFromTxtField,sqlInsert);
-            DBManagement.clearTxtFields(pnlContent.getComponents());
+            DB.insertDataProducts(dataFromTxtField,sqlInsert);
+            DB.clearTxtFields(pnlContent.getComponents());
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

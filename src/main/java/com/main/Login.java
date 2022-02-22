@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.main;
-import com.functions.DBManagement;
+import com.functions.DB;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Image;
@@ -236,12 +236,12 @@ public class Login extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Admin adminMain = new Admin();
         Employee employeeMain = new Employee();
-        if (DBManagement.login(txtUser.getText(), pwdUser.getText()) == 1) {
-            adminMain.setUserName(DBManagement.getUserName());
+        if (DB.login(txtUser.getText(), pwdUser.getText()) == 1) {
+            adminMain.setUserName(DB.getUserName());
             adminMain.setVisible(true);
             dispose();
-        } else if (DBManagement.login(txtUser.getText(), pwdUser.getText()) == 2) {
-            employeeMain.setUserName(DBManagement.getUserName());
+        } else if (DB.login(txtUser.getText(), pwdUser.getText()) == 2) {
+            employeeMain.setUserName(DB.getUserName());
             employeeMain.setVisible(true);
             dispose();
         } else {

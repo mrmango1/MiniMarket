@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -107,7 +107,7 @@ public class SellMain extends javax.swing.JPanel {
 
         txtTotalPrice.setEditable(false);
         txtTotalPrice.setBackground(new java.awt.Color(229, 233, 240));
-        txtTotalPrice.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        txtTotalPrice.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtTotalPrice.setBorder(null);
         pnlContent.add(txtTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 350, 110, 22));
 
@@ -174,11 +174,11 @@ public class SellMain extends javax.swing.JPanel {
     public void addToCar(){
         int idProduct = Integer.parseInt(txtID.getText());
         int amount = Integer.parseInt(txtAmount.getText());
-        DBManagement.getHashSellDetails(idProduct, amount);
+        DB.getHashSellDetails(idProduct, amount);
         String sql = "select P.idProduct, P.productName, C.description, P.pvp, P.discount "
                 + "from products P join categories C on P.idCategory=C.idCategory where idProduct="+idProduct;
-        DBManagement.showQuerySell(tblBill, sql, amount);
-        txtTotalPrice.setText(String.valueOf(DBManagement.getTotalPrice()));
+        DB.showQuerySell(tblBill, sql, amount);
+        txtTotalPrice.setText(String.valueOf(DB.getTotalPrice()));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

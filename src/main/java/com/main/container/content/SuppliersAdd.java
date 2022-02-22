@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -138,12 +138,12 @@ public class SuppliersAdd extends javax.swing.JPanel {
     public void addSupplier() {
         String sqlInsert = "insert into suppliers (company,ruc,address,phone,mail) "
                 + "values(?,?,?,?,?)";
-        ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(pnlContent.getComponents());
+        ArrayList<String> dataFromTxtField = DB.getTxtFromTxtFields(pnlContent.getComponents());
         if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.insertDataDB(dataFromTxtField,sqlInsert);
-            DBManagement.clearTxtFields(pnlContent.getComponents());
+            DB.insertDataDB(dataFromTxtField,sqlInsert);
+            DB.clearTxtFields(pnlContent.getComponents());
         }
     }
 

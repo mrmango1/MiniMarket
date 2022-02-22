@@ -4,9 +4,8 @@
  */
 package com.main.container;
 
-import com.main.Login;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+import com.functions.Design;
+import com.main.container.content.SettingsUser;
 
 /**
  *
@@ -17,8 +16,9 @@ public class Settings extends javax.swing.JPanel {
     /**
      * Creates new form AdminEmployeeMain
      */
-    public Settings() {
+    public Settings(boolean admin) {
         initComponents();
+        Design.panelChange(pnlContent, new SettingsUser(admin));
     }
 
     /**
@@ -30,25 +30,12 @@ public class Settings extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnLogout = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
+        pnlContent = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(236, 239, 244));
         setPreferredSize(new java.awt.Dimension(940, 590));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnLogout.setBackground(new java.awt.Color(191, 97, 106));
-        btnLogout.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        btnLogout.setForeground(new java.awt.Color(76, 86, 106));
-        btnLogout.setText("LOGOUT");
-        btnLogout.setBorder(null);
-        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 120, 40));
 
         lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(46, 52, 64));
@@ -56,19 +43,16 @@ public class Settings extends javax.swing.JPanel {
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
         lblTitle.setText("CONFIGURACION");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 200, 30));
+
+        pnlContent.setBackground(new java.awt.Color(236, 239, 244));
+        pnlContent.setPreferredSize(new java.awt.Dimension(840, 500));
+        pnlContent.setLayout(new javax.swing.BoxLayout(pnlContent, javax.swing.BoxLayout.LINE_AXIS));
+        add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 840, 500));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        Login login = new Login();
-        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        login.setVisible(true);
-        SwingUtilities.getWindowAncestor(lblTitle).dispose();
-
-    }//GEN-LAST:event_btnLogoutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JButton btnLogout;
     private static javax.swing.JLabel lblTitle;
+    private static javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }

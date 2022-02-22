@@ -485,7 +485,7 @@ public class Employee extends javax.swing.JFrame {
     }//GEN-LAST:event_userMenuMouseClicked
 
     private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
-        Design.panelChange(pnlMain, new Settings());
+        Design.panelChange(pnlMain, new Settings(false));
     }//GEN-LAST:event_btnSettingsMouseClicked
 
     public void setUserName(String user) {

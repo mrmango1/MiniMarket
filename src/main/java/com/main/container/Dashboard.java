@@ -46,7 +46,7 @@ public class Dashboard extends javax.swing.JPanel {
         lblTitle.setForeground(new java.awt.Color(46, 52, 64));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard.png"))); // NOI18N
-        lblTitle.setText("DASHBOARD");
+        lblTitle.setText("RESUMEN");
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
 

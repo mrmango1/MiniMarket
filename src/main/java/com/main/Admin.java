@@ -509,7 +509,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_userMenuMouseClicked
 
     private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
-        Design.panelChange(pnlMain, new Settings());
+        Design.panelChange(pnlMain, new Settings(true));
     }//GEN-LAST:event_btnSettingsMouseClicked
 
     private void btnProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseClicked

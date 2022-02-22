@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
@@ -19,7 +19,7 @@ public class EmployeesMain extends javax.swing.JPanel {
 
     public EmployeesMain() {
         initComponents();
-        DBManagement.showQueryInTable(tblEmployee, sql);
+        DB.showQueryInTable(tblEmployee, sql);
     }
 
     /**
@@ -141,12 +141,12 @@ public class EmployeesMain extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
-        DBManagement.modifySimpleTable(tblEmployee);
+        DB.modifySimpleTable(tblEmployee);
         
     }//GEN-LAST:event_btnModifyActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        DBManagement.inactiveDB(tblEmployee);
+        DB.inactiveDB(tblEmployee);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

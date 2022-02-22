@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class CustomersAdd extends javax.swing.JPanel {
 
-    String idEmployee = DBManagement.getID();
+    String idEmployee = DB.getID();
     String idCustomer;
 
     public CustomersAdd() {
@@ -152,27 +152,27 @@ public class CustomersAdd extends javax.swing.JPanel {
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
         String sqlSell = "INSERT INTO orders(idEmployee,idCustomer,orderDate) values (" + idEmployee + ",?,now())";
         if (idCustomer != null) {   
-            DBManagement.insertData(sqlSell, Integer.parseInt(idCustomer));
-            DBManagement.clearTxtFields(this.getComponents());
+            DB.insertData(sqlSell, Integer.parseInt(idCustomer));
+            DB.clearTxtFields(this.getComponents());
         } else {
             addCustomer();
-            DBManagement.insertData(sqlSell, 0);
+            DB.insertData(sqlSell, 0);
         }
-        DBManagement.resetTotalPrice();
+        DB.resetTotalPrice();
     }//GEN-LAST:event_btnSellActionPerformed
 
     private void btnSearchNuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchNuiActionPerformed
         String nui = txtNui.getText();
-        idCustomer = DBManagement.searchCustomer(nui, this.getComponents());
+        idCustomer = DB.searchCustomer(nui, this.getComponents());
     }//GEN-LAST:event_btnSearchNuiActionPerformed
     public void addCustomer() {
         String sqlInsert = "INSERT INTO customers (nui,firstName,lastName,address,phone,mail) VALUES(?,?,?,?,?,?)";
-        ArrayList<String> dataFromTxtField = DBManagement.getTxtFromTxtFields(this.getComponents());
+        ArrayList<String> dataFromTxtField = DB.getTxtFromTxtFields(this.getComponents());
         if (dataFromTxtField == null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.insertDataDB(dataFromTxtField, sqlInsert);
-            DBManagement.clearTxtFields(this.getComponents());
+            DB.insertDataDB(dataFromTxtField, sqlInsert);
+            DB.clearTxtFields(this.getComponents());
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

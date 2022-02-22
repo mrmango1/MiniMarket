@@ -4,7 +4,7 @@
  */
 package com.main.container;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import com.functions.Design;
 import com.main.container.content.CustomersAdd;
 import com.main.container.content.SellMain;
@@ -112,10 +112,10 @@ public class Sell extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelMouseClicked
 
     private void btnCFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCFActionPerformed
-        String idEmployee = DBManagement.getID();
+        String idEmployee = DB.getID();
         String sqlSellCF="INSERT INTO orders(idEmployee,idCustomer,orderDate) values ("+idEmployee+",?,now())";
-        DBManagement.insertData(sqlSellCF,1);
-        DBManagement.resetTotalPrice();
+        DB.insertData(sqlSellCF,1);
+        DB.resetTotalPrice();
     }//GEN-LAST:event_btnCFActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

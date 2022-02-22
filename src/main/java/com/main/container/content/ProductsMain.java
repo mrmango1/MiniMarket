@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -24,7 +24,7 @@ public class ProductsMain extends javax.swing.JPanel {
         initComponents();
         if (!admin) {
         }
-        DBManagement.showQueryInTable(tblProducts, sql);
+        DB.showQueryInTable(tblProducts, sql);
     }
 
     /**

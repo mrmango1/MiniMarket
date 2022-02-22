@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -29,8 +29,8 @@ public class DashboardMain extends javax.swing.JPanel {
 "where DATE(O.orderDate)=CURDATE() group by OD.idOrder order by sum(OD.quantity) desc";
     public DashboardMain() {
         initComponents();
-        DBManagement.showQueryInTable(tblSalesResume, sql);
-        DBManagement.showQueryInTable(tblCustomerResume, sql2);
+        DB.showQueryInTable(tblSalesResume, sql);
+        DB.showQueryInTable(tblCustomerResume, sql2);
     }
 
     /**

@@ -13,10 +13,24 @@ import javax.swing.JOptionPane;
  *
  * @author mrmango
  */
-public class EmployeesAdd extends javax.swing.JPanel {
 
-    public EmployeesAdd() {
+public class SettingsUser extends javax.swing.JPanel {
+    
+    String sql= "select firstName,lastName,nui,address,phone,mail,password from ";
+    String id, user;
+    
+    public SettingsUser(boolean admin) {
         initComponents();
+        if(admin){
+            id = "idAdmin=";
+            user = "admin";
+        }else{
+            id = "idEmployee=";
+            user = "employees";
+        }
+        sql += user + " where "+id+"?";
+        DB.getUserData(sql, pnlContent.getComponents());
+        txtPassword.setText(DB.getUserPwd());
     }
 
     /**
@@ -36,9 +50,9 @@ public class EmployeesAdd extends javax.swing.JPanel {
         lblPhone = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-        txtNui = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtLastName = new javax.swing.JTextField();
+        txtNui = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         txtPhone = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
@@ -88,13 +102,6 @@ public class EmployeesAdd extends javax.swing.JPanel {
         lblPassword.setText("Contraseña:");
         pnlContent.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, 30));
 
-        txtNui.setBackground(new java.awt.Color(229, 233, 240));
-        txtNui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
-        txtNui.setForeground(new java.awt.Color(130, 147, 181));
-        txtNui.setBorder(null);
-        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 190, 30));
-        txtNui.setBorder(BorderFactory.createCompoundBorder(txtNui.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
-
         txtName.setBackground(new java.awt.Color(229, 233, 240));
         txtName.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtName.setForeground(new java.awt.Color(130, 147, 181));
@@ -108,6 +115,13 @@ public class EmployeesAdd extends javax.swing.JPanel {
         txtLastName.setBorder(null);
         pnlContent.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 190, 30));
         txtLastName.setBorder(BorderFactory.createCompoundBorder(txtLastName.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
+
+        txtNui.setBackground(new java.awt.Color(229, 233, 240));
+        txtNui.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtNui.setForeground(new java.awt.Color(130, 147, 181));
+        txtNui.setBorder(null);
+        pnlContent.add(txtNui, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 190, 30));
+        txtNui.setBorder(BorderFactory.createCompoundBorder(txtNui.getBorder(),BorderFactory.createEmptyBorder(7, 10, 7, 10)));
 
         txtAddress.setBackground(new java.awt.Color(229, 233, 240));
         txtAddress.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
@@ -143,7 +157,7 @@ public class EmployeesAdd extends javax.swing.JPanel {
         btnAddEmployee.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         btnAddEmployee.setForeground(new java.awt.Color(76, 86, 106));
         btnAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnAddEmployee.setText("Agregar");
+        btnAddEmployee.setText("Actualizar");
         btnAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAddEmployee.setOpaque(true);
         btnAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,12 +174,12 @@ public class EmployeesAdd extends javax.swing.JPanel {
 
     public void addEmployee() {
         //insert into admin(a,s,f,s,d,) values (?,?,?,?,?)
-        String sqlInsert = "INSERT INTO employees (nui,firstname,lastname,address,phone,mail,password) VALUES(?,?,?,?,?,?,md5(?))";
+        String sqlUpdate = "update "+user+" set firstName=?,lastName=?,nui=?,address=?,phone=?,mail=?,password=md5(?) where "+id+DB.getID();
         ArrayList<String> dataFromTxtField = DB.getTxtFromTxtFields(pnlContent.getComponents());
         if (dataFromTxtField==null) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DB.insertDataDB(dataFromTxtField,sqlInsert);
+            DB.insertDataDB(dataFromTxtField,sqlUpdate);
             DB.clearTxtFields(pnlContent.getComponents());
         }
     }

@@ -14,9 +14,9 @@ import javax.swing.table.DefaultTableModel;
 /**
  * @author mrmango
  */
-public class DBManagement {
+public class DB {
 
-    static String idTable, userName, idUser, tableNameDB, sqlQuery, idCategory;
+    static String idTable, userName,userPwd, idUser, tableNameDB, sqlQuery, idCategory;
     static double totalPrice;
     static boolean completeName, correctDataToModify = true;
 
@@ -36,7 +36,9 @@ public class DBManagement {
     public static String getUserName() {
         return userName;
     }
-
+    public static String getUserPwd() {
+        return userPwd;
+    }
     public static String getID() {
         return idUser;
     }
@@ -55,6 +57,7 @@ public class DBManagement {
                 rs = pst.executeQuery();
                 if (rs.next()) {
                     userName = rs.getString("firstName");
+                    userPwd = password;
                     if (i == 0) {
                         idUser = rs.getString("idAdmin");
                         return 1;
@@ -223,8 +226,9 @@ public class DBManagement {
                 }
                 a++;
             }
+            pushUpdateDB(sqlData);
         }
-        pushUpdateDB(sqlData);
+        model.setRowCount(0);
         showQueryInTable(table, sqlQuery);
     }
 
@@ -393,6 +397,24 @@ public class DBManagement {
             JOptionPane.showMessageDialog(null, e);
         }
         return idCustomer;
+    }
+
+    public static void getUserData(String sql, Component[] pnlComponents) {
+        int count = 1;
+        try {
+            pst = cn.prepareStatement(sql);
+            pst.setString(1, getID());
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                for (Component pnlComponent : pnlComponents) {
+                    if (pnlComponent instanceof JTextField) {
+                        ((JTextField) pnlComponent).setText(rs.getString(count++));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     public static void getHashSellDetails(int products, int amount) {

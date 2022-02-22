@@ -5,7 +5,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -18,7 +18,7 @@ public class SalesMain extends javax.swing.JPanel {
     /**
      * Creates new form AdminSalesMain
      */
-    String idEmployee = DBManagement.getID();
+    String idEmployee = DB.getID();
     String sqlEmployee = "select O.idOrder, concat(E.firstName,' ',E.lastName),concat(C.firstName,' ',C.lastName), "
             + "DATE(O.orderDate), TIME(O.orderDate), sum(OD.quantity),sum(P.pvp * OD.quantity) "
             + "from orders O join orderDetails OD on O.idOrder=OD.idOrder join employees E on O.idEmployee=E.idEmployee "
@@ -31,9 +31,9 @@ public class SalesMain extends javax.swing.JPanel {
     public SalesMain(boolean admin) {
         initComponents();
         if (admin) {
-            DBManagement.showQueryInTable(tblSales, sqlAdmin);
+            DB.showQueryInTable(tblSales, sqlAdmin);
         }else{
-            DBManagement.showQueryInTable(tblSales, sqlEmployee);
+            DB.showQueryInTable(tblSales, sqlEmployee);
         }
     }
 

@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -110,7 +110,7 @@ public class CategoriesAdd extends javax.swing.JPanel {
         if (name.equals("") || description.equals("")) {
             JOptionPane.showMessageDialog(null, "Rellene los campos necesarios");
         } else {
-            DBManagement.insertDataDB(dataFromTxtField,sqlInsert);
+            DB.insertDataDB(dataFromTxtField,sqlInsert);
             txtName.setText("");txtDescription.setText("");
         }
     }

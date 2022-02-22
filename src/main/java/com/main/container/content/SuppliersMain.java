@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -21,7 +21,7 @@ public class SuppliersMain extends javax.swing.JPanel {
 
     public SuppliersMain() {
         initComponents();
-        DBManagement.showQueryInTable(tblSupplier, sql);
+        DB.showQueryInTable(tblSupplier, sql);
     }
 
     /**
@@ -131,11 +131,11 @@ public class SuppliersMain extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        DBManagement.inactiveDB(tblSupplier);
+        DB.inactiveDB(tblSupplier);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
-        DBManagement.modifySimpleTable(tblSupplier);
+        DB.modifySimpleTable(tblSupplier);
     }//GEN-LAST:event_btnModifyActionPerformed
 
 

@@ -4,7 +4,7 @@
  */
 package com.main.container.content;
 
-import com.functions.DBManagement;
+import com.functions.DB;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 
@@ -20,7 +20,7 @@ public class CustomersMain extends javax.swing.JPanel {
     String sql = "select idCustomer,firstname,lastName,nui, address, phone, mail from customers";
     public CustomersMain(boolean admin) {
         initComponents();
-        DBManagement.showQueryInTable(tblCustomers, sql);
+        DB.showQueryInTable(tblCustomers, sql);
         if(!admin){
             btnDelete.setVisible(false);
             btnModify.setVisible(false);
