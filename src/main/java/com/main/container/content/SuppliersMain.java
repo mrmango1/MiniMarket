@@ -125,6 +125,11 @@ public class SuppliersMain extends javax.swing.JPanel {
         txtSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtSearch.setForeground(new java.awt.Color(46, 52, 64));
         txtSearch.setBorder(null);
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSearchKeyReleased(evt);
+            }
+        });
         pnlSearch.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
 
         add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, 170, 35));
@@ -137,6 +142,11 @@ public class SuppliersMain extends javax.swing.JPanel {
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         DB.modifySimpleTable(tblSupplier);
     }//GEN-LAST:event_btnModifyActionPerformed
+
+    private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
+        String query = txtSearch.getText();
+        DB.tableSorter(tblSupplier, query);
+    }//GEN-LAST:event_txtSearchKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

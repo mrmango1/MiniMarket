@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  * @author mrmango
@@ -156,7 +157,11 @@ public class DB {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-
+    public static void tableSorter(JTable table, String query){
+        TableRowSorter<DefaultTableModel> rowSorter = new TableRowSorter(model);
+        table.setRowSorter(rowSorter);
+        rowSorter.setRowFilter(RowFilter.regexFilter("(?i)"+query.trim()));
+    }
     //Metodo para mostrar una consulta de la base de datos en una JTable
     public static void showQueryInTable(JTable table, String __sqlQuery) {
         sqlQuery = __sqlQuery;

@@ -123,6 +123,11 @@ public class ProductsMain extends javax.swing.JPanel {
         txtSearch.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtSearch.setForeground(new java.awt.Color(46, 52, 64));
         txtSearch.setBorder(null);
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSearchKeyReleased(evt);
+            }
+        });
         pnlSearch.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 8, 100, 20));
 
         add(pnlSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 462, -1, 35));
@@ -131,6 +136,11 @@ public class ProductsMain extends javax.swing.JPanel {
     private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
 
     }//GEN-LAST:event_tblProductsMouseClicked
+
+    private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
+        String query = txtSearch.getText();
+        DB.tableSorter(tblProducts, query);
+    }//GEN-LAST:event_txtSearchKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
